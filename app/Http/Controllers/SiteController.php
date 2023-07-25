@@ -44,7 +44,9 @@ class SiteController extends Controller
         $services = Service::where('showed', 1)->where('show_at_home', 1)->limit(2)->get();
         $contactInfo = ContactInfo::find(1);
         $allServices = Service::where('showed', 1)->get();
-        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices'));
+        $contactInfo = ContactInfo::find(1);
+
+        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices', 'contactInfo'));
     }
 
     public function about()

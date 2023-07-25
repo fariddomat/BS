@@ -17,7 +17,8 @@ class CreateServiceIndexItemTranslationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('service_index_item_id');
             $table->string('locale')->index();
-            $table->string('name');
+            $table->text('name');
+            $table->longText('description');
             $table->unique(['service_index_item_id', 'locale'], 'item_id_locale_unique');
         });
         Schema::table('service_index_item_translations', function (Blueprint $table) {

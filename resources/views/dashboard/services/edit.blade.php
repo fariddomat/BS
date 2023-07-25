@@ -151,7 +151,7 @@
 
                     <div class="form-group mb-3">
                         <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Update </button>
-                        {{-- <a href="{{route('dashboard.services.indexitems.index', $service->id)}}" class="btn btn-primary"> index items </a> --}}
+                        <a href="{{route('dashboard.services.indexitems.index', $service->id)}}" class="btn btn-primary"> index items </a>
                         <a href="{{ route('dashboard.services.sections.index', $service->id) }}" class="btn btn-primary">
                             sections </a>
                         {{-- <a href="{{route('dashboard.services.workways.index', $service->id)}}" class="btn btn-primary"> work ways </a> --}}

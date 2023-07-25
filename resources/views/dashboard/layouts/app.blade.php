@@ -13,7 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('noty/noty.css')}}">
     <script src="{{asset('noty/noty.min.js')}}"></script>
     <style>
@@ -33,6 +32,7 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="{{asset('dashboard/css/dashboard.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     @yield('styles')
 
 </head>

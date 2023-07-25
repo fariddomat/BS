@@ -17,7 +17,7 @@
             <form action="{{ route('dashboard.services.indexitems.update', $indexitem->id) }}" method="post">
                 @csrf()
                 {{ method_field('put') }}
-                 
+
                 <div class="form-group mb-3">
                     <label for="ar[name]" class="form-label">Name in Arabic</label>
                     <input type="text" name="ar[name]" class="form-control" value="{{ $indexitem->translate('ar')->name }}" dir="rtl">
@@ -25,6 +25,15 @@
                 <div class="form-group mb-3">
                     <label for="en[name]" class="form-label">Name in English</label>
                     <input type="text" name="en[name]" class="form-control" value="{{ $indexitem->translate('en')->name }}">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="ar[description]" class="form-label">description in Arabic</label>
+                    <textarea class="form-control" id="ar[description]" name="ar[description]" rows="3" dir="rtl">{{ $indexitem->translate('ar')->description }}</textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="en[description]" class="form-label">description in English</label>
+                    <textarea class="form-control" id="en[description]" name="en[description]" rows="3">{{$indexitem->translate('en')->description}}</textarea>
                 </div>
 
                 <div class="form-group mb-3">

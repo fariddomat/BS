@@ -20,11 +20,11 @@
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
                     panel.style.borderBottom = null;
-                    arrow.className = "fas fa-caret-{{ $arrow }} pr-3";
+                    arrow.className = "fa fa-caret-{{ $arrow }} pr-3";
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + "px";
                     panel.style.borderBottom = "1px solid #d4d4d4";
-                    arrow.className = "fas fa-caret-up pr-3";
+                    arrow.className = "fa fa-caret-up pr-3";
                 }
             });
         }
@@ -62,24 +62,23 @@
                 <div class="row">
                     <h1 class="service-main-title">{{ $service->main_title }}</h1>
 
-                    <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s" style="margin-top:50px">
 
-                        <div>{{ Str::limit($service->brief,100 ) }}</div>
-                        <div class="row">
-                        @foreach ($service->questions->chunk($halfOfQuestions) as $questions)
-                            <div class="col-12 col-md-12">
-                                @foreach ($questions as $question)
-                                    <div class="accordion1">
-                                        <i class="fa fa-caret-{{ $arrow }} pr-3"></i>
-                                        {{ $question->question }}
-                                    </div>
-                                    <div class="panel1">
-                                        {{ $question->answer }}
-                                    </div>
-                                @endforeach
-                            </div>
-                        @endforeach
-                    </div>
+                        <div>{{ Str::limit($service->brief, 100) }}</div>
+                        <div class="row" style="margin-top:35px">
+                            @foreach ($service->indexItems as $item)
+                                <div class="col-12 col-md-12">
+                                        <div class="accordion1">
+                                            <i class="fa fa-caret-{{ $arrow }} pr-3"></i>
+
+                                            <i aria-hidden="true" class="{{ $item->icon_class }}"></i>  {{ $item->name }}
+                                        </div>
+                                        <div class="panel1">
+                                            {{ $item->description }}
+                                        </div>
+                                </div>
+                            @endforeach
+                        </div>
                         @foreach ($service->sections as $section)
                             <div class="row mt-5">
                                 <div class="col-12">
@@ -116,4 +115,9 @@
             <a href="{{ route('service.order', $service->slug) }}" class="btn-line btn-big"
                 style="color: #fff">@lang('site.order_now')</a>
         </section>
-  
+        <!-- logo carousel section close -->
+
+
+
+    </div>
+@endsection

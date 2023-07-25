@@ -29,6 +29,9 @@ class ServiceIndexItemController extends Controller
         $rules = [
             'ar.name' => ['required'],
             'en.name' => ['required'],
+            'ar.description' => ['required'],
+            'en.description' => ['required'],
+
             'icon_class' => ['required'],
         ];
         $validatedData = $request->validate($rules);
@@ -36,6 +39,8 @@ class ServiceIndexItemController extends Controller
         $item->icon_class = $validatedData['icon_class'];
         $item->translateOrNew('en')->name = $validatedData['en']['name'];
         $item->translateOrNew('ar')->name = $validatedData['ar']['name'];
+        $item->translateOrNew('en')->description = $validatedData['en']['description'];
+        $item->translateOrNew('ar')->description = $validatedData['ar']['description'];
         $item->service_id = $service->id;
         $item->save();
         session()->flash('success', 'Index Item Added Successfully');
@@ -52,12 +57,16 @@ class ServiceIndexItemController extends Controller
         $rules = [
             'ar.name' => ['required'],
             'en.name' => ['required'],
+            'ar.description' => ['required'],
+            'en.description' => ['required'],
             'icon_class' => ['required'],
         ];
         $validatedData = $request->validate($rules);
         $indexitem->icon_class = $validatedData['icon_class'];
         $indexitem->translate('en')->name = $validatedData['en']['name'];
         $indexitem->translate('ar')->name = $validatedData['ar']['name'];
+        $indexitem->translate('en')->description = $validatedData['en']['description'];
+        $indexitem->translate('ar')->description = $validatedData['ar']['description'];
         $indexitem->save();
         session()->flash('success', 'Index Item Updated Successfully');
         return redirect()->route('dashboard.services.indexitems.index', $indexitem->service_id);
