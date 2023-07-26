@@ -19,23 +19,15 @@
         <section id="section-slider" class="fullwidthbanner-container no-padding" aria-label="section-slider">
             <div id="revolution-slider">
                 <ul>
+                    @foreach ($homeSlider as $image)
                     <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
                         <!--  BACKGROUND IMAGE -->
-                        <img src="{{ asset('home/images/slider/wide4.jpg') }}" alt="" />
+                        <img src="{{ $image->image }}" alt="" />
 
                     </li>
 
-                    <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
-                        <!--  BACKGROUND IMAGE -->
-                        <img src="{{ asset('home/images/slider/wide5.jpg') }}" alt="" />
+                    @endforeach
 
-                    </li>
-
-                    <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
-                        <!--  BACKGROUND IMAGE -->
-                        <img src="{{ asset('home/images/slider/wide6.jpg') }}" alt="" />
-
-                    </li>
 
                 </ul>
             </div>
@@ -43,7 +35,7 @@
         <!-- revolution slider close -->
 
         <section id="section-about-us-3" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0" style="background: url({{ asset('home/images/background/bg-side-2.jpg') }});"></div>
+            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0" style="background: url({{ asset($info->about_me_image) }});"></div>
 
             <div class="container-fluid">
                 <div class="row">

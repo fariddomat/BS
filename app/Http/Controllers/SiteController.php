@@ -21,6 +21,7 @@ use App\BlockedContact;
 use App\GlobalSMS;
 use App\SMS;
 use App\Helpers\SMS as SMSHelper;
+use App\HomeSlider;
 use App\SMSLog;
 use Illuminate\Support\Carbon;
 use Mail;
@@ -45,8 +46,9 @@ class SiteController extends Controller
         $contactInfo = ContactInfo::find(1);
         $allServices = Service::where('showed', 1)->get();
         $contactInfo = ContactInfo::find(1);
+        $homeSlider=HomeSlider::all();
 
-        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices', 'contactInfo'));
+        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices', 'contactInfo', 'homeSlider'));
     }
 
     public function about()
