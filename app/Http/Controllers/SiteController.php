@@ -69,11 +69,14 @@ class SiteController extends Controller
     public function services()
     {
         $services = Service::where('showed', 1)->get();
-        return view('services', compact('services'));
+        $info = Info::first();
+        return view('services', compact('services', 'info'));
     }
 
     public function service(Request $request, Service $service)
     {
+        $info = Info::first();
+
         switch ($service->id) {
             case 7: //digital business card design
                 return view('digitalCardService', compact('service'));
@@ -90,7 +93,7 @@ class SiteController extends Controller
                     $halfOfQuestions = ceil($questions / 2);
                 }
                 $otherServices = Service::where('showed', 1)->get();
-                return view('service', compact('service', 'halfOfQuestions', 'arrow', 'otherServices'));
+                return view('service', compact('service', 'halfOfQuestions', 'arrow', 'otherServices', 'info'));
         }
     }
 

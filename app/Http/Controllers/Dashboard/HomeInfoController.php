@@ -33,6 +33,7 @@ class HomeInfoController extends Controller
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'logo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'about_me_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
+            'service_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
         ];
         $validatedData = $request->validate($rules);
 
@@ -66,6 +67,12 @@ class HomeInfoController extends Controller
             $image = $request->file('about_me_image');
             $filename = $image->getClientOriginalName();
             $info->about_me_image = $image->storeAs('photos/home', $filename);
+        }
+        if ($request->has('service_image')) {
+            Storage::disk('local')->delete($info->service_image);
+            $image = $request->file('service_image');
+            $filename = $image->getClientOriginalName();
+            $info->service_image = $image->storeAs('photos/home', $filename);
         }
         $info->save();
         session()->flash('success', 'Home Info Updated Successfully');

@@ -38,7 +38,7 @@
 @section('content')
     <!-- subheader -->
     <section id="subheader" data-speed="8" data-type="background"
-        style="background: url({{ asset('home/images/background/bg-subheader-sn.jpg') }})top fixed">
+        style="background: url({{ asset($info->service_image) }}) top fixed">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -110,9 +110,9 @@
         </section>
 
         <!-- section begin -->
-        <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5"
+        <section id="view-all-projects" class="call-to-action bg-color  text-center" data-speed="5"
             data-type="background" aria-label="view-all-projects">
-            <a href="{{ route('service.order', $service->slug) }}" class="btn-line btn-big"
+            <a href="{{ route('service.order', $service->slug) }}" class="btn-line btn-big btn-h"
                 style="color: #fff">@lang('site.order_now')</a>
         </section>
         <!-- logo carousel section close -->

@@ -5,7 +5,7 @@
     <!-- Services Section -->
 
     <!-- subheader -->
-    <section id="subheader" data-speed="8" data-type="background" style="background: url({{ asset('home/images/background/bg-subheader-sn.jpg') }})top fixed">
+    <section id="subheader" data-speed="8" data-type="background" style="background: url({{ asset($info->service_image) }})top fixed">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -31,9 +31,11 @@
                         <h3 style="height: 65px;"><span class="id-color">{{ $service->title }}</span> </h3>
                         <p style="height: 25px;">{{ Str::limit($service->brief,100 ) }}</p>
                         <div class="spacer-single"></div>
-                        <img src="{{ asset('home/images/misc/pic_1.jpg') }}" class="img-responsive" alt="">
+                        <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
                         <div class="spacer-single"></div>
-                        <div class="d-flex flex-row justify-content-between pt-4">
+                        <a href="{{route('service', $service->slug )}}" class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
+
+                        {{-- <div class="d-flex flex-row justify-content-between pt-4">
                             <div>
                                 <a href="{{route('service', $service->slug )}}"
                                     class="more"><span>@lang('site.read_more')</span></a>
@@ -42,7 +44,7 @@
                                 <a href="{{route('service.order', $service->slug )}}"
                                     class="more"><span>@lang('site.order_now')</span></a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     @if ($index%2 != 0)
 

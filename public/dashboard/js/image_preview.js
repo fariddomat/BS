@@ -48,3 +48,19 @@ $(".about-me-image").change(function () {
     $(".about-me-image-preview").hide();
   }
 });
+
+$(".service-image").change(function () {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $(".service-image-preview").attr("src", e.target.result);
+        $(".service-image-preview").show();
+      };
+
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      $(".service-image-preview").attr("src", "");
+      $(".service-image-preview").hide();
+    }
+  });

@@ -99,7 +99,7 @@
         <!-- section begin -->
         <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5"
             data-type="background">
-            <a href="{{ route('services') }}" class="btn-line btn-big" style="color: #fff">@lang('site.view_all_services')</a>
+            <a href="{{ route('services') }}" class="btn-line btn-big btn-h" style="color: #fff">@lang('site.view_all_services')</a>
         </section>
         <!-- logo carousel section close -->
 
@@ -222,7 +222,7 @@
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
             data-type="background" aria-label="view-all-projects">
-            <a href="{{ route('blogs') }}" class="btn-line  btn-big" style="color:#fff">@lang('site.view_all_blogs')</a>
+            <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blogs')</a>
         </section>
         <!-- logo carousel section close -->
 

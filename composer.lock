@@ -350,43 +350,43 @@
         },
         {
             "name": "carlos-meneses/laravel-mpdf",
-            "version": "2.1.5",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mccarlosen/laravel-mpdf.git",
-                "reference": "810008e1a4b82fb6c8c74cdf32fd130195756027"
+                "reference": "6198486b23e7cff340958dfee09169da280f8f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mccarlosen/laravel-mpdf/zipball/810008e1a4b82fb6c8c74cdf32fd130195756027",
-                "reference": "810008e1a4b82fb6c8c74cdf32fd130195756027",
+                "url": "https://api.github.com/repos/mccarlosen/laravel-mpdf/zipball/6198486b23e7cff340958dfee09169da280f8f27",
+                "reference": "6198486b23e7cff340958dfee09169da280f8f27",
                 "shasum": ""
             },
             "require": {
                 "mpdf/mpdf": "^8.0",
-                "php": ">=7.0.0"
+                "php": "^5.6|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Meneses\\LaravelMpdf\\LaravelMpdfServiceProvider"
+                        "Mccarlosen\\LaravelMpdf\\LaravelMpdfServiceProvider"
                     ],
                     "aliases": {
-                        "PDF": "Meneses\\LaravelMpdf\\Facades\\LaravelMpdf"
+                        "PDF": "Mccarlosen\\LaravelMpdf\\Facades\\LaravelMpdf"
                     }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Meneses\\LaravelMpdf\\": "src/LaravelMpdf"
+                    "Mccarlosen\\LaravelMpdf\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Laravel Mpdf: Using Mpdf in Laravel 5 for generate Pdfs.",
+            "description": "Laravel Mpdf: Using Mpdf in Laravel to generate Pdfs.",
             "keywords": [
                 "laravel",
                 "mpdf",
@@ -394,9 +394,15 @@
             ],
             "support": {
                 "issues": "https://github.com/mccarlosen/laravel-mpdf/issues",
-                "source": "https://github.com/mccarlosen/laravel-mpdf/tree/2.1.5"
+                "source": "https://github.com/mccarlosen/laravel-mpdf/tree/2.1.12"
             },
-            "time": "2021-03-30T21:17:19+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/mccarlosen",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-05-09T23:25:45+00:00"
         },
         {
             "name": "doctrine/inflector",

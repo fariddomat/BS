@@ -96,6 +96,12 @@
     color:#fff;
 }
 
+a.btn-ho:hover{
+    color: #fff
+}
+a.btn-h:hover{
+    border-color: #fff
+}
     </style>
     <style>
         /* toggle */

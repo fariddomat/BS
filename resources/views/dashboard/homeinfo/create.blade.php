@@ -83,6 +83,16 @@
                     <img src="{{ isset($info) ? asset($info->about_me_image) : '#' }}" style="width: 300px;" class="img-thumbnail about-me-image-preview" alt="">
                 </div>
 
+
+                <div class="form-group mb-3">
+                    <label>Service Header Image</label>
+                    <input type="file" name="service_image" class="form-control service-image">
+                </div>
+
+                <div class="form-group mb-3">
+                    <img src="{{ isset($info) ? asset($info->service_image) : '#' }}" style="width: 300px;" class="img-thumbnail service-image-preview" alt="">
+                </div>
+
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Change </button>
                 </div>

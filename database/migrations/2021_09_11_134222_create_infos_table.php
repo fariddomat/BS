@@ -18,6 +18,7 @@ class CreateInfosTable extends Migration
             $table->string('image');
             $table->string('logo');
             $table->string('about_me_image');
+            $table->string('service_image');
             $table->timestamps();
         });
     }
