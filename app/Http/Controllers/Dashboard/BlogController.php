@@ -163,7 +163,7 @@ class BlogController extends Controller
         $blog->author_linkedin  = $validatedData['author_linkedin'] ?? null;
 
         if ($request->has('image')) {
-            Storage::disk('local')->delete($blog->image);
+            // Storage::disk('local')->delete($blog->image);
             $image = $request->file('image');
             $filename = $image->getClientOriginalName();
             $blog->image = $image->storeAs('photos/blogs', $filename);

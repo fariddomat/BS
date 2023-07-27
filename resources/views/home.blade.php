@@ -175,7 +175,7 @@
                             </li>
                             @foreach ($blogCategories as $category)
 
-                            <li><a href="#" data-filter=".{{ $category->name }}">{{ $category->name }}</a></li>
+                            <li><a href="#" data-filter=".{{ $category->id }}">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
 
@@ -190,7 +190,7 @@
                 @foreach ($blogs as $blog)
 
                 <!-- gallery item -->
-                <div class="col-md-4 col-sm-6 col-12 item {{ $blog->category->name }}">
+                <div class="col-md-4 col-sm-6 col-12 item {{ $blog->category->id }}">
 
 								<div class="de-post-poster" style="background-size: cover;">
 									<a class="d-overlay" href="{{ route('blog', $blog->slug) }}">

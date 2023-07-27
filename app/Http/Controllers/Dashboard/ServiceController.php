@@ -77,6 +77,7 @@ class ServiceController extends Controller
 
     public function edit(Service $service)
     {
+        // dd(true);
         return view('dashboard.services.edit', compact('service'));
     }
 
@@ -102,7 +103,7 @@ class ServiceController extends Controller
             'show_at_home' => ['nullable'],
         ];
         $validatedData = $request->validate($rules);
-        
+
         $service->translate('en')->title = $validatedData['en']['title'];
         $service->translate('ar')->title = $validatedData['ar']['title'];
         $service->translate('en')->brief = $validatedData['en']['brief'];

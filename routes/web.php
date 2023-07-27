@@ -67,10 +67,10 @@ Route::get('/sitemap.xml', 'SitemapXmlController@index')->name('sitemap');
 
 Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'], 'as' => 'dashboard.'], function () {
     Route::get('/home', 'Dashboard\DashboardController@home')->name('home');
+    Route::get('/services/{service}/edit', 'Dashboard\ServiceController@edit')->name('services.edit');
     Route::get('/services', 'Dashboard\ServiceController@index')->name('services.index');
     Route::get('/services/create', 'Dashboard\ServiceController@create')->name('services.create');
     Route::post('/services', 'Dashboard\ServiceController@store')->name('services.store');
-    Route::get('/services/{service}/edit', 'Dashboard\ServiceController@edit')->name('services.edit');
     Route::put('/services/{service}', 'Dashboard\ServiceController@update')->name('services.update');
     Route::delete('/services/{service}/index-image', 'Dashboard\ServiceController@destroyIndexImage')->name('services.indexImage.destroy');
 

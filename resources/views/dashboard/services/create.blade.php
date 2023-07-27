@@ -3,7 +3,7 @@
 @section('servicesActive', 'active')
 
 @section('scripts')
-<script src="{{asset('dashboard/js/image_preview.js')}}"></script> 
+<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
 @endsection
 
 @section('content')
@@ -54,11 +54,6 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label>Index Image</label>
-                    <input type="file" name="index_image" class="form-control logo">
-                </div>
-
-                <div class="form-group mb-3">
                     <img src="" style="width: 300px; display: none;" class="img-thumbnail logo-preview" alt="">
                 </div>
 
@@ -92,7 +87,17 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label>Image</label>
+                    <label>Image 1</label>
+                    <input type="file" name="index_image" class="form-control logo">
+                </div>
+
+                <div class="form-group mb-3">
+                <img src="" style="width: 300px; display: none;" class="img-thumbnail logo-preview"
+                alt="">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Image 2</label>
                     <input type="file" name="image" class="form-control image">
                 </div>
 

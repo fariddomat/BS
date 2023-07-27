@@ -58,6 +58,11 @@
 
 
                 <div class="form-group mb-3">
+                    <label>Home Slider</label>
+                    <a href="{{ route('dashboard.homeinfoSliderImages.index') }}"  class="btn btn-primary">Slider</a>
+                </div>
+
+                <div class="form-group mb-3">
                     <label>Logo Image (200 x 200)</label>
                     <input type="file" name="logo" class="form-control logo">
                 </div>
