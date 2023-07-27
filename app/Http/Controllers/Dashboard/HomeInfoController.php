@@ -30,7 +30,6 @@ class HomeInfoController extends Controller
             'en.work' => ['required'],
             'ar.work_description' => ['required'],
             'en.work_description' => ['required'],
-            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'logo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'about_me_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'service_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
@@ -50,12 +49,7 @@ class HomeInfoController extends Controller
         $info->translateOrNew('ar')->work = $validatedData['ar']['work'];
         $info->translateOrNew('en')->work_description = $validatedData['en']['work_description'];
         $info->translateOrNew('ar')->work_description = $validatedData['ar']['work_description'];
-        if ($request->has('image')) {
-            Storage::disk('s3')->delete($info->image);
-            $image = $request->file('image');
-            $filename = $image->getClientOriginalName();
-            $info->image = $image->storePubliclyAs('photos/home', $filename, 's3');
-        }
+
         if ($request->has('logo')) {
             Storage::disk('local')->delete($info->logo);
             $image = $request->file('logo');

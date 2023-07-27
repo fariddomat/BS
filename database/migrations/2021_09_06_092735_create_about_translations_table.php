@@ -25,6 +25,7 @@ class CreateAboutTranslationsTable extends Migration
             $table->longText('goals');
             $table->longText('vision');
             $table->longText('ambition');
+            $table->longText('values');
             $table->unique(['about_id', 'locale']);
         });
         Schema::table('about_translations', function (Blueprint $table) {

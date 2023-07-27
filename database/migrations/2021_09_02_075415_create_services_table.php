@@ -21,6 +21,7 @@ class CreateServicesTable extends Migration
             $table->string('icon_class');
             $table->boolean('showed');
             $table->boolean('show_at_home');
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
         });
     }

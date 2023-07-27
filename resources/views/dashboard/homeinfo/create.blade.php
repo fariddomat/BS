@@ -56,14 +56,6 @@
                     <input type="text" name="en[work_description]" class="form-control" value="{{ old('en.work_description') ?? isset($info) ? $info->translate('en')->work_description : '' }}">
                 </div>
 
-                <div class="form-group mb-3">
-                    <label>Header Image</label>
-                    <input type="file" name="image" class="form-control image">
-                </div>
-
-                <div class="form-group mb-3">
-                    <img src="{{ isset($info) ? Storage::disk('s3')->url($info->image) : '#' }}" style="width: 300px;" class="img-thumbnail image-preview" alt="">
-                </div>
 
                 <div class="form-group mb-3">
                     <label>Logo Image (200 x 200)</label>

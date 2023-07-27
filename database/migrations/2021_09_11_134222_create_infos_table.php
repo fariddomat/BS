@@ -15,7 +15,6 @@ class CreateInfosTable extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
             $table->string('logo');
             $table->string('about_me_image');
             $table->string('service_image');

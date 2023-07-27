@@ -13,12 +13,12 @@ class ContactInfoSeeder extends Seeder
     public function run()
     {
         $ContactInfo = new ContactInfo();
-        $ContactInfo->mobile = '00966556821445';
-        $ContactInfo->email = 'info@digitsmark.com';
-        $ContactInfo->whatsapp = '+966556821445';
-        $ContactInfo->location_link = 'https://bit.ly/3DMYSbj';
-        $ContactInfo->translateOrNew('en')->location = 'Falastin, Bani Malik, Jeddah 22230, Saudi Arabia';
-        $ContactInfo->translateOrNew('ar')->location = 'جدة بني مالك - شارع فلسطين - ابراج الليزر التجارية';
+        $ContactInfo->mobile = '00966666666666';
+        $ContactInfo->email = 'info@bsecret.com';
+        $ContactInfo->whatsapp = '+966666666666';
+        $ContactInfo->location_link = 'https://goo.gl/maps/SbF3CEMEvcjWYMhk7';
+        $ContactInfo->translateOrNew('en')->location = 'Saudi Arabia';
+        $ContactInfo->translateOrNew('ar')->location = 'المملكة العربية السعودية';
         $ContactInfo->save();
     }
 }
