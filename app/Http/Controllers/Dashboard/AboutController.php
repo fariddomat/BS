@@ -44,10 +44,8 @@ class AboutController extends Controller
         ];
         $validatedData = $request->validate($rules);
 
-        $about =  About::find(1);
-        if (is_null($about)) {
-            $about = new About();
-        }
+        $about =  About::firstOrNew();
+
 
         $about->translateOrNew('en')->about_me = $validatedData['en']['about_me'];
         $about->translateOrNew('ar')->about_me = $validatedData['ar']['about_me'];

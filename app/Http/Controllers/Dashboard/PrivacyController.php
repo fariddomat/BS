@@ -27,10 +27,8 @@ class PrivacyController extends Controller
             'ar' => ['required'],
             'en' => ['required'],
         ]);
-        $privacy =  Privacy::find(1);
-        if (is_null($privacy)) {
-            $privacy = new Privacy();
-        }
+        $privacy =  Privacy::firstOrNew();
+        
         $privacy->ar=$request->ar;
         $privacy->en=$request->en;
         $privacy->save();
