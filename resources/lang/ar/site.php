@@ -83,5 +83,6 @@ return [
     'view_all_blogs' => 'مشاهدة كل التدوينات',
     'our_team' =>'فريقنا',
     'subServices' =>' الخدمات الفرعية',
+    'privacy' =>' سياسة الخصوصية',
 
 ];

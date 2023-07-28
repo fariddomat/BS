@@ -13,6 +13,8 @@
         content="architecture,building,business,bootstrap,creative,exterior design,furniture design,gallery,garden design,house,interior design,landscape design,multipurpose,onepage,portfolio,studio">
     <meta name="author" content="">
 
+
+    <link href="{{ asset('fonts/fontawesome-free-6.4.0-web/css/all.css') }}" rel="stylesheet">
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('home/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap" />
@@ -55,13 +57,48 @@
     <![endif]-->
 
     @if (app()->getLocale() == 'ar')
+        <link
+            href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
         <style>
-            .de-navbar-left header #mainmenu > li{
+            * {
+                font-family: 'Cairo';
+            }
+
+            body {}
+
+            h4,
+            h5,
+            h6,
+            .h4,
+            .h5,
+            .h6 .h1,
+            .h2,
+            .h3,
+            h1,
+            h2,
+            h3 {
+                font-family: 'Cairo';
+            }
+
+            p {
+                font-family: 'Cairo';
+
+            }
+
+            span {
+                font-family: 'Cairo';
+            }
+        </style>
+        <style>
+            .de-navbar-left header #mainmenu>li {
                 letter-spacing: 2px;
             }
-            *{
+
+            * {
                 letter-spacing: 1px;
             }
+
             #filters a,
             a,
             h1,
@@ -76,32 +113,70 @@
                 letter-spacing: 1px;
             }
         </style>
+    @else
+        <link href="{{ asset('fonts/morn/Morn-Thin.otf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Morn';
+
+            }
+
+            body {}
+
+            h4,
+            h5,
+            h6,
+            .h4,
+            .h5,
+            .h6 .h1,
+            .h2,
+            .h3,
+            h1,
+            h2,
+            h3 {
+                font-family: 'Morn';
+            }
+
+            p {
+                font-family: 'Morn';
+            }
+
+            span {
+                font-family: 'Morn';
+            }
+        </style>
     @endif
     <style>
-        .de_light.de-navbar-left header #mainmenu > li{
+        .de_light.de-navbar-left header #mainmenu>li {
             padding: 5px
         }
+
         .de-post-poster .d-overlay {
-  background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.2);
 
         }
+
         .de-post-poster .d-content h3,
         .de-post-poster .d-date {
             color: #fff
         }
-        #filters a.selected {
-  color: #fff;
-}
-.de_tab.tab_steps .de_nav li span {
-    color:#fff;
-}
 
-a.btn-ho:hover{
-    color: #fff
-}
-a.btn-h:hover{
-    border-color: #fff
-}
+        #filters a.selected {
+            color: #fff;
+        }
+
+        .de_tab.tab_steps .de_nav li span {
+            color: #fff;
+        }
+
+        a.btn-ho:hover {
+            color: #fff
+        }
+
+        a.btn-h:hover {
+            border-color: #fff
+        }
     </style>
     <style>
         /* toggle */
@@ -248,11 +323,10 @@ a.btn-h:hover{
 
                         <div class="h-content">
                             <div class="social-icons-2">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                                @foreach ($socialMedias as $socialMedia)
+                                    <a href="{{ $socialMedia->link }}" target="_blank"><i
+                                            class="fa-brands {{ $socialMedia->icon }}"></i></a>
+                                @endforeach
                             </div>
                         </div>
 
@@ -273,14 +347,16 @@ a.btn-h:hover{
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{ asset('logo.png') }}" class="logo-small"
-                                        alt="" style="height: 40px;"><br>
-                                        <h2>{{$info->title}}</h2>
-                                        <h6>{{$info->description}}</h6>
+                                    <img src="{{ asset('logo.png') }}" class="logo-small" alt=""
+                                        style="height: 40px;"><br>
+                                    <h2>{{ $info->title }}</h2>
+                                    <h6>{{ $info->description }}</h6>
 
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6" style="margin-top: 65px">
+                                    <h4><a href="{{ route('privacy') }}">@lang('site.privacy')</a></h4>
+
                                     {{-- <h3>@lang('site.contact_us')</h3>
                                     <div>
 
@@ -305,12 +381,10 @@ a.btn-h:hover{
                                     </div>
                                     <div class="col-md-6 text-right">
                                         <div class="social-icons">
-                                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                                            <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                                            @foreach ($socialMedias as $socialMedia)
+                                                <a href="{{ $socialMedia->link }}" target="_blank"><i
+                                                        class="fa-brands {{ $socialMedia->icon }}"></i></a>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

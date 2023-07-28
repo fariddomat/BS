@@ -22,6 +22,7 @@ use App\GlobalSMS;
 use App\SMS;
 use App\Helpers\SMS as SMSHelper;
 use App\HomeSlider;
+use App\Privacy;
 use App\SMSLog;
 use Illuminate\Support\Carbon;
 use Mail;
@@ -55,8 +56,15 @@ class SiteController extends Controller
     {
         $about = About::first();
         $aboutImages = AboutImage::where('showed', 1)->latest()->get();
+        // dd($aboutImages);
         $counter = range($aboutImages->count(), 1);
         return view('about', compact('about', 'aboutImages', 'counter'));
+    }
+
+    public function privacy()
+    {
+        $privacy = Privacy::find(1);
+        return view('privacy', compact('privacy'));
     }
 
     public function contact()
@@ -78,7 +86,7 @@ class SiteController extends Controller
         $info = Info::first();
 
         switch ($service->id) {
-            
+
             default:
                 if (App::getLocale() == 'en') {
                     $arrow = 'right';

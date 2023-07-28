@@ -13,10 +13,10 @@ About Fields
     Work -X
 Clients
 Blog Categories
-Blog 
+Blog
     Customers -X
 Color
-    SMS Contact us -X 
+    SMS Contact us -X
     SMS Order Service -X
     SMS Larid ERP -X
 
@@ -33,3 +33,12 @@ Color
     3 سلايدر
 
     صفحة سياسة الخصوصية
+
+
+    social media links #
+    font #
+    service info
+    about info
+    team image
+    partners slider
+    team_experience slider

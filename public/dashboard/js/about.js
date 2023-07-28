@@ -160,4 +160,24 @@ $(function() {
             $("meta[name=csrf-token]").attr("content"),
         removeButtons: "About"
     });
+
+
+    CKEDITOR.replace("en", {
+        filebrowserBrowseUrl: imageGalleryBrowseUrl,
+        filebrowserUploadUrl:
+            imageGalleryUploadUrl +
+            "?_token=" +
+            $("meta[name=csrf-token]").attr("content"),
+        removeButtons: "About"
+    });
+
+
+    CKEDITOR.replace("ar", {
+        filebrowserBrowseUrl: imageGalleryBrowseUrl,
+        filebrowserUploadUrl:
+            imageGalleryUploadUrl +
+            "?_token=" +
+            $("meta[name=csrf-token]").attr("content"),
+        removeButtons: "About"
+    });
 });

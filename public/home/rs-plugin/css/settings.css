@@ -1343,7 +1343,7 @@ border-style:none;
 															-moz-opacity: 1;
 															-khtml-opacity: 1;
 															opacity: 1;
-															-webkit-transition: opacity 0.2s ease-out; -moz-transition: opacity 0.2s ease-out; -o-transition: opacity 0.2s ease-out; -ms-transition: opacity 0.2s ease-out;			
+															-webkit-transition: opacity 0.2s ease-out; -moz-transition: opacity 0.2s ease-out; -o-transition: opacity 0.2s ease-out; -ms-transition: opacity 0.2s ease-out;
 															-webkit-transform: translateZ(5000px);
 															-webkit-transform-style: flat;
 															-webkit-backface-visibility: hidden;
@@ -1552,21 +1552,21 @@ padding: 0px;
 	-	LOADER FORMS	-
 ********************************/
 
-.tp-loader 	{	  
-				top:50%; left:50%; 
-				z-index:10000; 
+.tp-loader 	{
+				top:50%; left:50%;
+				z-index:10000;
 				position:absolute;
-				
+
 
 			}
-			
+
 .tp-loader.spinner0 {
   width: 40px;
   height: 40px;
   background:url(../assets/loader.gif) no-repeat center center;
   background-color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);  
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
   margin-top:-20px;
   margin-left:-20px;
   -webkit-animation: tp-rotateplane 1.2s infinite ease-in-out;
@@ -1582,7 +1582,7 @@ padding: 0px;
   height: 40px;
   background-color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);  
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
   margin-top:-20px;
   margin-left:-20px;
   -webkit-animation: tp-rotateplane 1.2s infinite ease-in-out;
@@ -1594,9 +1594,9 @@ padding: 0px;
 
 
 
-.tp-loader.spinner5 	{	background:url(../assets/loader.gif) no-repeat 10px 10px; 
-							background-color:#fff;  
-							margin:-22px -22px; 							
+.tp-loader.spinner5 	{	background:url(../assets/loader.gif) no-repeat 10px 10px;
+							background-color:#fff;
+							margin:-22px -22px;
 							width:44px;height:44px;
 							border-radius: 3px;
 							-moz-border-radius: 3px;
@@ -1611,13 +1611,13 @@ padding: 0px;
 }
 
 @keyframes tp-rotateplane {
-  0% { 
+  0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
@@ -1630,8 +1630,8 @@ padding: 0px;
   margin-top:-20px;margin-left:-20px;
   background-color: #ff0000;
    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);  
-  border-radius: 100%;  
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+  border-radius: 100%;
   -webkit-animation: tp-scaleout 1.0s infinite ease-in-out;
   animation: tp-scaleout 1.0s infinite ease-in-out;
 }
@@ -1645,7 +1645,7 @@ padding: 0px;
 }
 
 @keyframes tp-scaleout {
-  0% { 
+  0% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
   } 100% {
@@ -1672,7 +1672,7 @@ padding: 0px;
   height: 18px;
   background-color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);  
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: tp-bouncedelay 1.4s infinite ease-in-out;
@@ -1698,10 +1698,10 @@ padding: 0px;
 }
 
 @keyframes tp-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 40% { 
+  } 40% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
@@ -1714,12 +1714,12 @@ padding: 0px;
   margin: -20px 0px 0px -20px;
   width: 40px;
   height: 40px;
-  text-align: center; 
+  text-align: center;
   -webkit-animation: tp-rotate 2.0s infinite linear;
   animation: tp-rotate 2.0s infinite linear;
 }
 
-.tp-loader.spinner4 .dot1, 
+.tp-loader.spinner4 .dot1,
 .tp-loader.spinner4 .dot2 {
   width: 60%;
   height: 60%;
@@ -1727,11 +1727,11 @@ padding: 0px;
   position: absolute;
   top: 0;
   background-color: #fff;
-  border-radius: 100%;  
+  border-radius: 100%;
   -webkit-animation: tp-bounce 2.0s infinite ease-in-out;
   animation: tp-bounce 2.0s infinite ease-in-out;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);  
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
 .tp-loader.spinner4 .dot2 {
@@ -1750,10 +1750,10 @@ padding: 0px;
 }
 
 @keyframes tp-bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }

@@ -83,5 +83,7 @@ return [
     'view_all_blogs' => 'View all blogs',
     'our_team' => 'Our Team',
     'subServices' =>' Sub Services',
+    'privacy' =>'Privacy',
+
 
 ];

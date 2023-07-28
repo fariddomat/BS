@@ -35,6 +35,7 @@ Route::group(
     function () {
         Route::get('/', 'SiteController@home')->name('home');
         Route::get('/about', 'SiteController@about')->name('about');
+        Route::get('/privacy', 'SiteController@privacy')->name('privacy');
         Route::get('/contact-us', 'SiteController@contact')->name('contact');
         Route::get('/services', 'SiteController@services')->name('services');
         Route::get('/services/{service:slug}', 'SiteController@service')->name('service');
@@ -143,6 +144,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'],
 
     Route::get('/about', 'Dashboard\AboutController@create')->name('about.create');
     Route::post('/about', 'Dashboard\AboutController@store')->name('about.store');
+
+
+    Route::get('/privacy', 'Dashboard\PrivacyController@create')->name('privacy.create');
+    Route::post('/privacy', 'Dashboard\PrivacyController@store')->name('privacy.store');
 
     Route::get('/socialMedia', 'Dashboard\SocialMediaController@index')->name('socialmedia.index');
     Route::get('/socialMedia/{socialMedia}/edit', 'Dashboard\SocialMediaController@edit')->name('socialmedia.edit');

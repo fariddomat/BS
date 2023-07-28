@@ -34,6 +34,7 @@
     <link href="{{asset('dashboard/css/dashboard.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     @yield('styles')
+    <link href="{{ asset('fonts/fontawesome-free-6.4.0-web/css/all.css') }}" rel="stylesheet">
 
 </head>
 
@@ -159,6 +160,12 @@
                         <li class="nav-item">
                             <a class="nav-link @yield('colorActive')" href="{{route('dashboard.color.create')}}">
                                 Color
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @yield('privacyActive')" href="{{route('dashboard.privacy.create')}}">
+                                Privacy
                             </a>
                         </li>
                         {{-- <li class="nav-item">
