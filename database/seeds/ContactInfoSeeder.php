@@ -14,7 +14,7 @@ class ContactInfoSeeder extends Seeder
     {
         $ContactInfo = new ContactInfo();
         $ContactInfo->mobile = '00966666666666';
-        $ContactInfo->email = 'info@bsecret.com';
+        $ContactInfo->email = 'info@bsecret.sa';
         $ContactInfo->whatsapp = '+966666666666';
         $ContactInfo->location_link = 'https://goo.gl/maps/SbF3CEMEvcjWYMhk7';
         $ContactInfo->translateOrNew('en')->location = 'Saudi Arabia';

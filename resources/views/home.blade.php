@@ -75,8 +75,10 @@
                         <h3><span class="id-color">{{$service->title}}</span></h3>
                         {{ Str::limit( $service->brief,100 ) }}
 
+                        <div class="spacer-single"></div>
+                        <a href="{{route('service', $service->slug )}}" class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
-                        <div class="d-flex flex-row justify-content-between pt-4">
+                        {{-- <div class="d-flex flex-row justify-content-between pt-4">
                             <div>
                                 <a href="{{route('service', $service->slug )}}"
                                     class="more"><span>@lang('site.read_more')</span></a>
@@ -85,7 +87,7 @@
                                 <a href="{{route('service.order', $service->slug )}}"
                                     class="more"><span>@lang('site.order_now')</span></a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     @endforeach

@@ -106,6 +106,42 @@
                         <img src="{{ asset($service->image) }}" class="img-responsive" alt="">
                     </div>
                 </div>
+                @if ($service->subServices->count() > 0)
+                <div class="row">
+                    <h2>@lang('site.subServices')</h2>
+                    @foreach ($service->subServices as $index=> $subService)
+                    <div class="row wow fadeIn" data-wow-delay=".9s" style="margin-bottom: 50px">
+                        <div class="col-md-6">
+                            <h3 style="height: 65px;"><span class="id-color">{{ $subService->title }}</span> </h3>
+                        <p >{!! $subService->brief !!}</p>
+                        </div>
+                        {{-- <div class="spacer-single"></div> --}}
+                        <div class="col-md-6">
+                            <img src="{{ asset($subService->index_image) }}" class="img-responsive" alt="">
+
+                        </div>
+                        <div class="spacer-single"></div>
+                        <a href="{{route('service', $subService->slug )}}" class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
+
+                        {{-- <div class="d-flex flex-row justify-content-between pt-4">
+                            <div>
+                                <a href="{{route('subService', $subService->slug )}}"
+                                    class="more"><span>@lang('site.read_more')</span></a>
+                            </div>
+                            <div>
+                                <a href="{{route('subService.order', $subService->slug )}}"
+                                    class="more"><span>@lang('site.order_now')</span></a>
+                            </div>
+                        </div> --}}
+                    </div>
+                    @if ($index%2 != 0)
+
+                    <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+                    <div class="spacer-single"></div>
+                    @endif
+                    @endforeach
+                </div>
+                @endif
             </div>
         </section>
 
