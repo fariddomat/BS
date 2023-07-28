@@ -18,16 +18,24 @@
                     <tr>
                         <th>#</th>
                         <th>Title</th>
+                        <th>Sub Service?</th>
                         <th>Showed</th>
                         <th>Show At Home</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($services as $service)
+                    @foreach ($services as $index=>$service)
                     <tr>
-                        <td>{{ $service->id }}</td>
+                        <td>{{ $index+1 }}</td>
                         <td>{{ $service->title }}</td>
+                        <td>
+                            @if ($service->parent_id == null)
+                            No
+                            @else
+                            {{ $service->parentService->title }}
+                            @endif
+                        </td>
                         <td>{{ $service->showed == 1 ? 'Showed' : 'Hidden' }}</td>
                         <td>{{ $service->show_at_home == 1 ? 'Showed' : 'Hidden' }}</td>
                         <td>

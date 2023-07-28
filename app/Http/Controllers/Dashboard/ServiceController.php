@@ -18,7 +18,7 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $services = Service::paginate(50);
+        $services = Service::orderBy('id')->paginate(50);
         return view('dashboard.services.index', compact('services'));
     }
     public function create()

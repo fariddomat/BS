@@ -78,9 +78,7 @@ class SiteController extends Controller
         $info = Info::first();
 
         switch ($service->id) {
-            case 7: //digital business card design
-                return view('digitalCardService', compact('service'));
-                break;
+            
             default:
                 if (App::getLocale() == 'en') {
                     $arrow = 'right';
