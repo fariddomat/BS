@@ -22,6 +22,9 @@ class CreateServicesTable extends Migration
             $table->boolean('showed');
             $table->boolean('show_at_home');
             $table->integer('parent_id')->nullable();
+            $table->text('slider1')->nullable();
+            $table->text('slider2')->nullable();
+            $table->text('slider3')->nullable();
             $table->timestamps();
         });
     }

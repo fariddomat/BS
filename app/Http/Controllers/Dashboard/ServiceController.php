@@ -23,7 +23,8 @@ class ServiceController extends Controller
     }
     public function create()
     {
-        return view('dashboard.services.create');
+        $services=Service::all();
+        return view('dashboard.services.create', compact('services'));
     }
 
     public function store(Request $request)
@@ -57,6 +58,7 @@ class ServiceController extends Controller
         $service->translateOrNew('en')->index_name = $validatedData['en']['index_name'];
         $service->translateOrNew('ar')->index_name = $validatedData['ar']['index_name'];
         $service->icon_class = $validatedData['icon_class'];
+        $service->parent_id=$request->parent_id;
         if ($request->has('image')) {
             $image = $request->file('image');
             $filename = $image->getClientOriginalName();
@@ -78,7 +80,8 @@ class ServiceController extends Controller
     public function edit(Service $service)
     {
         // dd(true);
-        return view('dashboard.services.edit', compact('service'));
+        $services=Service::all();
+        return view('dashboard.services.edit', compact('service', 'services'));
     }
 
     public function update(Request $request, Service $service)
@@ -113,6 +116,8 @@ class ServiceController extends Controller
         $service->translate('en')->index_name = $validatedData['en']['index_name'];
         $service->translate('ar')->index_name = $validatedData['ar']['index_name'];
         $service->icon_class = $validatedData['icon_class'];
+        $service->parent_id=$request->parent_id;
+
         if ($request->has('image')) {
             Storage::disk('local')->delete($service->image);
             $image = $request->file('image');

@@ -23,6 +23,20 @@
                 @method('PUT')
 
                 <div class="form-group mb-3">
+                    <label>Slider Number</label>
+                    <select name="slider" class="form-control" id="">
+                        <option value="1" @if ($image->slider==1)
+                            selected
+                        @endif>Slider 1</option>
+                        <option value="2" @if ($image->slider==2)
+                            selected
+                        @endif>Slider 2</option>
+                        <option value="3" @if ($image->slider==3)
+                            selected
+                        @endif>Slider 3</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
                     <label>Image</label>
                     <input type="file" name="image" class="form-control image">
                 </div>

@@ -149,6 +149,19 @@
                             class="img-thumbnail image-preview" alt="">
                     </div>
 
+
+                    <div class="form-group mb-3">
+                        <label>Parent Service</label>
+                        <select name="parent_id" id="" class="form-control">
+                            <option value="">Select a service to make this as sub service</option>
+                            @foreach ($services as $item)
+                                <option value="{{ $item->id }}" @if ($item->id == $service->parent_id)
+                                    selected
+                                @endif>{{ $item->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="form-group mb-3">
                         <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Update </button>
                         <a href="{{route('dashboard.services.indexitems.index', $service->id)}}" class="btn btn-primary"> index items </a>

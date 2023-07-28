@@ -15,6 +15,7 @@ class CreateServiceSLiderImagesTable extends Migration
     {
         Schema::create('service_slider_images', function (Blueprint $table) {
             $table->id();
+            $table->integer('slider_id')->default(1);
             $table->unsignedBigInteger('service_id');
             $table->string('image');
             $table->boolean('showed')->default(1);

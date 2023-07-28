@@ -96,7 +96,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'],
     Route::delete('/services/sections/images/{image}', 'Dashboard\ServiceSectionImageController@destroy')->name('services.sections.images.destroy');
 
 
-    Route::get('/services/{service}/sliderImages', 'Dashboard\ServiceSliderImageController@index')->name('services.sliderImages.index');
+    Route::get('/services/{id}/sliderImages', 'Dashboard\ServiceSliderImageController@index')->name('services.sliderImages.index');
     Route::get('/services/{service}/sliderImages/create', 'Dashboard\ServiceSliderImageController@create')->name('services.sliderImages.create');
     Route::post('/services/{service}/sliderImages', 'Dashboard\ServiceSliderImageController@store')->name('services.sliderImages.store');
     Route::get('/services/sliderImages/{image}/edit', 'Dashboard\ServiceSliderImageController@edit')->name('services.sliderImages.edit');
@@ -104,6 +104,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'],
     Route::delete('/services/sliderImages/{image}/delete', 'Dashboard\ServiceSliderImageController@destroy')->name('services.sliderImages.destroy');
     Route::get('/services/{service}/sliderImages/show', 'Dashboard\ServiceSliderImageController@show')->name('services.sliderImages.show');
     Route::get('/services/{service}/sliderImages/hide', 'Dashboard\ServiceSliderImageController@hide')->name('services.sliderImages.hide');
+    Route::post('/services/{service}/sliderImages/slider', 'Dashboard\ServiceSliderImageController@slider')->name('services.sliderImages.slider');
+
 
     Route::get('/services/{service}/sliderHeaderImages', 'Dashboard\ServiceHeaderSliderImageController@index')->name('services.sliderHeaderImages.index');
     Route::get('/services/{service}/sliderHeaderImages/create', 'Dashboard\ServiceHeaderSliderImageController@create')->name('services.sliderHeaderImages.create');

@@ -17,8 +17,10 @@ class ServiceSliderImageController extends Controller
         $this->middleware(['role:superadministrator']);
     }
 
-    public function index(Request $request, Service $service)
+    public function index(Request $request, $id)
     {
+        // dd(true);
+        $service=Service::findOrFail($id);
         $images = $service->sliderImages()->get();
         return view('dashboard.services.sliderImages.index', compact('service', 'images'));
     }
@@ -42,6 +44,7 @@ class ServiceSliderImageController extends Controller
 
         $sliderImage->showed  = $request->has('showed') ? 1 : 0;
         $sliderImage->service_id = $service->id;
+        $sliderImage->slider = $request->slider;
         $sliderImage->save();
         session()->flash('success', 'Image Added Successfully');
         return redirect()->route('dashboard.services.sliderImages.index', $service->id);
@@ -67,6 +70,8 @@ class ServiceSliderImageController extends Controller
         }
 
         $image->showed  = $request->has('showed') ? 1 : 0;
+        $image->slider = $request->slider;
+
         $image->save();
         session()->flash('success', 'Image Updated Successfully');
         return redirect()->route('dashboard.services.sliderImages.index', $image->service_id);
@@ -93,6 +98,17 @@ class ServiceSliderImageController extends Controller
         $sliderImage=ServiceSliderImage::where('service_id',$service->id);
         $sliderImage->update([
             'showed'=> 0
+        ]);
+        return redirect()->back();
+    }
+
+
+    public function slider(Service $service, Request $request)
+    {
+        $service->update([
+            'slider1' => $request->slider1,
+            'slider2' => $request->slider2,
+            'slider3' => $request->slider3,
         ]);
         return redirect()->back();
     }

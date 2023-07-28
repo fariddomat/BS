@@ -22,6 +22,14 @@
                 @csrf()
 
                 <div class="form-group mb-3">
+                    <label>Slider Number</label>
+                    <select name="slider" class="form-control" id="">
+                        <option value="1">Slider 1</option>
+                        <option value="2">Slider 2</option>
+                        <option value="3">Slider 3</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
                     <label>Image</label>
                     <input type="file" name="image" class="form-control image">
                 </div>

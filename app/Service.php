@@ -10,7 +10,7 @@ class Service extends Model implements TranslatableContract
 {
     use Translatable;
     public $translatedAttributes = ['title', 'brief', 'main_title', 'index_name'];
-
+    protected $guarded=[];
     public function indexItems()
     {
         return $this->hasMany('App\ServiceIndexItem', 'service_id', 'id');
@@ -39,4 +39,29 @@ class Service extends Model implements TranslatableContract
     {
         return $this->hasMany('App\ServiceHeaderSliderImage', 'service_id', 'id');
     }
+
+
+
+    // Define the relationship for child services
+    public function subServices()
+    {
+        return $this->hasMany(Service::class, 'parent_id');
+    }
+
+    // Define the relationship for the parent service
+    public function parentService()
+    {
+        return $this->belongsTo(Service::class, 'parent_id');
+    }
+
+    public function getAllSubServices()
+    {
+        return $this->subServices->map(function ($service) {
+            return [
+                'service' => $service,
+                'sub_services' => $service->getAllSubServices(),
+            ];
+        });
+    }
+
 }
