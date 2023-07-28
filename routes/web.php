@@ -164,6 +164,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'],
     Route::get('/homeinfo', 'Dashboard\HomeInfoController@create')->name('homeinfo.create');
     Route::post('/homeinfo', 'Dashboard\HomeInfoController@store')->name('homeinfo.store');
     Route::resource('homeinfoSliderImages', 'Dashboard\HomeSliderController');
+    Route::resource('partnerSlider', 'Dashboard\PartnerController');
     Route::resource('experinceSlider', 'Dashboard\ExperinceController');
 
     Route::get('/aboutfields', 'Dashboard\AboutFieldController@index')->name('aboutfields.index');

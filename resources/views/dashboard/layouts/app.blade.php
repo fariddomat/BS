@@ -107,6 +107,11 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link @yield('partnerActive')" href="{{route('dashboard.partnerSlider.index')}}">
+                                Partners
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link @yield('experinceActive')" href="{{route('dashboard.experinceSlider.index')}}">
                                 Team Experince
                             </a>

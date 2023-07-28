@@ -39,7 +39,9 @@ Color
     font #
     slider arabic or english
     service info
-    about info
+    about info #
     team image
-    partners slider
-    team_experience slider
+    partners slider #
+        show in home
+    team_experience slider #
+        show in home
