@@ -105,6 +105,12 @@
                                 Social Media
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @yield('experinceActive')" href="{{route('dashboard.experinceSlider.index')}}">
+                                Team Experince
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('contactinfoActive')" href="{{route('dashboard.contactinfo.create')}}">
                                 Contact Info

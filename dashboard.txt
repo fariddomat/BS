@@ -37,6 +37,7 @@ Color
 
     social media links #
     font #
+    slider arabic or english
     service info
     about info
     team image
