@@ -181,91 +181,30 @@
                 </div>
 
                 <div class="col-md-12 container-4">
-                    <!-- team member -->
-                    <div class="de-team-list">
+                   @foreach ($teams as $team)
+                     <!-- team member -->
+                     <div class="de-team-list">
                         <div class="team-pic">
-                            <img src="{{ asset('home/images/team/team_pic_1.jpg') }}" class="img-responsive" alt="" />
+                            <img src="{{ asset($team->image) }}" class="img-responsive" alt="" />
                         </div>
                         <div class="team-desc col-md-12">
-                            <h3>John Smith</h3>
-                            <p class="lead">Project Manager</p>
+                            <h3>{{ $team->name }}</h3>
+                            <p class="lead">{{ $team->title }}</p>
                             <div class="small-border"></div>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur.</p>
-
+                            <p>{{$team->description}}</p>
+{{--
                             <div class="social">
                                 <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
                                 <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                                 <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
                                 <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <!-- team close -->
+                   @endforeach
 
-                    <!-- team member -->
-                    <div class="de-team-list">
-                        <div class="team-pic">
-                            <img src="{{ asset('home/images/team/team_pic_2.jpg') }}" class="img-responsive" alt="" />
-                        </div>
-                        <div class="team-desc col-md-12">
-                            <h3>Michael Dennis</h3>
-                            <p class="lead">Creative Director</p>
-                            <div class="small-border"></div>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur.</p>
 
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- team close -->
-
-                    <!-- team member -->
-                    <div class="de-team-list">
-                        <div class="team-pic">
-                            <img src="{{ asset('home/images/team/team_pic_3.jpg') }}" class="img-responsive" alt="" />
-                        </div>
-                        <div class="team-desc col-md-12">
-                            <h3>Sarah Michelle</h3>
-                            <p class="lead">Creative Staff</p>
-                            <div class="small-border"></div>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur.</p>
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- team close -->
-
-                    <!-- team member -->
-                    <div class="de-team-list">
-                        <div class="team-pic">
-                            <img src="{{ asset('home/images/team/team_pic_3.jpg') }}" class="img-responsive" alt="" />
-                        </div>
-                        <div class="team-desc col-md-12">
-                            <h3>Sarah Michelle</h3>
-                            <p class="lead">Creative Staff</p>
-                            <div class="small-border"></div>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur.</p>
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- team close -->
                     <div class="clearfix"></div>
 
                 </div>
@@ -273,7 +212,7 @@
         </div>
     </section>
 
-    <section id="section-testimonial" data-bgimage="url(images/background/bg-38.jpg)" data-stellar-background-ratio=".2"
+    {{-- <section id="section-testimonial" data-bgimage="url(images/background/bg-38.jpg)" data-stellar-background-ratio=".2"
         class="text-light">
         <div class="container-fluid">
             <div class="row">
@@ -340,7 +279,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- section begin -->
     <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5"

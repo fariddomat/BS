@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('title', 'Update Image')
-@section('servicesActive', 'active')
+@section('teamActive', 'active')
 
 @section('scripts')
 <script src="{{asset('dashboard/js/image_preview.js')}}"></script>
@@ -18,20 +18,24 @@
 
     <div class="row justify-content-center">
         <div class="col">
-            <form action="{{ route('dashboard.homeinfoSliderImages.update', $image) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.team.update', $team) }}" method="post" enctype="multipart/form-data">
                 @csrf()
                 @method('PUT')
 
+
                 <div class="form-group mb-3">
-                    <label>Lang</label>
-                    <select name="lang" class="form-control" id="">
-                        <option value="ar" @if ($image->lang=='ar')
-                            selected
-                        @endif>Arabic</option>
-                        <option value="en" @if ($image->lang=='en')
-                            selected
-                        @endif>English</option>
-                    </select>
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control " value="{{ old('name', $team->name) }}">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control " value="{{ old('title', $team->title) }}">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Description</label>
+                    <textarea name="description" class="form-control">
+                        {{ old('description', $team->description) }}
+                    </textarea>
                 </div>
                 <div class="form-group mb-3">
                     <label>Image</label>
@@ -40,7 +44,7 @@
 
 
                 <div class="form-group mb-3">
-                    <img src="{{ asset($image->image) }}" style="width: 300px;" class="img-thumbnail image-preview" alt="">
+                    <img src="{{ asset($team->image) }}" style="width: 300px;" class="img-thumbnail image-preview" alt="">
                 </div>
 
                 <div class="form-group mb-3">

@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('title', 'Add New Image')
-@section('servicesActive', 'active')
+@section('teamActive', 'active')
 
 @section('scripts')
 <script src="{{asset('dashboard/js/image_preview.js')}}"></script>
@@ -18,15 +18,24 @@
 
     <div class="row justify-content-center">
         <div class="col">
-            <form action="{{ route('dashboard.homeinfoSliderImages.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.team.store') }}" method="post" enctype="multipart/form-data">
                 @csrf()
+
                 <div class="form-group mb-3">
-                    <label>Lang</label>
-                    <select name="lang" class="form-control" id="">
-                        <option value="ar">Arabic</option>
-                        <option value="en">English</option>
-                    </select>
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control " value="{{ old('name') }}">
                 </div>
+                <div class="form-group mb-3">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control " value="{{ old('title') }}">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Description</label>
+                    <textarea name="description" class="form-control">
+                        {{ old('description') }}
+                    </textarea>
+                </div>
+
                 <div class="form-group mb-3">
                     <label>Image</label>
                     <input type="file" name="image" class="form-control image">

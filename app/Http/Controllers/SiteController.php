@@ -18,12 +18,14 @@ use App\Blog;
 use Illuminate\Support\Facades\App;
 use App\AboutImage;
 use App\BlockedContact;
+use App\ExperinceSlider;
 use App\GlobalSMS;
 use App\SMS;
 use App\Helpers\SMS as SMSHelper;
 use App\HomeSlider;
 use App\Privacy;
 use App\SMSLog;
+use App\Team;
 use Illuminate\Support\Carbon;
 use Mail;
 
@@ -48,8 +50,9 @@ class SiteController extends Controller
         $allServices = Service::where('showed', 1)->get();
         $contactInfo = ContactInfo::find(1);
         $homeSlider=HomeSlider::all();
+        $experinceSlider=ExperinceSlider::all();
 
-        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices', 'contactInfo', 'homeSlider'));
+        return view('home', compact('info', 'about', 'aboutFields', 'workCategories', 'works', 'clients', 'blogs', 'blogCategories', 'services', 'contactInfo', 'allServices', 'contactInfo', 'homeSlider', 'experinceSlider'));
     }
 
     public function about()
@@ -58,7 +61,8 @@ class SiteController extends Controller
         $aboutImages = AboutImage::where('showed', 1)->latest()->get();
         // dd($aboutImages);
         $counter = range($aboutImages->count(), 1);
-        return view('about', compact('about', 'aboutImages', 'counter'));
+        $teams=Team::all();
+        return view('about', compact('about', 'aboutImages', 'counter', 'teams'));
     }
 
     public function privacy()

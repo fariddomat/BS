@@ -19,13 +19,22 @@
         <section id="section-slider" class="fullwidthbanner-container no-padding" aria-label="section-slider">
             <div id="revolution-slider">
                 <ul>
-                    @foreach ($homeSlider as $image)
-                    <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
-                        <!--  BACKGROUND IMAGE -->
-                        <img src="{{ $image->image }}" alt="" />
 
-                    </li>
+                    @if (app()->getLocale() == 'ar')
+                        @php
+                            $lang = 'ar';
+                        @endphp
+                    @else
+                        @php
+                            $lang = 'en';
+                        @endphp
+                    @endif
+                    @foreach ($homeSlider->where('lang', $lang) as $image)
+                        <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
+                            <!--  BACKGROUND IMAGE -->
+                            <img src="{{ $image->image }}" alt="" />
 
+                        </li>
                     @endforeach
 
 
@@ -35,7 +44,8 @@
         <!-- revolution slider close -->
 
         <section id="section-about-us-3" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0" style="background: url({{ asset($info->about_me_image) }});"></div>
+            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
+                style="background: url({{ asset($info->about_me_image) }});"></div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -44,10 +54,10 @@
                             <h2>@lang('site.about')</h2>
                             {!! $about->about_me !!}
                             <div class="row">
-                                @foreach($aboutFields as $aboutField)
-                                <div class="col-md-6">
-                                    <p><b>{{$aboutField->title}}:</b> {{$aboutField->value}}</p>
-                                </div>
+                                @foreach ($aboutFields as $aboutField)
+                                    <div class="col-md-6">
+                                        <p><b>{{ $aboutField->title }}:</b> {{ $aboutField->value }}</p>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -68,17 +78,18 @@
                         <div class="spacer-single"></div>
                     </div>
 
-                    @foreach($services as $index=>$service)
-                    <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <img src="{{ asset('home/images/misc/pic_1.jpg') }}" class="img-responsive" alt="">
-                        <div class="spacer-single"></div>
-                        <h3><span class="id-color">{{$service->title}}</span></h3>
-                        {{ Str::limit( $service->brief,100 ) }}
+                    @foreach ($services as $index => $service)
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                            <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
+                            <div class="spacer-single"></div>
+                            <h3><span class="id-color">{{ $service->title }}</span></h3>
+                            {{ Str::limit($service->brief, 100) }}
 
-                        <div class="spacer-single"></div>
-                        <a href="{{route('service', $service->slug )}}" class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
+                            <div class="spacer-single"></div>
+                            <a href="{{ route('service', $service->slug) }}"
+                                class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
-                        {{-- <div class="d-flex flex-row justify-content-between pt-4">
+                            {{-- <div class="d-flex flex-row justify-content-between pt-4">
                             <div>
                                 <a href="{{route('service', $service->slug )}}"
                                     class="more"><span>@lang('site.read_more')</span></a>
@@ -88,8 +99,7 @@
                                     class="more"><span>@lang('site.order_now')</span></a>
                             </div>
                         </div> --}}
-                    </div>
-
+                        </div>
                     @endforeach
 
 
@@ -99,8 +109,7 @@
         <!-- section close -->
 
         <!-- section begin -->
-        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background">
+        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background">
             <a href="{{ route('services') }}" class="btn-line btn-big btn-h" style="color: #fff">@lang('site.view_all_services')</a>
         </section>
         <!-- logo carousel section close -->
@@ -137,7 +146,7 @@
                                 </div>
 
                                 <div id="tab2">
-                                   {!! $about->massage !!}
+                                    {!! $about->massage !!}
                                 </div>
 
                                 <div id="tab3">
@@ -176,8 +185,7 @@
                             <li><a href="#" data-filter="*" class="selected">@lang('site.blog')</a>
                             </li>
                             @foreach ($blogCategories as $category)
-
-                            <li><a href="#" data-filter=".{{ $category->id }}">{{ $category->name }}</a></li>
+                                <li><a href="#" data-filter=".{{ $category->id }}">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
 
@@ -190,25 +198,26 @@
             <div id="gallery" class="row g-0 wow fadeInUp" data-wow-delay=".3s">
 
                 @foreach ($blogs as $blog)
+                    <!-- gallery item -->
+                    <div class="col-md-4 col-sm-6 col-12 item {{ $blog->category->id }}">
 
-                <!-- gallery item -->
-                <div class="col-md-4 col-sm-6 col-12 item {{ $blog->category->id }}">
+                        <div class="de-post-poster" style="background-size: cover;">
+                            <a class="d-overlay" href="{{ route('blog', $blog->slug) }}">
+                                <div class="d-content" style="background-size: cover;">
 
-								<div class="de-post-poster" style="background-size: cover;">
-									<a class="d-overlay" href="{{ route('blog', $blog->slug) }}">
-										<div class="d-content" style="background-size: cover;">
-
-											<h3>{{ $blog->title }}</h3>
-											<span class="d-date">{{$blog->updated_at->format('d F
-                                                Y')}}</span>
-										</div>
-									</a>
-									<div class="d-image" data-bgimage="url({{asset($blog->image)}})" style="background: url({{asset($blog->image)}}&quot;) 0% 0% / cover;"></div>
-								</div>
+                                    <h3>{{ $blog->title }}</h3>
+                                    <span
+                                        class="d-date">{{ $blog->updated_at->format('d F
+                                                                                        Y') }}</span>
+                                </div>
+                            </a>
+                            <div class="d-image" data-bgimage="url({{ asset($blog->image) }})"
+                                style="background: url({{ asset($blog->image) }}&quot;) 0% 0% / cover;"></div>
+                        </div>
 
 
-                </div>
-                <!-- close gallery item -->
+                    </div>
+                    <!-- close gallery item -->
                 @endforeach
 
 
@@ -241,26 +250,12 @@
                     <div class="col-md-8 offset-md-2">
 
                         <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp">
-                            <blockquote class="testimonial-big">
-                                <span class="title">Big attention to details!</span>
-                                I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-
-                                <span class="name">John, Customer</span>
-                            </blockquote>
+                            @foreach ($experinceSlider as $image)
 
                             <blockquote class="testimonial-big">
-                                <span class="title">Modern and great design!</span>
-                                Just wow! I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-
-                                <span class="name">Sandra, Customer</span>
+                                <img src="{{ asset($image->image) }}" alt="">
                             </blockquote>
-
-                            <blockquote class="testimonial-big">
-                                <span class="title">Better than we think!</span>
-                                I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-
-                                <span class="name">Michael, Customer</span>
-                            </blockquote>
+                            @endforeach
                         </div>
 
                     </div>

@@ -111,6 +111,12 @@
                                 Partners
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @yield('teamActive')" href="{{route('dashboard.team.index')}}">
+                                Our Team
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('experinceActive')" href="{{route('dashboard.experinceSlider.index')}}">
                                 Team Experince
