@@ -32,7 +32,7 @@
                     @foreach ($homeSlider->where('lang', $lang) as $image)
                         <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
                             <!--  BACKGROUND IMAGE -->
-                            <img src="{{ $image->image }}" alt="" />
+                            <img src="{{ $image->image }}" alt=""  class="img-responsive" />
 
                         </li>
                     @endforeach
