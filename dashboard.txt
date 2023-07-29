@@ -37,11 +37,11 @@ Color
 
     social media links #
     font #
-    slider arabic or english
+    slider arabic or english #
     service info
     about info #
-    team image
+    team image #
     partners slider #
         show in home
     team_experience slider #
-        show in home
+        show in home #
