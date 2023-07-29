@@ -184,9 +184,9 @@ class SiteController extends Controller
             'data' => $request->message
         );
         Mail::send('mail', $info, function ($message) use ($orderService) {
-            $message->to("abdulkader@digitsmark.com", "Mr. Abdulkader")
+            $message->to("info@bsecrets.sa", "Mr. Abdulkader")
                 ->subject('New order service');
-            $message->from('card-ordrer@digitsmark.com', 'Digitsmark');
+            $message->from('card-ordrer@bsecrets.sa', 'Digitsmark');
         });
         if ($service->slug == 'malak-screen' || $service->slug == 'organizing-exhibitions-and-conferences') {
             $info = array(
@@ -197,9 +197,9 @@ class SiteController extends Controller
                 'data' => $request->message
             );
             Mail::send('mail', $info, function ($message) use ($orderService) {
-                $message->to("ads@digitsmark.com", "ADS")
+                $message->to("info@bsecrets.sa", "ADS")
                     ->subject('New order service');
-                $message->from('card-ordrer@digitsmark.com', 'Digitsmark');
+                $message->from('card-ordrer@bsecrets.sa', 'Digitsmark');
             });
         }
         session()->flash('success', trans('site.order_added_successfully'));
@@ -269,9 +269,9 @@ class SiteController extends Controller
             'data' => $request->message
         );
         Mail::send('mail', $info, function ($message) use ($contact) {
-            $message->to("abdulkader@digitsmark.com", "Mr. Abdulkader")
+            $message->to("info@bsecrets.sa", "Mr. Abdulkader")
                 ->subject('New Contact us');
-            $message->from('card-ordrer@digitsmark.com', 'Digitsmark');
+            $message->from('card-ordrer@bsecrets.sa', 'Digitsmark');
         });
         $services = Service::whereIn('id', $validatedData['services'])->get();
         foreach ($services as $key => $service) {
@@ -284,9 +284,9 @@ class SiteController extends Controller
                     'data' => $request->message
                 );
                 Mail::send('mail', $info, function ($message) use ($contact) {
-                    $message->to("ads@digitsmark.com", "ADS")
+                    $message->to("info@bsecrets.sa", "ADS")
                         ->subject('New Contact us');
-                    $message->from('card-ordrer@digitsmark.com', 'Digitsmark');
+                    $message->from('card-ordrer@bsecrets.sa', 'Digitsmark');
                 });
                 break;
             }

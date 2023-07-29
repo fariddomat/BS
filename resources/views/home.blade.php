@@ -50,7 +50,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="inner-padding">
-                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s">
+                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s" style="padding-left: 35px; padding-right: 35px">
                             <h2>@lang('site.about')</h2>
                             {!! $about->about_me !!}
                             <div class="row">

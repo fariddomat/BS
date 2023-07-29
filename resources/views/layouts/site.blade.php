@@ -8,11 +8,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Archi is best selling interior design website template with responsive stunning design">
+        content="{{ $info->description }}">
     <meta name="keywords"
-        content="architecture,building,business,bootstrap,creative,exterior design,furniture design,gallery,garden design,house,interior design,landscape design,multipurpose,onepage,portfolio,studio">
+        content="Buisness Secrets">
     <meta name="author" content="">
 
+    <link href="{{ asset($info->logo) }}" rel="shortcut icon" type="image/png">
+    <link href="{{ asset($info->logo) }}" rel="apple-touch-icon">
+    <link href="{{ asset($info->logo) }}" rel="apple-touch-icon" sizes="72x72">
+    <link href="{{ asset($info->logo) }}" rel="apple-touch-icon" sizes="114x114">
+    <link href="{{ asset($info->logo) }}" rel="apple-touch-icon" sizes="144x144">
 
     <link href="{{ asset('fonts/fontawesome-free-6.4.0-web/css/all.css') }}" rel="stylesheet">
     <!-- CSS Files
@@ -347,7 +352,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{ asset('logo.png') }}" class="logo-small" alt=""
+                                    <img src="{{ asset($info->logo) }}" class="logo-small" alt=""
                                         style="height: 40px;"><br>
                                     <h2>{{ $info->title }}</h2>
                                     <h6>{{ $info->description }}</h6>
