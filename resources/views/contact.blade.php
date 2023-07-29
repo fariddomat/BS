@@ -14,7 +14,7 @@
 @section('content')
 
 <!-- Contact Section -->
-<div id="contact" class="section-padding" style="background: #fff; padding-top: 50px; padding-left:15px; padding-right: 15px;">
+<div id="contact" class="section-padding" style="background: #fff; padding-top: 100px; padding-left:15px; padding-right: 15px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">

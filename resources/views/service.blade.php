@@ -226,7 +226,7 @@ $('.simple-slider-wrapper').each(function() {
 
                     <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s" style="margin-top:50px">
 
-                        <div>{{ Str::limit($service->brief, 100) }}</div>
+                        <div>{{ $service->brief }}</div>
                         <div class="row" style="margin-top:35px">
                             @foreach ($service->indexItems as $item)
                                 <div class="col-12 col-md-12">

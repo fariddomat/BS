@@ -24,7 +24,7 @@
 
 @section('content')
 
-<div id="contact" class="section-padding" style="background: #fff; padding-top:50px; padding-left:15px; padding-right:15px">
+<div id="contact" class="section-padding" style="background: #fff; padding-top:100px; padding-left:15px; padding-right:15px">
     <div class="container-fluid">
         <div>
             @include('partials._errors')

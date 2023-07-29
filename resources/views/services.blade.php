@@ -29,9 +29,9 @@
                     @foreach ($services as $index=> $service)
                     <div class="col-md-6 wow fadeIn" data-wow-delay=".9s">
                         <h3 style="height: 65px;"><span class="id-color">{{ $service->title }}</span> </h3>
-                        <p style="height: 25px;">{{ Str::limit($service->brief,100 ) }}</p>
+                        <p style="height: 37px;">{{ Str::limit($service->brief,140 ) }}</p>
                         <div class="spacer-single"></div>
-                        <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
+                        <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="" style="margin-top: 15px">
                         <div class="spacer-single"></div>
                         <a href="{{route('service', $service->slug )}}" class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
