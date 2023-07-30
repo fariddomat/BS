@@ -29,7 +29,7 @@ class ServiceIndexItemController extends Controller
         $rules = [
             'ar.name' => ['required'],
             'en.name' => ['required'],
-            'ar.h' => ['required'],
+            'ar.description' => ['required'],
             'en.description' => ['required'],
 
             'icon_class' => ['required'],
