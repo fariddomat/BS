@@ -199,7 +199,7 @@ $('.simple-slider-wrapper').each(function() {
 @section('content')
     <!-- subheader -->
     <section id="subheader" data-speed="8" data-type="background"
-        style="background: url({{ asset($info->service_image) }}) top fixed">
+        style="background: url({{ asset($info->service_image) }}) top; background-size: cover !important; ">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
