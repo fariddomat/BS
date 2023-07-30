@@ -23,6 +23,7 @@ use App\GlobalSMS;
 use App\SMS;
 use App\Helpers\SMS as SMSHelper;
 use App\HomeSlider;
+use App\PartnerSlider;
 use App\Privacy;
 use App\SMSLog;
 use App\Team;
@@ -62,7 +63,10 @@ class SiteController extends Controller
         // dd($aboutImages);
         $counter = range($aboutImages->count(), 1);
         $teams=Team::all();
-        return view('about', compact('about', 'aboutImages', 'counter', 'teams'));
+        $partnerSlider=PartnerSlider::all();
+        $experinceSlider=ExperinceSlider::all();
+
+        return view('about', compact('about', 'aboutImages', 'counter', 'teams', 'partnerSlider', 'experinceSlider'));
     }
 
     public function privacy()

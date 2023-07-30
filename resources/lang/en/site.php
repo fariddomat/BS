@@ -82,6 +82,7 @@ return [
     'view_all_services' => 'View all services',
     'view_all_blogs' => 'View all blogs',
     'our_team' => 'Our Team',
+    'our_partner' => 'Our Partners',
     'subServices' =>' Sub Services',
     'privacy' =>'Privacy',
 
