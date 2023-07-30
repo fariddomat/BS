@@ -346,9 +346,13 @@ $('.simple-slider-wrapper').each(function() {
 
                                 </div>
                                 <div class="spacer-single"></div>
-                                <a href="{{ route('service', $subService->slug) }}"
-                                    class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="{{ route('service', $subService->slug) }}"
+                                            class="btn-line btn-ho">@lang('site.read_more')</a>
 
+                                    </div>
+                                </div>
                                 {{-- <div class="d-flex flex-row justify-content-between pt-4">
                             <div>
                                 <a href="{{route('subService', $subService->slug )}}"

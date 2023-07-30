@@ -101,7 +101,7 @@
             }
 
             * {
-                letter-spacing: 1px;
+                letter-spacing: 0px;
             }
 
             #filters a,
@@ -115,7 +115,7 @@
             span,
             p {
 
-                letter-spacing: 1px;
+                letter-spacing: 0px !important;
             }
         </style>
     @else
@@ -154,7 +154,7 @@
     @endif
     <style>
         .de_light.de-navbar-left header #mainmenu>li {
-            padding: 5px
+            padding: 10px
         }
 
         .de-post-poster .d-overlay {
@@ -296,7 +296,7 @@
                         <div id="logo">
                             <a href="{{ route('home') }}">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  height: 40px;">
+                                    style="  height: 55px; margin-top: 35px">
                                 <img class="logo-2" src="{{ asset($info->logo) }}" alt="">
                             </a>
                         </div>
@@ -314,14 +314,14 @@
                                 <li><a href="{{ route('about') }}">@lang('site.about')</a></li>
                                 <li><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
                                 <li><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
-                                <li><a href="{{ route('login') }}">@lang('site.login')</a></li>
-                                <li style="z-index: 9999;">
+                                {{-- <li><a href="{{ route('login') }}">@lang('site.login')</a></li> --}}
+                                {{-- <li style="z-index: 9999;">
                                     <div class="switchToggle">
                                         <input type="checkbox" id="switch" class="switchToggle-a"
                                             @if (app()->getLocale() == 'ar') checked @endif>
                                         <label for="switch">Toggle</label>
                                     </div>
-                                </li>
+                                </li> --}}
                             </ul>
                         </nav>
 
@@ -351,18 +351,17 @@
                     <footer class="light">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <img src="{{ asset($info->logo) }}" class="logo-small" alt=""
-                                        style="height: 40px;"><br>
+                                        style="height: 40px !important; width: 200px !important;"><br>
                                     <h2>{{ $info->title }}</h2>
                                     <h6>{{ $info->description }}</h6>
 
                                 </div>
 
-                                <div class="col-md-6" style="margin-top: 65px">
-                                    <h4><a href="{{ route('privacy') }}">@lang('site.privacy')</a></h4>
+                                <div class="col-md-4">
 
-                                    {{-- <h3>@lang('site.contact_us')</h3>
+                                    <h3>@lang('site.contact_us')</h3>
                                     <div>
 
                                         <p><b>@lang('contact.give_call'):</b> <a
@@ -373,7 +372,12 @@
                                         <p><b>@lang('contact.email_me'):</b> <a
                                                 href="mailto:{{$contactInfo->email}}">{{$contactInfo->email}}</a></p>
 
-                                    </div> --}}
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h4><a href="{{ route('privacy') }}">@lang('site.privacy')</a></h4>
+
                                 </div>
                             </div>
                         </div>
@@ -384,14 +388,14 @@
                                     <div class="col-md-6">
                                         &copy; Copyright 2023 by <a href="https://joudtech.sa/">JoudTech</a>
                                     </div>
-                                    <div class="col-md-6 text-right">
+                                    {{-- <div class="col-md-6 text-right">
                                         <div class="social-icons">
                                             @foreach ($socialMedias as $socialMedia)
                                                 <a href="{{ $socialMedia->link }}" target="_blank"><i
                                                         class="fa-brands {{ $socialMedia->icon }}"></i></a>
                                             @endforeach
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

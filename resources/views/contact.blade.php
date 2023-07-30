@@ -40,11 +40,11 @@
                     <p><i class="fa fa-map-marker-alt"></i> <b>@lang('contact.my_location'):</b> <a
                             href="{{$contactInfo->location_link}}" target="_blank">{{$contactInfo->location}}</a></p>
                 </div>
-                <div>
+                {{-- <div>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.369643221737!2d39.19512271494126!3d21.532397085727695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf135aa8c5cf%3A0xb5d7d806784475f3!2zZGlnaXRzIG1hcmsg2KjYtdmF2Kkg2YXYrdin2LHZgSDYp9mE2LHZgtmF2YrYqQ!5e0!3m2!1sen!2s!4v1631086171225!5m2!1sen!2s"
                         width="" height="300" style="border:0;" allowfullscreen="" loading="lazy" id="iframe-google-map"></iframe>
-                </div>
+                </div> --}}
             </div>
             <!-- Contact Form -->
             <div class="col-md-6" >

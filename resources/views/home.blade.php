@@ -32,7 +32,7 @@
                     @foreach ($homeSlider->where('lang', $lang) as $image)
                         <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
                             <!--  BACKGROUND IMAGE -->
-                            <img src="{{ $image->image }}" alt=""  class="img-responsive" />
+                            <img src="{{ asset($image->image) }}" alt=""  class="img-responsive" />
 
                         </li>
                     @endforeach
@@ -239,17 +239,17 @@
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax">
-            <img src="{{ asset('home/images-architecture/bg/1.jpg') }}" class="jarallax-img" alt="">
+        <section id="section-testimonial-architecture" class="jarallax" style="padding: 70px 0">
+            {{-- <img src="{{ asset('home/images-architecture/bg/1.jpg') }}" class="jarallax-img" alt=""> --}}
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
                         <h2 class="title" style="color: #848080;">@lang('site.team_experience')</h2>
 
                     </div>
-                    <div class="col-md-8 offset-md-2">
+                    <div class="col-md-12 ">
 
-                        <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp">
+                        <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp" style="padding: 0">
                             @foreach ($experinceSlider as $image)
 
                             <blockquote class="testimonial-big">
