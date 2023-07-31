@@ -11,11 +11,11 @@
 
     img {
         width: 100% !important;
-        height: auto !important;
+        /* height: auto !important; */
     }
 
     p{
-        font-family: 'Al-Jazeera-Arabic-Regular';
+        /* font-family: 'Al-Jazeera-Arabic-Regular'; */
     }
 
     .relatedBlogs {

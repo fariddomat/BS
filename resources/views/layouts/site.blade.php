@@ -157,7 +157,7 @@
     @endif
     <style>
         .de_light.de-navbar-left header #mainmenu>li {
-            padding: 10px
+            padding: 7px
         }
 
         .de-post-poster .d-overlay {
@@ -296,10 +296,10 @@
 
 
                         <!-- logo begin -->
-                        <div id="logo">
+                        <div id="logo" style="padding-top: 0px !important">
                             <a href="{{ route('home') }}">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  height: 155px; ">
+                                    style="  width: 100%; ">
                                 <img class="logo-2" src="{{ asset($info->logo) }}" alt="">
                             </a>
                         </div>
