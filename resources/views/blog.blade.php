@@ -275,7 +275,7 @@
                             </div>
                         </div> --}}
 
-                        <div class="border rounded border-secondary p-3">
+                        <div class="border rounded border-secondary p-3" style="margin-top: 35px">
                             <div class="mt-2 d-flex flex-column flex-md-row justify-content-between">
                                 <div class="mb-4 d-flex justify-content-between">
                                     <div>
