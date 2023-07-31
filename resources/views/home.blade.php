@@ -44,8 +44,8 @@
         <!-- revolution slider close -->
 
         <section id="section-about-us-3" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="background: url({{ asset($info->about_me_image) }});"></div>
+            <div class="image-container col-lg-6 col-md-12 pull-left" data-delay="0"
+                style="background: url({{ asset($info->about_me_image) }}) 70% 0% / cover; "></div>
 
             <div class="container-fluid">
                 <div class="row">
