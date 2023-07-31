@@ -71,7 +71,7 @@ return [
     'service_detail' => 'Service Detail',
     'categories' => 'Categories',
     'blog_social' => [
-        'facebook' => 'For more about digital marketing services information, join our Facebook page',
+        'facebook' => 'For more about our services information, join our Facebook page',
         'instagram' => 'For more details, follow us on Instagram',
         'twitter' => 'Follow us on Twitter',
         'youtube' => 'Our team\'s latest works are available also on YouTube',

@@ -216,7 +216,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-5 mb-4">
+                        {{-- <div class="mt-5 mb-4">
                             <div class="mb-3">
                                 <a target="_blank" href="https://www.facebook.com/DigitsMark-101594752108749" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
@@ -273,7 +273,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="border rounded border-secondary p-3">
                             <div class="mt-2 d-flex flex-column flex-md-row justify-content-between">
