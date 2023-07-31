@@ -80,7 +80,7 @@ return [
     'work_templates'=>'نماذج أعمالنا',
     'team_experience' => 'خبرات فريق العمل',
     'view_all_services' => 'مشاهدة كل الخدمات',
-    'view_all_blogs' => 'مشاهدة كل التدوينات',
+    'view_all_blog' => 'مشاهدة كل التدوينات',
     'our_team' =>'فريقنا',
     'our_partner' => 'شركائنا',
     'subServices' =>' الخدمات الفرعية',

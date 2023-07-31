@@ -17,7 +17,11 @@ class CreateInfosTable extends Migration
             $table->id();
             $table->string('logo');
             $table->string('about_me_image');
+            $table->string('about_me_image_en');
             $table->string('service_image');
+            $table->string('about_header_image');
+            $table->string('blog_header_image');
+            $table->string('contact_header_image');
             $table->timestamps();
         });
     }

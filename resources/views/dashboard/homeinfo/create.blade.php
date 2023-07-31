@@ -72,12 +72,22 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label>About Me Image</label>
+                    <label>About Me Image AR</label>
                     <input type="file" name="about_me_image" class="form-control about-me-image">
                 </div>
 
                 <div class="form-group mb-3">
+
                     <img src="{{ isset($info) ? asset($info->about_me_image) : '#' }}" style="width: 300px;" class="img-thumbnail about-me-image-preview" alt="">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>About Me Image EN</label>
+                    <input type="file" name="about_me_image_en" class="form-control about-me-image-en">
+                </div>
+
+                <div class="form-group mb-3">
+                    <img src="{{ isset($info) ? asset($info->about_me_image_en) : '#' }}" style="width: 300px;" class="img-thumbnail about-me-image-en-preview" alt="">
                 </div>
 
 
@@ -89,6 +99,39 @@
                 <div class="form-group mb-3">
                     <img src="{{ isset($info) ? asset($info->service_image) : '#' }}" style="width: 300px;" class="img-thumbnail service-image-preview" alt="">
                 </div>
+
+
+                <div class="form-group mb-3">
+                    <label>About Header Image</label>
+                    <input type="file" name="about_header_image" class="form-control about-header-image">
+                </div>
+
+                <div class="form-group mb-3">
+                    <img src="{{ isset($info) ? asset($info->about_header_image) : '#' }}" style="width: 300px;" class="img-thumbnail about-header-image-preview" alt="">
+                </div>
+
+
+
+                <div class="form-group mb-3">
+                    <label>Blog Header Image</label>
+                    <input type="file" name="blog_header_image" class="form-control blog-header-image">
+                </div>
+
+                <div class="form-group mb-3">
+                    <img src="{{ isset($info) ? asset($info->blog_header_image) : '#' }}" style="width: 300px;" class="img-thumbnail blog-header-image-preview" alt="">
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label>Contact Header Image</label>
+                    <input type="file" name="contact_header_image" class="form-control contact-header-image">
+                </div>
+
+                <div class="form-group mb-3">
+                    <img src="{{ isset($info) ? asset($info->contact_header_image) : '#' }}" style="width: 300px;" class="img-thumbnail contact-header-image-preview" alt="">
+                </div>
+
+
 
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Change </button>

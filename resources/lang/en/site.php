@@ -80,7 +80,7 @@ return [
     'work_templates'=>'Our work templates',
     'team_experience' => 'Team experience',
     'view_all_services' => 'View all services',
-    'view_all_blogs' => 'View all blogs',
+    'view_all_blog' => 'View all blog',
     'our_team' => 'Our Team',
     'our_partner' => 'Our Partners',
     'subServices' =>' Sub Services',

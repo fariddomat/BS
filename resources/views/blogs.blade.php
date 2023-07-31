@@ -3,6 +3,23 @@
 @section('content')
 
 <!-- Blog -->
+  <!-- subheader -->
+  <section id="subheader" data-speed="8" data-type="background"
+  style="background: url({{ asset($info->blog_header_image) }})top fixed">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <h1>@lang('site.blog')</h1>
+              <ul class="crumb">
+                  <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
+                  <li class="sep">/</li>
+                  <li>@lang('site.blog')</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- subheader close -->
 <section id="section-portfolio" class="no-padding">
     <div class="container-fluid">
 
@@ -10,12 +27,7 @@
 
         <!-- portfolio filter begin -->
         <div class="row">
-            <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                <h1>@lang('site.blog')</h1>
 
-                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                <div class="spacer-single"></div>
-            </div>
 
             <div class="col-md-12 text-center">
                 <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">

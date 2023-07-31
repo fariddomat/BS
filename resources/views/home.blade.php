@@ -32,7 +32,7 @@
                     @foreach ($homeSlider->where('lang', $lang) as $image)
                         <li data-transition="parallaxtoright" data-slotamount="10" data-masterspeed="800" data-thumb="">
                             <!--  BACKGROUND IMAGE -->
-                            <img src="{{ asset($image->image) }}" alt=""  class="img-responsive" />
+                            <img src="{{ asset($image->image) }}" alt="" class="img-responsive" />
 
                         </li>
                     @endforeach
@@ -45,12 +45,17 @@
 
         <section id="section-about-us-3" class="side-bg no-padding">
             <div class="image-container col-lg-6 col-md-12 pull-left" data-delay="0"
-                style="background: url({{ asset($info->about_me_image) }}) 70% 0% / cover; "></div>
+                style="background: url(
+                    @if (app()->getLocale() == 'ar') {{ asset($info->about_me_image) }}
+                    @else{{ asset($info->about_me_image_en) }} @endif
+                    ) 70% 0% / cover; ">
+            </div>
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="inner-padding">
-                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s" style="padding-left: 35px; padding-right: 35px">
+                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s"
+                            style="padding-left: 35px; padding-right: 35px">
                             <h2>@lang('site.about')</h2>
                             {!! $about->about_me !!}
                             <div class="row">
@@ -208,7 +213,7 @@
                                     <h3>{{ $blog->title }}</h3>
                                     <span
                                         class="d-date">{{ $blog->updated_at->format('d F
-                                                                                        Y') }}</span>
+                                                                                                                                Y') }}</span>
                                 </div>
                             </a>
                             <div class="d-image" data-bgimage="url({{ asset($blog->image) }})"
@@ -233,7 +238,7 @@
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
             data-type="background" aria-label="view-all-projects">
-            <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blogs')</a>
+            <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blog')</a>
         </section>
         <!-- logo carousel section close -->
 
@@ -249,12 +254,12 @@
                     </div>
                     <div class="col-md-12 ">
 
-                        <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp" style="padding: 0">
+                        <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp"
+                            style="padding: 0">
                             @foreach ($experinceSlider as $image)
-
-                            <blockquote class="testimonial-big">
-                                <img src="{{ asset($image->image) }}" alt="">
-                            </blockquote>
+                                <blockquote class="testimonial-big">
+                                    <img src="{{ asset($image->image) }}" alt="">
+                                </blockquote>
                             @endforeach
                         </div>
 

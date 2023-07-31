@@ -6,7 +6,7 @@
 
     <!-- subheader -->
     <section id="subheader" data-speed="8" data-type="background"
-        style="background: url({{ asset('home/images/background/bg-subheader-sn.jpg') }})top fixed">
+        style="background: url({{ asset($info->about_header_image) }})top fixed">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">

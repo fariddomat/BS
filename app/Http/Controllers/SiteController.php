@@ -58,6 +58,8 @@ class SiteController extends Controller
 
     public function about()
     {
+        $info = Info::first();
+
         $about = About::first();
         $aboutImages = AboutImage::where('showed', 1)->latest()->get();
         // dd($aboutImages);
@@ -66,20 +68,21 @@ class SiteController extends Controller
         $partnerSlider=PartnerSlider::all();
         $experinceSlider=ExperinceSlider::all();
 
-        return view('about', compact('about', 'aboutImages', 'counter', 'teams', 'partnerSlider', 'experinceSlider'));
+        return view('about', compact('about', 'aboutImages', 'counter', 'teams', 'partnerSlider', 'experinceSlider', 'info'));
     }
 
     public function privacy()
     {
         $privacy = Privacy::find(1);
-        return view('privacy', compact('privacy'));
+        return view('privacy', compact('privacy',));
     }
 
     public function contact()
     {
+        $info = Info::first();
         $services = Service::where('showed', 1)->get();
         $contactInfo = ContactInfo::find(1);
-        return view('contact', compact('services', 'contactInfo'));
+        return view('contact', compact('services', 'contactInfo', 'info'));
     }
 
     public function services()
@@ -306,6 +309,7 @@ class SiteController extends Controller
 
     public function blog(Request $request,  Blog $blog)
     {
+
         $relatedBlogs = Blog::with(['category'])
             ->where('showed', 1)
             ->where('blog_category_id', $blog->blog_category_id)
@@ -316,9 +320,10 @@ class SiteController extends Controller
 
     public function blogs()
     {
+        $info = Info::first();
         $blogCategories = BlogCategory::where('showed', 1)->orderBy('position', 'asc')->get();
         $blogs = Blog::with(['category'])->where('showed', 1)->get();
-        return view('blogs', compact('blogs', 'blogCategories'));
+        return view('blogs', compact('blogs', 'blogCategories', 'info'));
     }
 
     public function profile()

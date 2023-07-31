@@ -119,11 +119,14 @@
             }
         </style>
     @else
-        <link href="{{ asset('fonts/morn/Morn-Thin.otf') }},wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet">
+        {{-- <link href="{{ asset('fonts/morn/Morn-Thin.otf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"> --}}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
         <style>
             * {
-                font-family: 'Morn';
+                font-family: 'Noto Sans', sans-serif;;
 
             }
 
@@ -140,15 +143,15 @@
             h1,
             h2,
             h3 {
-                font-family: 'Morn';
+                font-family: 'Noto Sans', sans-serif;;
             }
 
             p {
-                font-family: 'Morn';
+                font-family: 'Noto Sans', sans-serif;;
             }
 
             span {
-                font-family: 'Morn';
+                font-family: 'Noto Sans', sans-serif;;
             }
         </style>
     @endif
@@ -296,7 +299,7 @@
                         <div id="logo">
                             <a href="{{ route('home') }}">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  height: 55px; margin-top: 35px">
+                                    style="  height: 155px; ">
                                 <img class="logo-2" src="{{ asset($info->logo) }}" alt="">
                             </a>
                         </div>
@@ -327,7 +330,7 @@
 
 
                         <div class="h-content">
-                            <div class="social-icons-2">
+                            <div class="social-icons-2" style="margin-top: 25px !important">
                                 @foreach ($socialMedias as $socialMedia)
                                     <a href="{{ $socialMedia->link }}" target="_blank"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>
@@ -353,9 +356,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <img src="{{ asset($info->logo) }}" class="logo-small" alt=""
-                                        style="height: 40px !important; width: 200px !important;"><br>
-                                    <h2>{{ $info->title }}</h2>
-                                    <h6>{{ $info->description }}</h6>
+                                        style="height: 155px !important; width: 200px !important;"><br>
 
                                 </div>
 
@@ -376,6 +377,8 @@
                                 </div>
 
                                 <div class="col-md-4">
+                                    <h2>{{ $info->title }}</h2>
+                                    <h6>{{ $info->description }}</h6>
                                     <h4><a href="{{ route('privacy') }}">@lang('site.privacy')</a></h4>
 
                                 </div>
