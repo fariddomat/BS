@@ -2,6 +2,15 @@
 @section('title', 'Add New Index Item')
 @section('servicesActive', 'active')
 
+
+@section('scripts')
+<script type="text/javascript">
+    var imageGalleryBrowseUrl = "{{ route('dashboard.imageGallery.browser') }}";
+    var imageGalleryUploadUrl = "{{ route('dashboard.imageGallery.uploader') }}";
+</script>
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('dashboard/js/about.js')}}"></script>
+@endsection
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">

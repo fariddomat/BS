@@ -39,7 +39,7 @@
                             <h3 style="height: 65px;"><span class="id-color">{{ $service->title }}</span> </h3>
                             <p style="height: 37px;">{{ Str::limit($service->brief, 140) }}</p>
                             <div class="spacer-single"></div>
-                            <img src="{{ asset($service->index_image) }}" class="img-responsive" alt=""
+                            <img src="{{ asset($service->image) }}" class="img-responsive" alt=""
                                 style="margin-top: 15px">
                             <div class="spacer-single"></div>
                             <a href="{{ route('service', $service->slug) }}"

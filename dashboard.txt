@@ -45,3 +45,13 @@ Color
         show in home
     team_experience slider #
         show in home #
+
+
+default
+للخط واللون والحجم بالتيكست بوك
+ضبط كشيدة للنصوص
+
+add href to index item
+
+2 index images
+

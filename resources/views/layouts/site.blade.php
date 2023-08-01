@@ -7,10 +7,8 @@
     <title> @yield('title')</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="{{ $info->description }}">
-    <meta name="keywords"
-        content="Buisness Secrets">
+    <meta name="description" content="{{ $info->description }}">
+    <meta name="keywords" content="Buisness Secrets">
     <meta name="author" content="">
 
     <link href="{{ asset($info->logo) }}" rel="shortcut icon" type="image/png">
@@ -121,12 +119,13 @@
     @else
         {{-- <link href="{{ asset('fonts/morn/Morn-Thin.otf') }},wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"> --}}
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
         <style>
             * {
-                font-family: 'Noto Sans', sans-serif;;
+                font-family: 'Noto Sans', sans-serif;
+                ;
 
             }
 
@@ -143,19 +142,26 @@
             h1,
             h2,
             h3 {
-                font-family: 'Noto Sans', sans-serif;;
+                font-family: 'Noto Sans', sans-serif;
+                ;
             }
 
             p {
-                font-family: 'Noto Sans', sans-serif;;
+                font-family: 'Noto Sans', sans-serif;
+                ;
             }
 
             span {
-                font-family: 'Noto Sans', sans-serif;;
+                font-family: 'Noto Sans', sans-serif;
+                ;
             }
         </style>
     @endif
     <style>
+        address span strong {
+            width: 100px;
+        }
+
         .de_light.de-navbar-left header #mainmenu>li {
             padding: 7px
         }
@@ -354,34 +360,37 @@
                     <footer class="light">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset($info->logo) }}" class="logo-small" alt=""
-                                        style="height: 155px !important; width: 200px !important;"><br>
+                                <div class="col-md-7">
+                                    <div class="col-md-4">
+                                        <img src="{{ asset('logo.png') }}" class="logo-small" alt=""
+                                            style="width: 100% !important;"><br>
+
+                                    </div>
+                                    <h6>A specialized Saudi company offering a wide range of consultation and management services in addition to creative digital solutions through a distinctive and professional work team giving you the opportunity to benefit from our consultancy team in the fields of digital transformation, data management, enterprise architecture, customer experience, digital transformation techniques, and ICT solutions to help you discover future opportunities and give a real added value to the clients. </h6>
+
 
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-5">
 
                                     <h3>@lang('site.contact_us')</h3>
-                                    <div>
-
-                                        <p><b>@lang('contact.give_call'):</b> <a
-                                                href="tel:{{$contactInfo->mobile}}">{{$contactInfo->mobile}}</a></p>
-                                        <p><b>@lang('contact.whatsapp'):</b> <a
-                                                href="https://api.whatsapp.com/send?phone={{$contactInfo->whatsapp}}"
-                                                target="_blank">{{$contactInfo->whatsapp}}</a></p>
-                                        <p><b>@lang('contact.email_me'):</b> <a
-                                                href="mailto:{{$contactInfo->email}}">{{$contactInfo->email}}</a></p>
-
+                                    <div style="margin-top: 36px;">
+                                        <div class="widget widget-address">
+                                            <address>
+                                                <span><strong>@lang('contact.give_call'):</strong> <a
+                                                        href="tel:{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
+                                                <span><strong>@lang('contact.whatsapp'):</strong><a
+                                                        href="https://api.whatsapp.com/send?phone={{ $contactInfo->whatsapp }}"
+                                                        target="_blank">{{ $contactInfo->whatsapp }}</a></span>
+                                                <span><strong>@lang('contact.email_me'):</strong>
+                                                    <a
+                                                        href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a>
+                                                </span>
+                                            </address>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <h2>{{ $info->title }}</h2>
-                                    <h6>{{ $info->description }}</h6>
-                                    <h4><a href="{{ route('privacy') }}">@lang('site.privacy')</a></h4>
-
-                                </div>
                             </div>
                         </div>
 

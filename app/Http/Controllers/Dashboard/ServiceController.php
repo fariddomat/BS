@@ -90,8 +90,7 @@ class ServiceController extends Controller
             'ar.title' => ['required'],
             'en.title' => ['required'],
             'slug' => [
-                'required',
-                Rule::unique('services', 'slug')->ignore($service->id)
+                'required', 'unique:services,slug,' . $service->id
             ],
             'ar.brief' => ['required'],
             'en.brief' => ['required'],

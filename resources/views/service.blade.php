@@ -236,7 +236,7 @@ $('.simple-slider-wrapper').each(function() {
                                         <i aria-hidden="true" class="{{ $item->icon_class }}"></i> {{ $item->name }}
                                     </div>
                                     <div class="panel1">
-                                        {{ $item->description }}
+                                        {!! $item->description !!}
                                     </div>
                                 </div>
                             @endforeach
@@ -263,9 +263,9 @@ $('.simple-slider-wrapper').each(function() {
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s" style="margin-top:50px">
+                    <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s" style="margin-top:55px">
                         <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
-                        <img src="{{ asset($service->image) }}" class="img-responsive" alt="">
+                        {{-- <img src="{{ asset($service->image) }}" class="img-responsive" alt=""> --}}
                     </div>
                 </div>
 

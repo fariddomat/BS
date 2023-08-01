@@ -85,7 +85,7 @@
 
                     @foreach ($services as $index => $service)
                         <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
+                            <img src="{{ asset($service->image) }}" class="img-responsive" alt="">
                             <div class="spacer-single"></div>
                             <h3><span class="id-color">{{ $service->title }}</span></h3>
                             {{ Str::limit($service->brief, 100) }}
@@ -244,8 +244,8 @@
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax" style="padding: 70px 0">
-            {{-- <img src="{{ asset('home/images-architecture/bg/1.jpg') }}" class="jarallax-img" alt=""> --}}
+        <section id="section-testimonial-architecture" class="jarallax" >
+            <img src="{{ asset('home/images-architecture/bg/1.jpg') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">

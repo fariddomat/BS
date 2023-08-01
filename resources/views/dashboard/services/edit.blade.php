@@ -120,8 +120,21 @@
                         </label>
                     </div>
 
+
                     <div class="form-group mb-3">
-                        <label>Image 1</label>
+                        <label>Thumbnail Image</label>
+                        <input type="file" name="image" class="form-control image">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <img src="{{ asset($service->image) }}" style="width: 300px;"
+                            class="img-thumbnail image-preview" alt="">
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label>Index Image
+                        </label>
                         <input type="file" name="index_image" class="form-control logo">
                     </div>
 
@@ -137,16 +150,6 @@
                             <img src="" style="width: 300px; display: none;" class="img-thumbnail logo-preview"
                                 alt="">
                         @endif
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label>Image 2</label>
-                        <input type="file" name="image" class="form-control image">
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <img src="{{ asset($service->image) }}" style="width: 300px;"
-                            class="img-thumbnail image-preview" alt="">
                     </div>
 
 
