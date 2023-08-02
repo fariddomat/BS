@@ -237,7 +237,7 @@
 
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects">
+            data-type="background" aria-label="view-all-projects" style="margin-top: 50px">
             <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blog')</a>
         </section>
         <!-- logo carousel section close -->
