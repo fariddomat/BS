@@ -33,6 +33,24 @@ $(".logo").change(function () {
     }
 });
 
+$(".logo2").change(function () {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $(".logo-preview-2").attr("src", e.target.result);
+            $(".logo-preview-2").show();
+        };
+
+        reader.readAsDataURL(this.files[0]);
+        $(".img-wrap").show();
+    } else {
+        $(".logo-preview-2").attr("src", "");
+        $(".logo-preview-2").hide();
+        $(".img-wrap").hide();
+    }
+});
+
 $(".about-me-image").change(function () {
     if (this.files && this.files[0]) {
         var reader = new FileReader();

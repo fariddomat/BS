@@ -265,7 +265,7 @@ $('.simple-slider-wrapper').each(function() {
                     </div>
                     <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s" style="margin-top:55px">
                         <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
-                        {{-- <img src="{{ asset($service->image) }}" class="img-responsive" alt=""> --}}
+                        <img src="{{ asset($service->index_image_2) }}" class="img-responsive" alt="">
                     </div>
                 </div>
 

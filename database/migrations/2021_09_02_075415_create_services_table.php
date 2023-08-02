@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('slug');
             $table->string('image')->nullable();
             $table->string('index_image')->nullable();
+            $table->string('index_image_2')->nullable();
             $table->string('icon_class');
             $table->boolean('showed');
             $table->boolean('show_at_home');

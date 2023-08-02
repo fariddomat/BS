@@ -42,6 +42,7 @@ class ServiceController extends Controller
             'en.index_name' => ['required'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'index_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
+            'index_image_2' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'icon_class' => ['required'],
             'showed' => ['nullable'],
             'show_at_home' => ['nullable'],
@@ -68,6 +69,11 @@ class ServiceController extends Controller
             $indexImage = $request->file('index_image');
             $filename = $indexImage->getClientOriginalName();
             $service->index_image = $indexImage->storeAs('photos/services/index', $filename);
+        }
+        if ($request->has('index_image_2')) {
+            $indexImage = $request->file('index_image_2');
+            $filename = $indexImage->getClientOriginalName();
+            $service->index_image_2 = $indexImage->storeAs('photos/services/index', $filename);
         }
         $service->showed  = $request->has('showed') ? 1 : 0;
         $service->show_at_home  = $request->has('show_at_home') ? 1 : 0;
@@ -100,6 +106,7 @@ class ServiceController extends Controller
             'en.index_name' => ['required'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'index_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
+            'index_image_2' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'icon_class' => ['required'],
             'showed' => ['nullable'],
             'show_at_home' => ['nullable'],
@@ -129,6 +136,13 @@ class ServiceController extends Controller
             $filename = $indexImage->getClientOriginalName();
             $service->index_image = $indexImage->storeAs('photos/services/index', $filename);
         }
+
+        if ($request->has('index_image_2')) {
+            Storage::disk('local')->delete($service->index_image_2);
+            $indexImage = $request->file('index_image_2');
+            $filename = $indexImage->getClientOriginalName();
+            $service->index_image_2 = $indexImage->storeAs('photos/services/index', $filename);
+        }
         $service->showed  = $request->has('showed') ? 1 : 0;
         $service->show_at_home  = $request->has('show_at_home') ? 1 : 0;
         $service->slug = Str::slug($validatedData['slug'], '-');
@@ -142,6 +156,16 @@ class ServiceController extends Controller
         if ($service->index_image) {
             Storage::disk('local')->delete($service->index_image);
             $service->index_image = null;
+            $service->save();
+        }
+    }
+
+
+    public function destroyIndexImage2(Service $service)
+    {
+        if ($service->index_image_2) {
+            Storage::disk('local')->delete($service->index_image_2);
+            $service->index_image_2 = null;
             $service->save();
         }
     }

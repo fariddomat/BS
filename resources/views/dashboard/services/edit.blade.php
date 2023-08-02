@@ -12,7 +12,7 @@
         $(function() {
             $("#delete-index-img").on("click", function() {
                 $("#index-img").attr("src", "");
-                $(".img-wrap").hide();
+                $(".del").hide();
                 $(".logo").val(null);
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr("content");
                 $.ajax({
@@ -29,6 +29,28 @@
             });
         });
     </script>
+
+<script>
+    $(function() {
+        $("#delete-index-img-2").on("click", function() {
+            $("#index-img-2").attr("src", "");
+            $(".del2").hide();
+            $(".logo2").val(null);
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr("content");
+            $.ajax({
+                url: "{{ route('dashboard.services.indexImage.destroy2', $service->id) }}",
+                type: "DELETE",
+                data: {
+                    _token: CSRF_TOKEN
+                },
+                dataType: "JSON",
+                success: function(data) {
+                    //done.
+                },
+            });
+        });
+    });
+</script>
 @endsection
 
 @section('content')
@@ -140,7 +162,8 @@
 
                     <div class="form-group mb-3">
                         @if ($service->index_image)
-                            <div class="img-wrap">
+
+                            <div class="img-wrap del">
                                 <span id="delete-index-img" class="close" data-bs-toggle="tooltip" data-bs-placement="top"
                                     title="Delete">&times;</span>
                                 <img id="index-img" src="{{ asset($service->index_image) }}" style="width: 300px;"
@@ -152,6 +175,27 @@
                         @endif
                     </div>
 
+
+
+                    <div class="form-group mb-3">
+                        <label>Index Image 2
+                        </label>
+                        <input type="file" name="index_image_2" class="form-control logo2">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        @if ($service->index_image_2)
+                            <div class="img-wrap del2">
+                                <span id="delete-index-img-2" class="close" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Delete">&times;</span>
+                                <img id="index-img-2" src="{{ asset($service->index_image_2) }}" style="width: 300px;"
+                                    class="img-thumbnail logo-preview-2" alt="">
+                            </div>
+                        @else
+                            <img src="" style="width: 300px; display: none;" class="img-thumbnail logo-preview-2"
+                                alt="">
+                        @endif
+                    </div>
 
                     <div class="form-group mb-3">
                         <label>Parent Service</label>

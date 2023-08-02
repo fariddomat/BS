@@ -113,6 +113,17 @@
                             alt="">
                     </div>
 
+
+                    <div class="form-group mb-3">
+                        <label>Index Image 2</label>
+                        <input type="file" name="index_image_2" class="form-control logo2">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <img src="" style="width: 300px; display: none;" class="img-thumbnail logo-preview-2"
+                            alt="">
+                    </div>
+
                     <div class="form-group mb-3">
                         <label>Parent Service</label>
                         <select name="parent_id" id="" class="form-control">

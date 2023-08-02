@@ -64,8 +64,8 @@
             href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet">
         <style>
-            * {
-                font-family: 'Cairo';
+            a {
+                font-family: 'Cairo' !important;
             }
 
             body {}
@@ -81,16 +81,20 @@
             h1,
             h2,
             h3 {
-                font-family: 'Cairo';
+                font-family: 'Cairo' !important;
             }
 
             p {
-                font-family: 'Cairo';
+                font-family: 'Cairo' !important;
+                font-size: 15px !important;
+
 
             }
 
             span {
-                font-family: 'Cairo';
+                font-family: 'Cairo' !important;
+                font-size: 15px !important;
+
             }
         </style>
         <style>
@@ -123,11 +127,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
         <style>
-            * {
-                font-family: 'Noto Sans', sans-serif;
-                ;
+            a {
+                font-family: 'Noto Sans', sans-serif !important;
+
 
             }
+
 
             body {}
 
@@ -142,22 +147,34 @@
             h1,
             h2,
             h3 {
-                font-family: 'Noto Sans', sans-serif;
-                ;
+                font-family: 'Noto Sans', sans-serif !important;
+
+
             }
 
             p {
-                font-family: 'Noto Sans', sans-serif;
-                ;
+                font-family: 'Noto Sans', sans-serif !important;
+                font-size: 15px !important;
+
             }
 
             span {
-                font-family: 'Noto Sans', sans-serif;
-                ;
+                font-family: 'Noto Sans', sans-serif !important;
+                font-size: 15px !important;
+
             }
         </style>
     @endif
     <style>
+        *{
+            text-align: justify;
+        }
+        p,
+        span {
+            color: #606060 !important;
+            text-align: justify;
+        }
+
         address span strong {
             width: 100px;
         }
@@ -303,9 +320,9 @@
 
                         <!-- logo begin -->
                         <div id="logo" style="padding-top: 0px !important">
-                            <a href="{{ route('home') }}">
+                            <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  width: 100%; ">
+                                    style="  width: 80%; ">
                                 <img class="logo-2" src="{{ asset($info->logo) }}" alt="">
                             </a>
                         </div>
@@ -336,7 +353,7 @@
 
 
                         <div class="h-content">
-                            <div class="social-icons-2" style="margin-top: 25px !important">
+                            <div class="social-icons-2" style="margin-top: 55px !important">
                                 @foreach ($socialMedias as $socialMedia)
                                     <a href="{{ $socialMedia->link }}" target="_blank"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>
@@ -363,10 +380,16 @@
                                 <div class="col-md-7">
                                     <div class="col-md-4">
                                         <img src="{{ asset('logo.png') }}" class="logo-small" alt=""
-                                            style="width: 100% !important;"><br>
+                                            style="width: 80% !important;"><br>
 
                                     </div>
-                                    <h6>A specialized Saudi company offering a wide range of consultation and management services in addition to creative digital solutions through a distinctive and professional work team giving you the opportunity to benefit from our consultancy team in the fields of digital transformation, data management, enterprise architecture, customer experience, digital transformation techniques, and ICT solutions to help you discover future opportunities and give a real added value to the clients. </h6>
+                                    <h6>A specialized Saudi company offering a wide range of consultation and management
+                                        services in addition to creative digital solutions through a distinctive and
+                                        professional work team giving you the opportunity to benefit from our
+                                        consultancy team in the fields of digital transformation, data management,
+                                        enterprise architecture, customer experience, digital transformation techniques,
+                                        and ICT solutions to help you discover future opportunities and give a real
+                                        added value to the clients. </h6>
 
 
                                 </div>
@@ -374,7 +397,7 @@
                                 <div class="col-md-5">
 
                                     <h3>@lang('site.contact_us')</h3>
-                                    <div style="margin-top: 36px;">
+                                    <div style="margin-top: 27px;">
                                         <div class="widget widget-address">
                                             <address>
                                                 <span><strong>@lang('contact.give_call'):</strong> <a

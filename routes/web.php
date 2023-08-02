@@ -74,6 +74,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'setEnLocale'],
     Route::post('/services', 'Dashboard\ServiceController@store')->name('services.store');
     Route::put('/services/{service}', 'Dashboard\ServiceController@update')->name('services.update');
     Route::delete('/services/{service}/index-image', 'Dashboard\ServiceController@destroyIndexImage')->name('services.indexImage.destroy');
+    Route::delete('/services/{service}/index-image-2', 'Dashboard\ServiceController@destroyIndexImage2')->name('services.indexImage.destroy2');
 
     Route::get('/services/{service}/indexitems', 'Dashboard\ServiceIndexItemController@index')->name('services.indexitems.index');
     Route::get('/services/{service}/indexitems/create', 'Dashboard\ServiceIndexItemController@create')->name('services.indexitems.create');
