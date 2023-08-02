@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
     <meta charset="utf-8">
@@ -24,6 +24,13 @@
     <link href="{{ asset('home/css/bootstrap-grid.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap-grid" />
     <link href="{{ asset('home/css/bootstrap-reboot.min.css') }}" rel="stylesheet" type="text/css"
         id="bootstrap-reboot" />
+    @if (app()->getLocale() == 'ar')
+        <link rel="preload" href="{{ asset('css/bootstrapRTL.min.css') }}" as="style"
+            onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="{{ asset('css/bootstrapRTL.min.css') }}">
+        </noscript>
+    @endif
     <link href="{{ asset('home/css/plugins.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('home/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('home/css/color.css') }}" rel="stylesheet" type="text/css">
@@ -64,11 +71,44 @@
             href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet">
         <style>
+            #gallery .item {
+                padding: 0;
+            }
+
+            .post-text {
+                padding-left: 0 !important;
+                padding-right: 100px !important;
+            }
+
+            .blog-list .btn-more {
+                float: left
+            }
+
+            .btn-line::after,
+            a.btn-line::after {
+
+                margin-left: 10px;
+                margin-right: 10px;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+
+            .owl-carousel{
+ direction: ltr !important;
+}
+            .de_light a.btn-big {
+                padding-right: 30px !important;
+                padding-left: 50px !important;
+            }
+
             a {
                 font-family: 'Cairo' !important;
             }
 
-            body {}
+            body {
+
+                font-family: 'Cairo' !important;
+            }
 
             h4,
             h5,
@@ -166,17 +206,24 @@
         </style>
     @endif
     <style>
-        *{
+        * {
             text-align: justify;
         }
+
         p,
-        span {
-            color: #606060 !important;
-            text-align: justify;
+        {
+        color: #606060 !important;
+        text-align: justify;
         }
 
         address span strong {
             width: 100px;
+        }
+
+
+        .blog-list .date-box .day,
+        .blog-read .date-box .day {
+            padding-top: 20px;
         }
 
         .de_light.de-navbar-left header #mainmenu>li {
@@ -305,7 +352,11 @@
 
 <body class="de_light de-navbar-left">
 
-    <div id="wrapper">
+    <div id="wrapper"  class="
+    @if (app()->getLocale() == 'ar')
+    rtl
+    @endif
+    ">
         <div class="container-fluid">
             <div class="row g-0">
                 <div id="de-sidebar" class="col-lg-3 col-md-12">
@@ -341,19 +392,19 @@
                                 <li><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
                                 <li><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
                                 {{-- <li><a href="{{ route('login') }}">@lang('site.login')</a></li> --}}
-                                {{-- <li style="z-index: 9999;">
+                                <li style="z-index: 9999;">
                                     <div class="switchToggle">
                                         <input type="checkbox" id="switch" class="switchToggle-a"
                                             @if (app()->getLocale() == 'ar') checked @endif>
                                         <label for="switch">Toggle</label>
                                     </div>
-                                </li> --}}
+                                </li>
                             </ul>
                         </nav>
 
 
                         <div class="h-content">
-                            <div class="social-icons-2" style="margin-top: 55px !important">
+                            <div class="social-icons-2" style="margin-top: 0 !important">
                                 @foreach ($socialMedias as $socialMedia)
                                     <a href="{{ $socialMedia->link }}" target="_blank"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>

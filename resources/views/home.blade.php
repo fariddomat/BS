@@ -258,7 +258,7 @@
                             style="padding: 0">
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
-                                    <img src="{{ asset($image->image) }}" alt="">
+                                    <img src="{{ asset($image->image) }}" alt="" >
                                 </blockquote>
                             @endforeach
                         </div>

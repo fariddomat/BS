@@ -45,7 +45,11 @@
 
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="right: 0; background: url({{ asset($aboutImages[1]->image) }}); "></div>
+                style="@if (app()->getLocale() == 'ar')
+                left: 0;
+                @else
+                right: 0;
+                @endif background: url({{ asset($aboutImages[1]->image) }}); "></div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -83,7 +87,11 @@
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="right: 0; background: url({{ asset($aboutImages[3]->image) }}); "></div>
+                style="@if (app()->getLocale() == 'ar')
+                left: 0;
+                @else
+                right: 0;
+                @endif background: url({{ asset($aboutImages[3]->image) }}); "></div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -121,7 +129,11 @@
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="right: 0; background: url({{ asset($aboutImages[5]->image) }}); "></div>
+                style="@if (app()->getLocale() == 'ar')
+                left: 0;
+                @else
+                right: 0;
+                @endif background: url({{ asset($aboutImages[5]->image) }}); "></div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -159,7 +171,11 @@
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="right: 0; background: url({{ asset($aboutImages[7]->image) }}); "></div>
+                style="@if (app()->getLocale() == 'ar')
+                left: 0;
+                @else
+                right: 0;
+                @endif background: url({{ asset($aboutImages[7]->image) }}); "></div>
 
             <div class="container-fluid">
                 <div class="row">
