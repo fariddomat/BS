@@ -245,11 +245,11 @@
 
         <!-- section begin -->
         <section id="section-testimonial-architecture" class="jarallax" >
-            <img src="{{ asset('home/images-architecture/bg/1.jpg') }}" class="jarallax-img" alt="">
+            <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                        <h2 class="title" style="color: #848080;">@lang('site.team_experience')</h2>
+                        <h2 class="title" style="color: #fff;">@lang('site.team_experience')</h2>
 
                     </div>
                     <div class="col-md-12 ">

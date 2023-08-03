@@ -93,9 +93,10 @@
                 transform: scaleX(-1);
             }
 
-            .owl-carousel{
- direction: ltr !important;
-}
+            .owl-carousel {
+                direction: ltr !important;
+            }
+
             .de_light a.btn-big {
                 padding-right: 30px !important;
                 padding-left: 50px !important;
@@ -352,10 +353,8 @@
 
 <body class="de_light de-navbar-left">
 
-    <div id="wrapper"  class="
-    @if (app()->getLocale() == 'ar')
-    rtl
-    @endif
+    <div id="wrapper" class="
+    @if (app()->getLocale() == 'ar') rtl @endif
     ">
         <div class="container-fluid">
             <div class="row g-0">

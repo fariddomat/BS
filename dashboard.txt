@@ -55,3 +55,8 @@ add href to index item
 
 2 index images
 
+
+migrate
+    site
+    home
+    about
