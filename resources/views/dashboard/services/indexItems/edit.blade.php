@@ -47,6 +47,17 @@
                     <label for="icon_class" class="form-label">Icon Class</label>
                     <input type="text" name="icon_class" class="form-control" value="{{ $indexitem->icon_class }}">
                 </div>
+                <div class="form-group mb-3">
+                    <label for="" class="form-label">Sub Service Link</label>
+                    <select name="sub_service_id" class="form-control">
+                        <option value="">( Optional )</option>
+                        @foreach ($subServices as $service)
+                        <option value="{{ $service->id }}" @if ($indexitem->sub_service_id == $service->id)
+                            selected
+                        @endif >{{ $service->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Update </button>

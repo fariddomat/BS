@@ -21,7 +21,8 @@ class ServiceIndexItemController extends Controller
 
     public function create(Request $request, Service $service)
     {
-        return view('dashboard.services.indexItems.create', compact('service'));
+        $subServices=Service::where('parent_id','<>',null)->get();
+        return view('dashboard.services.indexItems.create', compact('service', 'subServices'));
     }
 
     public function store(Request $request, Service $service)
@@ -37,6 +38,7 @@ class ServiceIndexItemController extends Controller
         $validatedData = $request->validate($rules);
         $item  = new ServiceIndexItem();
         $item->icon_class = $validatedData['icon_class'];
+        $item->sub_service_id = $request->sub_service_id;
         $item->translateOrNew('en')->name = $validatedData['en']['name'];
         $item->translateOrNew('ar')->name = $validatedData['ar']['name'];
         $item->translateOrNew('en')->description = $validatedData['en']['description'];
@@ -49,7 +51,8 @@ class ServiceIndexItemController extends Controller
 
     public function edit(ServiceIndexItem $indexitem)
     {
-        return view('dashboard.services.indexItems.edit', compact('indexitem'));
+        $subServices=Service::where('parent_id','<>',null)->get();
+        return view('dashboard.services.indexItems.edit', compact('indexitem', 'subServices'));
     }
 
     public function update(Request $request, ServiceIndexItem $indexitem)
@@ -63,6 +66,7 @@ class ServiceIndexItemController extends Controller
         ];
         $validatedData = $request->validate($rules);
         $indexitem->icon_class = $validatedData['icon_class'];
+        $indexitem->sub_service_id = $request->sub_service_id;
         $indexitem->translate('en')->name = $validatedData['en']['name'];
         $indexitem->translate('ar')->name = $validatedData['ar']['name'];
         $indexitem->translate('en')->description = $validatedData['en']['description'];
