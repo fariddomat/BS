@@ -93,7 +93,7 @@
                                         </div>
 
                                         <div class="post-text">
-                                            <h2><a href="#">{{ $blog->title }}</a></h2>
+                                            <h2><a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a></h2>
                                             <p>{!!  Str::limit($blog->description,300)!!}</p>
                                         </div>
 

@@ -147,7 +147,7 @@
 @endsection
 
 @section('content')
-<div class="related-blogs section-padding" style="padding-top: 45px; background-color: #fff;padding-left: 25px">
+<div class="related-blogs section-padding" style="padding-top: 45px; background-color: #fff;padding-left: 25px; padding-right: 25px">
     <div class="container-fluid">
         <div class="row mb-2 d-none d-md-flex">
             <div class="col-12 col-md-8 col-xl-8">

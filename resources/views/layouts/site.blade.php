@@ -256,6 +256,51 @@
         a.btn-h:hover {
             border-color: #fff
         }
+
+        @media screen and (max-width:992px) {
+
+            .de_light .btn-line,
+            .de_light a.btn-line {
+                margin-bottom: 35px !important;
+            }
+
+            .img-responsive {
+                margin-top: 30px !important;
+            }
+            .related-blogs{
+                padding-top: 75px !important;
+            }
+            .de-navbar-left #subheader h1 {
+  margin-right: 80px;
+}
+
+.animated {
+  padding-left: 25px;
+  padding-right: 40px;
+}
+
+
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .img-responsive {
+                margin-top: 50px !important;
+            }
+
+
+            .post-text {
+                padding-right: 0px !important;
+            }
+
+            .post-text h2 {
+                padding-right: 100px !important;
+            }
+
+            .post-content p {
+                margin-top: 50px;
+            }
+        }
     </style>
     <style>
         /* toggle */
@@ -373,7 +418,7 @@
                             <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
                                     style="  width: 80%; ">
-                                <img class="logo-2" src="{{ asset($info->logo) }}" alt="">
+                                <img class="logo-2" src="{{ asset('logo.png') }}"  style="    width: unset !important; " alt="">
                             </a>
                         </div>
                         <!-- logo close -->
@@ -433,7 +478,11 @@
                                             style="width: 80% !important;"><br>
 
                                     </div>
-                                    <h6>A specialized Saudi company offering a wide range of consultation and management
+                                    <h6>
+                                        @if (app()->getLocale() == 'ar')
+                                        شركة سعودية تقدم مجموعة متكاملة من الخدمات الإستشارات الإدارية والحلول الإبداعية المتميزة من خلال فريق عمل محترف ومتميز تمنحكم إمكانية الاستفادة من خبرات فريفنا الإستشاري في مجالات التحول الرقمي وإدارة البيانات والبنية المؤسسية وتجربة المستفيد وتقنية وممكنات التحول الرقمي وحلول تقنية المعلومات لمساعدتكم على اكتشاف الفرص المستقبلية وإضافة قيمة مضافة حقيقة للعملاء. 
+                                        @else
+                                        A specialized Saudi company offering a wide range of consultation and management
                                         services in addition to creative digital solutions through a distinctive and
                                         professional work team giving you the opportunity to benefit from our
                                         consultancy team in the fields of digital transformation, data management,
@@ -441,7 +490,7 @@
                                         and ICT solutions to help you discover future opportunities and give a real
                                         added value to the clients. </h6>
 
-
+                                        @endif
                                 </div>
 
                                 <div class="col-md-5">
