@@ -145,7 +145,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                        <h1>Our Process</h1>
+                        <h1>@lang('site.our_principles')</h1>
                         <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                         <div class="spacer-single"></div>
                     </div>

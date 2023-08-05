@@ -71,9 +71,9 @@
     <![endif]-->
 
     @if (app()->getLocale() == 'ar')
-        <link
-            href="{{ asset('fonts/JannaLT/JannaLTBold.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet">
+    <link
+    href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
         <style>
             #gallery .item {
                 padding: 0;
@@ -107,12 +107,12 @@
             }
 
             a {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             body {
 
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             h4,
@@ -126,18 +126,18 @@
             h1,
             h2,
             h3 {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             p {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
                 font-size: 15px !important;
 
 
             }
 
             span {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
                 font-size: 15px !important;
 
             }
