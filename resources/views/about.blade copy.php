@@ -1,13 +1,6 @@
 @extends('layouts.site')
 
 @section('title', trans('site.about'))
-@section('styles')
-    <style>
-        #section-about-us-4{
-            border-radius: 0 0 15px 0;
-        }
-    </style>
-@endsection
 @section('content')
 
 
@@ -50,7 +43,7 @@
             </div>
         </section> --}}
 
-        <section id="section-about-us-4" class="side-bg no-padding" >
+        <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
@@ -122,7 +115,7 @@
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
             >
-            <img src="{{ asset($aboutImages[4]->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
+            <img src="{{ asset($aboutImages[4]->image) }}" style="width: 100%;" class="img-responsive" alt="">
         </div>
 
             <div class="container-fluid">
@@ -145,7 +138,7 @@
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif">
-                <img src="{{ asset($aboutImages[5]->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages[5]->image) }}" style="width: 100%;" class="img-responsive" alt="">
             </div>
 
             <div class="container-fluid">
@@ -322,7 +315,7 @@
         <!-- section begin -->
         <section id="section-testimonial-architecture" class="jarallax" style=";
         padding-bottom: 25px;padding-top: 30px;">
-            <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="" style="border-radius: 15px 15px 15px 15px;">
+            <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -335,7 +328,7 @@
                             style="padding: 0">
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
-                                    <img src="{{ asset($image->image) }}" alt="" style="border-radius: 15px 15px 15px 15px;">
+                                    <img src="{{ asset($image->image) }}" alt="">
                                 </blockquote>
                             @endforeach
                         </div>
@@ -368,7 +361,7 @@
 
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects" style="border-radius: 0px 0px 15px 0px;">
+            data-type="background" aria-label="view-all-projects">
             <a href="{{ route('contact') }}" class="btn-line btn-big btn-h" style="color:white">@lang('contact.get_in_touch')</a>
         </section>
     </div>

@@ -24,7 +24,6 @@
     <link href="{{ asset('home/css/bootstrap-grid.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap-grid" />
     <link href="{{ asset('home/css/bootstrap-reboot.min.css') }}" rel="stylesheet" type="text/css"
         id="bootstrap-reboot" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     @if (app()->getLocale() == 'ar')
         <link rel="preload" href="{{ asset('css/bootstrapRTL.min.css') }}" as="style"
             onload="this.onload=null;this.rel='stylesheet'">
@@ -52,9 +51,6 @@
             --contact_button: {{ $color->contact_button }};
             --menu_social_media: {{ $color->menu_social_media }};
         }
-        li{
-            font-size: 18px;
-        }
     </style>
 
     <!-- revolution slider -->
@@ -72,7 +68,7 @@
 
     @if (app()->getLocale() == 'ar')
         <link
-            href="{{ asset('fonts/JannaLT/JannaLTBold.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+            href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet">
         <style>
             #gallery .item {
@@ -107,12 +103,12 @@
             }
 
             a {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             body {
 
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             h4,
@@ -126,18 +122,18 @@
             h1,
             h2,
             h3 {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
             }
 
             p {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
                 font-size: 15px !important;
 
 
             }
 
             span {
-                font-family: 'Janna LT' !important;
+                font-family: 'Cairo' !important;
                 font-size: 15px !important;
 
             }
@@ -421,7 +417,7 @@
                         <div id="logo" style="padding-top: 0px !important">
                             <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  width: 80% !important; ">
+                                    style="  width: 80%; ">
                                 <img class="logo-2" src="{{ asset('logo.png') }}"  style="    width: unset !important; " alt="">
                             </a>
                         </div>
@@ -431,14 +427,14 @@
 
                         <!-- mainmenu begin -->
                         <nav>
-                            <ul id="mainmenu" style="font-size:20px;">
-                                <li style="font-size:18px;"><a href="{{ route('home') }}">@lang('site.home')</a></li>
-                                <li style="font-size:18px;"><a href="{{ route('services') }}">@lang('site.services')</a></li>
+                            <ul id="mainmenu">
+                                <li><a href="{{ route('home') }}">@lang('site.home')</a></li>
+                                <li><a href="{{ route('services') }}">@lang('site.services')</a></li>
                                 {{-- <li><a href="{{ route('home') }}#portfolio">@lang('site.team_experience')</a></li> --}}
 
-                                <li style="font-size:18px;"><a href="{{ route('about') }}">@lang('site.about')</a></li>
-                                <li style="font-size:18px;"><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
-                                <li style="font-size:18px;"><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
+                                <li><a href="{{ route('about') }}">@lang('site.about')</a></li>
+                                <li><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
+                                <li><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
                                 {{-- <li><a href="{{ route('login') }}">@lang('site.login')</a></li> --}}
                                 <li style="z-index: 9999;">
                                     <div class="switchToggle">
@@ -477,12 +473,12 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <img src="{{ asset('logo.png') }}" class="logo-small" alt=""
                                             style="width: 80% !important;"><br>
 
                                     </div>
-                                    <h6 style="font-size: 13px !important;">
+                                    <h6>
                                         @if (app()->getLocale() == 'ar')
                                         شركة سعودية تقدم مجموعة متكاملة من الخدمات الإستشارات الإدارية والحلول الإبداعية المتميزة من خلال فريق عمل محترف ومتميز تمنحكم إمكانية الاستفادة من خبرات فريفنا الإستشاري في مجالات التحول الرقمي وإدارة البيانات والبنية المؤسسية وتجربة المستفيد وتقنية وممكنات التحول الرقمي وحلول تقنية المعلومات لمساعدتكم على اكتشاف الفرص المستقبلية وإضافة قيمة مضافة حقيقة للعملاء.
                                         @else
@@ -503,18 +499,19 @@
                                     <div style="margin-top: 27px;">
                                         <div class="widget widget-address">
                                             <address>
-                                                <span><i class="fa-solid fa-phone fa-2l"></i> &nbsp; &nbsp;<a
+                                                <span><strong>@lang('contact.give_call'):</strong> <a
                                                         href="tel:{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
-                                                <span><i class="fa-brands fa-whatsapp fa-xl"></i> &nbsp; &nbsp; <a
+                                                <span><strong>@lang('contact.whatsapp'):</strong><a
                                                         href="https://api.whatsapp.com/send?phone={{ $contactInfo->whatsapp }}"
                                                         target="_blank">{{ $contactInfo->whatsapp }}</a></span>
-                                                <span><i class="fa-regular fa-envelope fa-xl"></i> &nbsp; &nbsp;
+                                                <span><strong>@lang('site.email'):</strong>
                                                     <a
                                                         href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a>
                                                 </span>
                                             </address>
                                         </div>
                                     </div>
+                                    <a href="{{ route('privacy') }}">@lang('site.privacy')</a>
                                 </div>
 
                             </div>

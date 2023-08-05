@@ -25,7 +25,7 @@
         style="background: url({{ asset($info->service_image) }}) top; background-position: unset !important;
         background-repeat: no-repeat !important; background-size: cover !important; ">
         <div class="container-fluid">
-            <div class="row" style="border-radius: 0 0 15px 0px;">
+            <div class="row">
                 <div class="col-md-12">
                     <h1>@lang('site.services')</h1>
                     <ul class="crumb">
@@ -50,7 +50,7 @@
                             <p style="height: 37px;">{{ Str::limit($service->brief, 140) }}</p>
                             <div class="spacer-single"></div>
                             <img src="{{ asset($service->image) }}" class="img-responsive" alt=""
-                            style="margin-top: 15px; border-radius: 15px 15px 15px 15px;">
+                                style="margin-top: 15px">
                             <div class="spacer-single"></div>
                             <a href="{{ route('service', $service->slug) }}"
                                 class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
@@ -77,10 +77,10 @@
         </section>
 
         <!-- section begin -->
-        {{-- <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5"
+        <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5"
             data-type="background" aria-label="view-all-projects">
             <a href="sidebar-light-contact.html" class="btn-line black btn-big">Get Quotation</a>
-        </section> --}}
+        </section>
         <!-- logo carousel section close -->
 
 

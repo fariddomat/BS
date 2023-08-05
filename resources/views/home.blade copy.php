@@ -63,7 +63,7 @@
         </section>
         <!-- revolution slider close -->
 
-        <section id="section-about-us-3" class="side-bg no-padding" style="border-radius: 0 0 15px 0px;">
+        <section id="section-about-us-3" class="side-bg no-padding">
             <div class="image-container col-lg-6 col-md-12 pull-left" data-delay="0"
                 style="background: url(
                     @if (app()->getLocale() == 'ar') {{ asset($info->about_me_image) }}
@@ -93,7 +93,7 @@
         </section>
 
         <!-- section begin -->
-        <section id="section-about"  style="border-radius: 0 0 15px 15px;">
+        <section id="section-about">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -105,7 +105,7 @@
 
                     @foreach ($services as $index => $service)
                         <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{{ asset($service->image) }}" class="img-responsive" alt="" style="border-radius: 15px 15px 15px 15px;">
+                            <img src="{{ asset($service->image) }}" class="img-responsive" alt="">
                             <div class="spacer-single"></div>
                             <h3><span class="id-color stitle">{{ $service->title }}</span></h3>
                             {{ Str::limit($service->brief, 100) }}
@@ -134,14 +134,14 @@
         <!-- section close -->
 
         <!-- section begin -->
-        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background" style="border-radius: 0 0 15px 0px;">
+        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background">
             <a href="{{ route('services') }}" class="btn-line btn-big btn-h" style="color: #fff">@lang('site.view_all_services')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-steps-2"  style="border-radius: 0 0 15px 15px;">
+        <section id="section-steps-2">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -191,7 +191,7 @@
 
 
         <!-- section begin -->
-        <section id="section-portfolio" class="no-padding" style="border-radius: 0 0 15px 0px;">
+        <section id="section-portfolio" class="no-padding">
             <div class="container-fluid">
 
                 <div class="spacer-single"></div>
@@ -224,7 +224,7 @@
 
                 @foreach ($blogs as $blog)
                     <!-- gallery item -->
-                    <div class="col-md-3 col-sm-6 col-12 item {{ $blog->category->id }}">
+                    <div class="col-md-4 col-sm-6 col-12 item {{ $blog->category->id }}">
 
                         <div class="de-post-poster" style="background-size: cover;">
                             <a class="d-overlay" href="{{ route('blog', $blog->slug) }}">
@@ -257,14 +257,15 @@
 
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects" style="border-radius: 0 0 15px 0px;">
+            data-type="background" aria-label="view-all-projects" style="margin-top: 50px">
             <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blog')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax" style="padding-bottom: 25px;padding-top: 30px;border-radius: 0 0 15px 0px;">
+        <section id="section-testimonial-architecture" class="jarallax" style=";
+        padding-bottom: 25px;padding-top: 30px;">
             <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
@@ -278,7 +279,7 @@
                             style="padding: 0">
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
-                                    <img src="{{ asset($image->image) }}" alt="" style="border-radius: 15px 15px 15px 15px;">
+                                    <img src="{{ asset($image->image) }}" alt="">
                                 </blockquote>
                             @endforeach
                         </div>

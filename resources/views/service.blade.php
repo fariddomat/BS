@@ -95,6 +95,7 @@
         #subheader {
             background-size: cover !important;
         }
+
         #subheader h1 {
             color: #2f529f !important;
             font-weight: bold;
@@ -255,19 +256,26 @@
                                     <div class="panel1">
                                         {!! $item->description !!}
                                         @if ($item->sub_service_id != null)
-                                    <div class="row" style="margin-bottom: 15px">
-                                        <div class="">
-                                            <a href="{{ route('service', $item->sub_service_id) }}"
-                                                class="btn btn-primary" style="color: #fff">@lang('site.read_more')</a>
+                                            <div class="row" style="margin-bottom: 15px">
+                                                <div class="">
+                                                    <a href="{{ route('service', $item->sub_service_id) }}"
+                                                        class="btn btn-primary" style="color: #fff">@lang('site.read_more')</a>
 
-                                        </div>
-                                    </div>
-                                    @endif
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
 
                                 </div>
                             @endforeach
                         </div>
+
+                    </div>
+                    <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s" style="margin-top:55px">
+                        <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
+                        <img src="{{ asset($service->index_image_2) }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="col-md-12 wow fadeInUp" data-wow-delay=".3s" style="margin-top:50px">
                         @foreach ($service->sections as $section)
                             <div class="row mt-5">
                                 <div class="col-12">
@@ -289,10 +297,6 @@
                                 @endforeach
                             </div>
                         @endforeach
-                    </div>
-                    <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s" style="margin-top:55px">
-                        <img src="{{ asset($service->index_image) }}" class="img-responsive" alt="">
-                        <img src="{{ asset($service->index_image_2) }}" class="img-responsive" alt="">
                     </div>
                 </div>
 

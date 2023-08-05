@@ -47,7 +47,7 @@
         </div>
     </section>
     <!-- subheader close -->
-    <section id="section-portfolio" class="no-padding" >
+    <section id="section-portfolio" class="no-padding">
         <div class="container-fluid">
 
             <div class="spacer-single"></div>
@@ -81,12 +81,12 @@
                                 <li>
                                     <div class="post-content">
                                         <div class="post-image">
-                                            <img src="{{ asset($blog->image) }}" alt="" style="border-radius: 15px 15px 0px 0px;"/>
+                                            <img src="{{ asset($blog->image) }}" alt="" />
                                         </div>
 
 
                                         <div class="date-box">
-                                            <div class="day" style="border-radius: 0px 0px 15px 15px;">
+                                            <div class="day">
                                                 {{ $blog->updated_at->format('d F
                                                                                                                                             Y') }}
                                             </div>

@@ -83,6 +83,7 @@ return [
     'view_all_blog' => 'مشاهدة كل التدوينات',
     'our_team' =>'فريقنا',
     'our_partner' => 'شركائنا',
+    'our_principles'=>'مبادئنا',
     'subServices' =>' الخدمات الفرعية',
     'privacy' =>' سياسة الخصوصية',
 

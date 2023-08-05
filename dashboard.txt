@@ -61,3 +61,10 @@ migrate
     home
     about
 sub_service_id
+
+
+about us
+team
+تقليل البادينغ
+
+Service
