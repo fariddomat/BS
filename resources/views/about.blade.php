@@ -8,6 +8,9 @@
         }
     </style>
 @endsection
+@section('scripts')
+
+@endsection
 @section('content')
 
 
@@ -207,7 +210,7 @@
 
 
 
-        <section id="section-team">
+        {{-- <section id="section-team">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -229,13 +232,7 @@
                                     <p class="lead">{{ $team->title }}</p>
                                     <div class="small-border"></div>
                                     <p>{{ $team->description }}</p>
-                                    {{--
-                            <div class="social">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                            </div> --}}
+
                                 </div>
                             </div>
                             <!-- team close -->
@@ -247,7 +244,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         {{-- <section id="section-testimonial" data-bgimage="url(images/background/bg-38.jpg)" data-stellar-background-ratio=".2"
         class="text-light">
@@ -351,11 +348,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                        <h2 class="title" style="color: #848080;">@lang('site.our_partner')</h2>
+                        <h2 class="title" style="color: #000;">@lang('site.our_partner')</h2>
 
                     </div>
                     <div class="col-md-12">
-                        <div id="logo-carousel" class="owl-carousel owl-theme">
+                        <div id="owl-logo" class="owl-carousel owl-theme de_carousel">
                             @foreach ($partnerSlider as $image)
                                 <img src="{{ asset($image->image) }}" class="img-responsive" alt="">
                             @endforeach
@@ -364,6 +361,8 @@
                 </div>
             </div>
         </section>
+
+
 
 
         <!-- section begin -->

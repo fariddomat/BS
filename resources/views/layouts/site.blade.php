@@ -24,7 +24,7 @@
     <link href="{{ asset('home/css/bootstrap-grid.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap-grid" />
     <link href="{{ asset('home/css/bootstrap-reboot.min.css') }}" rel="stylesheet" type="text/css"
         id="bootstrap-reboot" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     @if (app()->getLocale() == 'ar')
         <link rel="preload" href="{{ asset('css/bootstrapRTL.min.css') }}" as="style"
             onload="this.onload=null;this.rel='stylesheet'">
@@ -52,7 +52,8 @@
             --contact_button: {{ $color->contact_button }};
             --menu_social_media: {{ $color->menu_social_media }};
         }
-        li{
+
+        li {
             font-size: 18px;
         }
     </style>
@@ -71,9 +72,9 @@
     <![endif]-->
 
     @if (app()->getLocale() == 'ar')
-    <link
-    href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+        <link
+            href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
         <style>
             #gallery .item {
                 padding: 0;
@@ -181,6 +182,10 @@
 
             body {}
 
+            h3 {
+                letter-spacing: 1px;
+            }
+
             h4,
             h5,
             h6,
@@ -271,17 +276,19 @@
             .img-responsive {
                 margin-top: 30px !important;
             }
-            .related-blogs{
+
+            .related-blogs {
                 padding-top: 75px !important;
             }
-            .de-navbar-left #subheader h1 {
-  margin-right: 80px;
-}
 
-.animated {
-  padding-left: 25px;
-  padding-right: 40px;
-}
+            .de-navbar-left #subheader h1 {
+                margin-right: 80px;
+            }
+
+            .animated {
+                padding-left: 25px;
+                padding-right: 40px;
+            }
 
 
         }
@@ -422,7 +429,8 @@
                             <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
                                     style="  width: 80% !important; ">
-                                <img class="logo-2" src="{{ asset('logo.png') }}"  style="    width: unset !important; " alt="">
+                                <img class="logo-2" src="{{ asset('logo.png') }}" style="    width: unset !important; "
+                                    alt="">
                             </a>
                         </div>
                         <!-- logo close -->
@@ -433,12 +441,14 @@
                         <nav>
                             <ul id="mainmenu" style="font-size:20px;">
                                 <li style="font-size:18px;"><a href="{{ route('home') }}">@lang('site.home')</a></li>
-                                <li style="font-size:18px;"><a href="{{ route('services') }}">@lang('site.services')</a></li>
+                                <li style="font-size:18px;"><a href="{{ route('services') }}">@lang('site.services')</a>
+                                </li>
                                 {{-- <li><a href="{{ route('home') }}#portfolio">@lang('site.team_experience')</a></li> --}}
 
                                 <li style="font-size:18px;"><a href="{{ route('about') }}">@lang('site.about')</a></li>
                                 <li style="font-size:18px;"><a href="{{ route('blogs') }}">@lang('site.blog')</a></li>
-                                <li style="font-size:18px;"><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
+                                <li style="font-size:18px;"><a href="{{ route('contact') }}">@lang('site.contact')</a>
+                                </li>
                                 {{-- <li><a href="{{ route('login') }}">@lang('site.login')</a></li> --}}
                                 <li style="z-index: 9999;">
                                     <div class="switchToggle">
@@ -484,17 +494,23 @@
                                     </div>
                                     <h6 style="font-size: 13px !important;">
                                         @if (app()->getLocale() == 'ar')
-                                        شركة سعودية تقدم مجموعة متكاملة من الخدمات الإستشارات الإدارية والحلول الإبداعية المتميزة من خلال فريق عمل محترف ومتميز تمنحكم إمكانية الاستفادة من خبرات فريفنا الإستشاري في مجالات التحول الرقمي وإدارة البيانات والبنية المؤسسية وتجربة المستفيد وتقنية وممكنات التحول الرقمي وحلول تقنية المعلومات لمساعدتكم على اكتشاف الفرص المستقبلية وإضافة قيمة مضافة حقيقة للعملاء.
+                                            شركة سعودية تقدم مجموعة متكاملة من الخدمات الإستشارات الإدارية والحلول
+                                            الإبداعية المتميزة من خلال فريق عمل محترف ومتميز تمنحكم إمكانية الاستفادة من
+                                            خبرات فريفنا الإستشاري في مجالات التحول الرقمي وإدارة البيانات والبنية
+                                            المؤسسية وتجربة المستفيد وتقنية وممكنات التحول الرقمي وحلول تقنية المعلومات
+                                            لمساعدتكم على اكتشاف الفرص المستقبلية وإضافة قيمة مضافة حقيقة للعملاء.
                                         @else
-                                        A specialized Saudi company offering a wide range of consultation and management
-                                        services in addition to creative digital solutions through a distinctive and
-                                        professional work team giving you the opportunity to benefit from our
-                                        consultancy team in the fields of digital transformation, data management,
-                                        enterprise architecture, customer experience, digital transformation techniques,
-                                        and ICT solutions to help you discover future opportunities and give a real
-                                        added value to the clients. </h6>
-
-                                        @endif
+                                            A specialized Saudi company offering a wide range of consultation and
+                                            management
+                                            services in addition to creative digital solutions through a distinctive and
+                                            professional work team giving you the opportunity to benefit from our
+                                            consultancy team in the fields of digital transformation, data management,
+                                            enterprise architecture, customer experience, digital transformation
+                                            techniques,
+                                            and ICT solutions to help you discover future opportunities and give a real
+                                            added value to the clients.
+                                    </h6>
+                                    @endif
                                 </div>
 
                                 <div class="col-md-6">
@@ -504,9 +520,9 @@
                                         <div class="widget widget-address">
                                             <address>
                                                 <span><i class="fa-solid fa-phone fa-2l"></i> &nbsp; &nbsp;<a
-                                                        href="tel:{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
+                                                        href="tel:+{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
                                                 <span><i class="fa-brands fa-whatsapp fa-xl"></i> &nbsp; &nbsp; <a
-                                                        href="https://api.whatsapp.com/send?phone={{ $contactInfo->whatsapp }}"
+                                                        href="https://api.whatsapp.com/send?phone=+{{ $contactInfo->whatsapp }}"
                                                         target="_blank">{{ $contactInfo->whatsapp }}</a></span>
                                                 <span><i class="fa-regular fa-envelope fa-xl"></i> &nbsp; &nbsp;
                                                     <a
@@ -550,7 +566,7 @@
     <!-- Javascript Files
     ================================================== -->
     <script src="{{ asset('home/js/plugins.js') }}"></script>
-    <script src="{{ asset('home/js/designesia.js') }}"></script>
+    <script src="{{ asset('home/js/designesia.js') }}?v=1"></script>
 
     <!-- SLIDER REVOLUTION SCRIPTS  -->
     <script type="text/javascript" src="{{ asset('home/rs-plugin/js/jquery.themepunch.plugins.min.j') }}s"></script>

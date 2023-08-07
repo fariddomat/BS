@@ -8,9 +8,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
-           <a href="{{ route('dashboard.aboutimages.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Add </a>
+           {{-- <a href="{{ route('dashboard.aboutimages.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Add </a> --}}
         </div>
     </div>
+    @php
+        $names=[__('about.brief'), __('about.who'), __('about.history'), __('about.massage'), __('about.goals'), __('about.vision'), __('about.ambition'), __('about.values')];
+    @endphp
     <div class="row justify-content-center">
         <div class="col">
             <table class="table table-hover">
@@ -18,15 +21,17 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Showed</th>                        
+                        <th>Section</th>
+                        <th>Showed</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($images as $image)
+                    @foreach ($images as $index=>$image)
                     <tr>
-                        <td>{{ $image->id }}</td>
+                        <td>{{ $index }}</td>
                         <td>{{ basename($image->image) }}</td>
+                        <td>{{ $names[$index] }}</td>
                         <td>{{ $image->showed == 1 ? 'Showed' : 'Hidden' }}</td>
                         <td>
                             <a href="{{ route('dashboard.aboutimages.edit', $image->id) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> edit</a>

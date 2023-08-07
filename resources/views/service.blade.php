@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="{{ asset('css/services.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <style>
+
+.accordion1 {
+    font-family: inherit;
+  color: #2f529f;
+}
+
         .simple-slider-wrapper {
             width: 100%;
             margin: 0 auto 30px auto;
