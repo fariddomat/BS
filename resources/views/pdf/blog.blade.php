@@ -58,7 +58,7 @@
             <div class="footer2" style="background:#f5f5dc; padding: 45px 0;">
                 <div>
                     <div style="float: left; text-align: center; direction: ltr !important;">
-                        <p>&copy; 2021 Digitsmark. All Rights Reserved.</p>
+                        <p>&copy; 2023 BSecrets. All Rights Reserved.</p>
                     </div>
                     <div style="float: right; text-align: center; direction: ltr !important;">
                         @foreach($socialMedias as $socialMedia)

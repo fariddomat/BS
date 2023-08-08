@@ -50,7 +50,7 @@ class BlogController extends Controller
             'en.author_name' => ['required'],
             'ar.author_title' => ['required'],
             'en.author_title' => ['required'],
-            'author_image' => ['required', 'image', 'mimes:jpeg,png,jpg,webp'],
+            'author_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp'],
             'author_instagram' => ['nullable'],
             'author_snapchat' => ['nullable'],
             'author_twitter' => ['nullable'],
@@ -75,9 +75,11 @@ class BlogController extends Controller
         $blog->translateOrNew('ar')->author_name = $validatedData['ar']['author_name'];
         $blog->translateOrNew('en')->author_title = $validatedData['en']['author_title'];
         $blog->translateOrNew('ar')->author_title = $validatedData['ar']['author_title'];
-        $AuthorImage = $request->file('author_image');
-        $filename = $AuthorImage->getClientOriginalName();
-        $blog->author_image = $AuthorImage->storeAs('photos/blogs', $filename);
+        if ($request->has('author_image')) {
+            $AuthorImage = $request->file('author_image');
+            $filename = $AuthorImage->getClientOriginalName();
+            $blog->author_image = $AuthorImage->storeAs('photos/blogs', $filename);
+        }
         $blog->author_instagram  = $validatedData['author_instagram'] ?? null;
         $blog->author_snapchat  = $validatedData['author_snapchat'] ?? null;
         $blog->author_twitter  = $validatedData['author_twitter'] ?? null;

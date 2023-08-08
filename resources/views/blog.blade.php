@@ -174,16 +174,16 @@
                         <div class="p-3" style="background-color: rgba(96,125,139,0.12); border-radius: 10px;">{!! $blog->first_paragraph !!}</div>
                         <div class="mt-3">{!!$blog->description!!}</div>
                         <div class="mt-3" style="background-color: rgba(96,125,139,0.12); border-radius: 10px;">
-                            <div class="row p-4">
-                                <div class="col-4 col-md-3">
+                            <div class="row p-4" style="padding-bottom: 0.1rem !important;">
+                                {{-- <div class="col-6 col-md-6">
                                     <img class="author_image rounded-circle" src="{{asset($blog->author_image)}}" />
-                                </div>
-                                <div class="col-8 col-md-9">
-                                    <h3>{{ $blog->author_name}}</h3>
-                                    <p>{{ $blog->author_title}}</p>
+                                </div> --}}
+                                <div class="col-12 col-md-12" style="text-align: center">
+                                    <h3 style="text-align: center">{{ $blog->author_name}}</h3>
+                                    <p style="text-align: center">{{ $blog->author_title}}</p>
                                 </div>
                                 <div class="col-3 mt-3 d-none d-md-block"></div>
-                                <div class="col-12 col-md-9 mt-3 text-center text-md-left">
+                                {{-- <div class="col-12 col-md-9 mt-3 text-center text-md-left">
                                     @if($blog->author_instagram)
                                     <a target="_blank" href="{{$blog->author_instagram}}">
                                         <i class="fa fa-instagram fa-2x" style="color: #e1306c;"></i>
@@ -213,7 +213,7 @@
                                         <i class="fa fa-linkedin fa-2x" style="color: #0072b1;"></i>
                                     </a>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         {{-- <div class="mt-5 mb-4">
@@ -316,7 +316,7 @@
                         <h4>@lang('site.related_blogs')</h4>
                         <div class="small-border"></div>
 
-                        <ul class="de-bloglist-type-1">
+                        <ul class="de-bloglist-type-1" style="  direction: ltr;">
                             @foreach($relatedBlogs as $blog)
                             <li style="padding-top: 15px">
                                 <div class="d-image">

@@ -354,12 +354,12 @@
 
         .switchToggle input:checked+label,
         .switchToggle input:checked+input+label {
-            background: #3e98d3;
+            background: #2f529f;
         }
 
         .switchToggle label,
         .switchToggle input+label {
-            background: #3e98d3;
+            background: #2f529f;
         }
 
         .switchToggle input+label:before,
@@ -464,7 +464,8 @@
                         <div class="h-content">
                             <div class="social-icons-2" style="margin-top: 0 !important">
                                 @foreach ($socialMedias as $socialMedia)
-                                    <a href="{{ $socialMedia->link }}" target="_blank"><i
+                                    <a href="{{ $socialMedia->link }}" target="_blank" style="color: #2f419f;
+                                        opacity: unset;"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>
                                 @endforeach
                             </div>
@@ -512,8 +513,8 @@
                                     </h6>
                                     @endif
                                 </div>
-
-                                <div class="col-md-6">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4">
 
                                     <h3>@lang('site.contact_us')</h3>
                                     <div style="margin-top: 27px;">

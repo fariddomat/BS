@@ -84,6 +84,9 @@
                                         <p><b>{{ $aboutField->title }}:</b> {{ $aboutField->value }}</p>
                                     </div>
                                 @endforeach
+                        <a href="{{ route('about') }}" class="btn btn-primary text-white" style="margin-top: 25px;   width: auto;
+                        padding: 12px 32px;
+                        border-radius: 10px;">@lang('site.read_more')</a>
                             </div>
                         </div>
                         <div class="clearfix"></div>

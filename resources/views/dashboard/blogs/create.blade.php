@@ -10,7 +10,7 @@
 
 <script src="{{asset('dashboard/js/image_preview.js')}}"></script>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('dashboard/js/blog.js')}}"></script> 
+<script src="{{asset('dashboard/js/blog.js')}}"></script>
 @endsection
 
 @section('content')
@@ -134,7 +134,7 @@
                         value="{{ old('en.author_title') }}">
                 </div>
 
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label>Author Image</label>
                     <input type="file" name="author_image" class="form-control about-me-image">
                 </div>
@@ -142,9 +142,9 @@
                 <div class="form-group mb-3">
                     <img src="" style="width: 300px; display: none;" class="img-thumbnail about-me-image-preview"
                         alt="">
-                </div>
+                </div> --}}
 
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label for="author_instagram" class="form-label">Author Instagram</label>
                     <input type="text" name="author_instagram" class="form-control"
                         value="{{ old('author_instagram') }}">
@@ -172,7 +172,7 @@
                     <label for="author_linkedin" class="form-label">Author Linkedin</label>
                     <input type="text" name="author_linkedin" class="form-control"
                         value="{{ old('author_linkedin') }}">
-                </div>
+                </div> --}}
                 <div class="form-group mb-3">
                     <label>Image</label>
                     <input type="file" name="image" class="form-control image">

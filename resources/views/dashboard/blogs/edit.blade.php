@@ -136,7 +136,7 @@
                     <input type="text" name="en[author_title]" class="form-control"
                         value="{{ $blog->translate('en')->author_title }}">
                 </div>
-
+{{--
                 <div class="form-group mb-3">
                     <label>Author Image</label>
                     <input type="file" name="author_image" class="form-control about-me-image">
@@ -145,9 +145,9 @@
                 <div class="form-group mb-3">
                     <img src="{{ asset($blog->author_image) }}" style="width: 300px;" class="img-thumbnail about-me-image-preview"
                         alt="">
-                </div>
+                </div> --}}
 
-                <div class="form-group mb-3">
+                {{-- <div class="form-group mb-3">
                     <label for="author_instagram" class="form-label">Author Instagram</label>
                     <input type="text" name="author_instagram" class="form-control"
                         value="{{ $blog->author_instagram }}">
@@ -175,7 +175,7 @@
                     <label for="author_linkedin" class="form-label">Author Linkedin</label>
                     <input type="text" name="author_linkedin" class="form-control"
                         value="{{ $blog->author_linkedin }}">
-                </div>
+                </div> --}}
 
                 <div class="form-group mb-3">
                     <label>Image</label>

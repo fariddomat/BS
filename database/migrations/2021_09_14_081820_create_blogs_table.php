@@ -20,7 +20,7 @@ class CreateBlogsTable extends Migration
             $table->string('image');
             $table->boolean('showed');
             $table->boolean('show_at_home');
-            $table->string('author_image');
+            $table->string('author_image')->nullable();
             $table->string('author_instagram')->nullable();
             $table->string('author_snapchat')->nullable();
             $table->string('author_twitter')->nullable();
