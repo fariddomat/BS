@@ -137,14 +137,14 @@
         <!-- section close -->
 
         <!-- section begin -->
-        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background" style="border-radius: 0 0 15px 0px;">
+        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background" style="border-radius: 15px ; margin-bottom: 50px">
             <a href="{{ route('services') }}" class="btn-line btn-big btn-h" style="color: #fff">@lang('site.view_all_services')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-steps-2"  style="border-radius: 0 0 15px 15px;">
+        <section id="section-steps-2"  style="border-radius:15px 15px;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -194,7 +194,7 @@
 
 
         <!-- section begin -->
-        <section id="section-portfolio" class="no-padding" style="border-radius: 0 0 15px 0px;">
+        <section id="section-portfolio" class="no-padding" style="border-radius: 15px">
             <div class="container-fluid">
 
                 <div class="spacer-single"></div>
@@ -260,14 +260,14 @@
 
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects" style="border-radius: 0 0 15px 0px;">
+            data-type="background" aria-label="view-all-projects" style="border-radius: 15px ; margin-top:50px; margin-bottom: 50px;">
             <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blog')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax" style="padding-bottom: 25px;padding-top: 30px;border-radius: 0 0 15px 0px;">
+        <section id="section-testimonial-architecture" class="jarallax" style="padding-bottom: 25px;padding-top: 30px;border-radius: 15px ;">
             <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
