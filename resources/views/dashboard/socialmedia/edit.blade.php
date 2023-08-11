@@ -26,6 +26,10 @@
                     <label for="link" class="form-label">Link</label>
                     <input type="text" name="link" class="form-control" value="{{ $socialMedia->link }}">
                 </div>
+                <div class="form-group mb-3">
+                    <label for="link" class="form-label">Icon</label>
+                    <input type="text" name="icon" class="form-control" value="{{ $socialMedia->icon }}">
+                </div>
 
                 <div class="form-group mb-3">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Update </button>

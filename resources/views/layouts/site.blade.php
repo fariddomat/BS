@@ -2,6 +2,38 @@
 <html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MTZ651PQ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4MTZ651PQ9');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5MBFDSH7');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <link rel="icon" href="{{ asset($info->logo) }}" type="image/png" sizes="16x16">
     <title> @yield('title')</title>
@@ -17,7 +49,8 @@
     <link href="{{ asset($info->logo) }}" rel="apple-touch-icon" sizes="114x114">
     <link href="{{ asset($info->logo) }}" rel="apple-touch-icon" sizes="144x144">
 
-    <link href="{{ asset('fonts/fontawesome-free-6.4.0-web/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('fonts/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css') }}"
+        rel="stylesheet">
     <!-- CSS Files
     ================================================== -->
     <link href="{{ asset('home/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap" />
@@ -76,6 +109,11 @@
             href="{{ asset('fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') }},wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet">
         <style>
+            #back-to-top {
+                left: 40px;
+                right: unset;
+            }
+
             #gallery .item {
                 padding: 0;
             }
@@ -216,6 +254,11 @@
         </style>
     @endif
     <style>
+        #back-to-top {
+            bottom: 70px;
+
+        }
+
         * {
             text-align: justify;
         }
@@ -408,6 +451,10 @@
 </head>
 
 <body class="de_light de-navbar-left">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MBFDSH7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div id="wrapper" class="
     @if (app()->getLocale() == 'ar') rtl @endif
@@ -429,8 +476,8 @@
                             <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
                                     style="  width: 80% !important; ">
-                                <img class="logo-2" src="{{ asset('logo.png') }}" style="    width: unset !important; "
-                                    alt="">
+                                <img class="logo-2" src="{{ asset('logo.png') }}"
+                                    style="    width: unset !important; " alt="">
                             </a>
                         </div>
                         <!-- logo close -->
@@ -462,9 +509,10 @@
 
 
                         <div class="h-content">
-                            <div class="social-icons-2" style="margin-top: 0 !important">
+                            <div class="social-icons-2" style="">
                                 @foreach ($socialMedias as $socialMedia)
-                                    <a href="{{ $socialMedia->link }}" target="_blank" style="color: #2f419f;
+                                    <a href="{{ $socialMedia->link }}" target="_blank"
+                                        style="color: #2f419f;
                                         opacity: unset;"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>
                                 @endforeach
@@ -521,9 +569,9 @@
                                         <div class="widget widget-address">
                                             <address>
                                                 <span><i class="fa-solid fa-phone fa-2l"></i> &nbsp; &nbsp;<a
-                                                        href="tel:+{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
+                                                        href="tel:{{ $contactInfo->mobile }}">{{ $contactInfo->mobile }}</a></span>
                                                 <span><i class="fa-brands fa-whatsapp fa-xl"></i> &nbsp; &nbsp; <a
-                                                        href="https://api.whatsapp.com/send?phone=+{{ $contactInfo->whatsapp }}"
+                                                        href="https://api.whatsapp.com/send?phone={{ $contactInfo->whatsapp }}"
                                                         target="_blank">{{ $contactInfo->whatsapp }}</a></span>
                                                 <span><i class="fa-regular fa-envelope fa-xl"></i> &nbsp; &nbsp;
                                                     <a

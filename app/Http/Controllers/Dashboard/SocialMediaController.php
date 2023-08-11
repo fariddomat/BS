@@ -28,9 +28,11 @@ class SocialMediaController extends Controller
     {
         $rules = [
             'link' => ['required'],
+            'icon' => ['required'],
         ];
         $validatedData = $request->validate($rules);
         $socialMedia->link = $validatedData['link'];
+        $socialMedia->icon = $validatedData['icon'];
         $socialMedia->save();
         session()->flash('success', 'Social Media Updated Successfully');
         return redirect()->route('dashboard.socialmedia.index');
