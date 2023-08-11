@@ -509,7 +509,7 @@
 
 
                         <div class="h-content">
-                            <div class="social-icons-2" style="">
+                            <div class="social-icons-2" style=" margin-top: 20px !important;">
                                 @foreach ($socialMedias as $socialMedia)
                                     <a href="{{ $socialMedia->link }}" target="_blank"
                                         style="color: #2f419f;
