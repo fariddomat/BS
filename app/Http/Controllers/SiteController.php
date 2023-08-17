@@ -61,7 +61,7 @@ class SiteController extends Controller
         $info = Info::first();
 
         $about = About::first();
-        $aboutImages = AboutImage::where('showed', 1)->latest()->get();
+        $aboutImages = AboutImage::where('showed', 1)->orderBy('id')->get();
         // dd($aboutImages);
         $counter = range($aboutImages->count(), 1);
         $teams=Team::all();

@@ -446,6 +446,32 @@
         .toggle-switchArea {
             margin: 10px 0 10px 0;
         }
+
+
+    </style>
+    <style>
+  @media screen and (max-width: 767px)
+{
+.de-navbar-left .inner-padding {
+  padding: 0px;
+    padding-bottom: 25px;
+  padding-top: 45px;
+}}
+
+  @media  screen and (max-width: 992px){
+    .switchToggle label {
+margin-left: 35px;
+    }
+header.side-header .social-icons-2 {
+
+}
+header.side-header, .de_light header.side-header {
+  position: absolute !important;
+  display: block;
+  height: 60px !important;
+  top: 0;
+}
+  }
     </style>
     @yield('styles')
 </head>
@@ -464,7 +490,7 @@
                 <div id="de-sidebar" class="col-lg-3 col-md-12">
 
                     <!-- header begin -->
-                    <header class="side-header">
+                    <header class="side-header" style="height: 100vh">
 
                         <!-- small button begin -->
                         <span id="menu-btn"></span>
@@ -508,15 +534,32 @@
                         </nav>
 
 
-                        <div class="h-content">
+                        <div class="h-content" style="position: absolute;
+                        bottom: 15px;
+                        right: 0;
+                        left: 0;
+                        text-align: center;
+                        margin: 0 auto;
+                        z-index: 500000;
+                        width: 100%;">
                             <div class="social-icons-2" style=" margin-top: 20px !important;">
-                                @foreach ($socialMedias as $socialMedia)
+                                @foreach ($socialMedias->take(4) as $socialMedia)
                                     <a href="{{ $socialMedia->link }}" target="_blank"
                                         style="color: #2f419f;
                                         opacity: unset;"><i
                                             class="fa-brands {{ $socialMedia->icon }}"></i></a>
                                 @endforeach
                             </div>
+                            <div class="social-icons-2" style=" margin-top: 0px !important;">
+                                @foreach ($socialMedias->take(-4) as $socialMedia)
+                                    <a href="{{ $socialMedia->link }}" target="_blank"
+                                        style="color: #2f419f;
+                                        opacity: unset;"><i
+                                            class="fa-brands {{ $socialMedia->icon }}"></i></a>
+                                @endforeach
+                            </div>
+
+
                         </div>
 
 

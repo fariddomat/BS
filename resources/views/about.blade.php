@@ -3,6 +3,12 @@
 @section('title', trans('site.about'))
 @section('styles')
     <style>
+        #section-about-us-4 .image-container {
+  background: url(../images/background/bg-side-3.jpg);
+    background-size: auto;
+  min-height: 450px;
+}
+
         #section-about-us-4{
             border-radius: 0 0 15px 0;
         }
@@ -58,7 +64,7 @@
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif ">
-                <img src="{{ asset($aboutImages[1]->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where("id",2)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
 
             </div>
 
@@ -79,7 +85,7 @@
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0">
-                <img src="{{ asset($aboutImages[2]->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where("id",3)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
 
             </div>
 
@@ -102,8 +108,8 @@
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
-                right: 0; @endif "
-                <img src="{{ asset($aboutImages[3]->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                right: 0; @endif ">
+                <img src="{{ asset($aboutImages->where("id",4)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
 
             </div>
 
@@ -125,7 +131,7 @@
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
             >
-            <img src="{{ asset($aboutImages[4]->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
+            <img src="{{ asset($aboutImages->where("id",5)->first()->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
         </div>
 
             <div class="container-fluid">
@@ -148,7 +154,7 @@
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif">
-                <img src="{{ asset($aboutImages[5]->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where("id",6)->first()->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
             </div>
 
             <div class="container-fluid">
@@ -168,7 +174,7 @@
         </section>
         {{-- <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="background: url({{ asset($aboutImages[6]->image) }});"></div>
+                style="background: url({{ asset($aboutImages->where("id",7)->first()->image) }});"></div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -189,7 +195,7 @@
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
-                right: 0; @endif background: url({{ asset($aboutImages[7]->image) }}); ">
+                right: 0; @endif background: url({{ asset($aboutImages->where("id",10)->first()->image) }}); ">
             </div>
 
             <div class="container-fluid">
