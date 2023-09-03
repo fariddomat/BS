@@ -6,6 +6,62 @@
             font-weight: bold;
             font-size: 20px !important;
         }
+
+        @media screen and (max-width: 460px) {
+
+
+            #section-about,
+            #section-steps-2 {
+                padding: 25px;
+            }
+
+            #filters a {
+                background: none;
+                letter-spacing: 0;
+            }
+
+            .de_tab.tab_steps .de_nav li span {
+                padding: 22px 0 22px 0;
+                line-height: 50px;
+                width: 100px;
+                height: 100px;
+                font-size: 11px !important;
+            }
+
+            .de_tab.tab_steps .de_nav li .v-border {
+                height: 25px;
+            }
+
+            .de_nav {
+                display: flex;
+                justify-content: center;
+            }
+
+            .de_tab.tab_steps .de_nav li {
+
+                padding: 5px;
+            }
+
+            #gallery {
+                padding: 0 25px;
+            }
+
+            #gallery .item {
+                padding: 10px 25px;
+                position: static !important;
+                border-radius: 65px !important;
+            }
+
+            #view-all-projects,
+            #call-to-action,
+            #view-all-services {
+                padding: 60px 0 25px 0;
+            }
+
+            #section-testimonial-architecture {
+                padding: 30px 15px 25px;
+            }
+        }
     </style>
 @endsection
 @section('scripts')
@@ -34,29 +90,30 @@
                 $lang = 'en';
             @endphp
         @endif
-        <section id="section-welcome" class="full-height" data-bgimage="url({{ asset($homeSlider->where('lang', $lang)->first()->image) }})"
+        <section id="section-welcome" class="full-height"
+            data-bgimage="url({{ asset($homeSlider->where('lang', $lang)->first()->image) }})"
             data-stellar-background-ratio=".2">
             <div class="center-y text-center">
                 <div class="spacer-single"></div>
                 <div id="text-carousel" class="owl-carousel owl-theme text-slider fontsize40 dark border-deco">
-                    @if ($lang=='ar')
-                    <div class="item" style="direction: rtl;
+                    @if ($lang == 'ar')
+                        <div class="item" style="direction: rtl;
                     float: right;">
-                        <h2 style="letter-spacing: 15px;color: #bdccd9;">
-                        أسرار الأعمال
-                        </h2>
-                        <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 30px;color: #bdccd9;">
-                            ابداع مبتكر لتحول رقمي مستدام
-                        </h3>
-                    </div>
-
+                            <h2 style="letter-spacing: 15px;color: #bdccd9;">
+                                أسرار الأعمال
+                            </h2>
+                            <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 30px;color: #bdccd9;">
+                                ابداع مبتكر لتحول رقمي مستدام
+                            </h3>
+                        </div>
                     @else
-                    <div class="item"><h2 style="letter-spacing: 15px;color: #bdccd9;">
-                        Business secrets
-                    </h2>
-                        <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 70px;color: #bdccd9;">Innovative Creative for Sustainable Digital Transformation</h3>
-                    </div>
-
+                        <div class="item">
+                            <h2 style="letter-spacing: 15px;color: #bdccd9;">
+                                Business secrets
+                            </h2>
+                            <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 70px;color: #bdccd9;">Innovative
+                                Creative for Sustainable Digital Transformation</h3>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -84,7 +141,8 @@
                                         <p><b>{{ $aboutField->title }}:</b> {{ $aboutField->value }}</p>
                                     </div>
                                 @endforeach
-                        <a href="{{ route('about') }}" class="btn btn-primary text-white" style="margin-top: 25px;   width: auto;
+                                <a href="{{ route('about') }}" class="btn btn-primary text-white"
+                                    style="margin-top: 25px;   width: auto;
                         padding: 12px 32px;
                         border-radius: 10px;">@lang('site.read_more')</a>
                             </div>
@@ -96,7 +154,7 @@
         </section>
 
         <!-- section begin -->
-        <section id="section-about"  style="border-radius: 0 0 15px 15px;">
+        <section id="section-about" style="border-radius: 0 0 15px 15px;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -108,7 +166,8 @@
 
                     @foreach ($services as $index => $service)
                         <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{{ asset($service->image) }}" class="img-responsive" alt="" style="border-radius: 15px 15px 15px 15px;">
+                            <img src="{{ asset($service->image) }}" class="img-responsive img-service" alt=""
+                                style="border-radius: 15px 15px 15px 15px;">
                             <div class="spacer-single"></div>
                             <h3><span class="id-color stitle">{{ $service->title }}</span></h3>
                             {{ Str::limit($service->brief, 100) }}
@@ -117,16 +176,7 @@
                             <a href="{{ route('service', $service->slug) }}"
                                 class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
-                            {{-- <div class="d-flex flex-row justify-content-between pt-4">
-                            <div>
-                                <a href="{{route('service', $service->slug )}}"
-                                    class="more"><span>@lang('site.read_more')</span></a>
-                            </div>
-                            <div>
-                                <a href="{{route('service.order', $service->slug )}}"
-                                    class="more"><span>@lang('site.order_now')</span></a>
-                            </div>
-                        </div> --}}
+                           
                         </div>
                     @endforeach
 
@@ -137,14 +187,15 @@
         <!-- section close -->
 
         <!-- section begin -->
-        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background" style="border-radius: 15px ; margin-bottom: 50px">
+        <section id="view-all-services" class="call-to-action bg-color text-center" data-speed="5" data-type="background"
+            style="border-radius: 15px ; margin-bottom: 50px">
             <a href="{{ route('services') }}" class="btn-line btn-big btn-h" style="color: #fff">@lang('site.view_all_services')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-steps-2"  style="border-radius:15px 15px;">
+        <section id="section-steps-2" style="border-radius:15px 15px;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -227,7 +278,7 @@
 
                 @foreach ($blogs as $blog)
                     <!-- gallery item -->
-                    <div class="col-md-3 col-sm-6 col-12 item {{ $blog->category->id }}">
+                    <div id="gallery-item" class="col-md-3 col-sm-6 col-12 item {{ $blog->category->id }} ">
 
                         <div class="de-post-poster" style="background-size: cover;">
                             <a class="d-overlay" href="{{ route('blog', $blog->slug) }}">
@@ -236,7 +287,7 @@
                                     <h3>{{ $blog->title }}</h3>
                                     <span
                                         class="d-date">{{ $blog->updated_at->format('d F
-                                                                                                                                                                        Y') }}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                Y') }}</span>
                                 </div>
                             </a>
                             <div class="d-image" data-bgimage="url({{ asset($blog->image) }})"
@@ -260,14 +311,16 @@
 
         <!-- section begin -->
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects" style="border-radius: 15px ; margin-top:50px; margin-bottom: 50px;">
+            data-type="background" aria-label="view-all-projects"
+            style="border-radius: 15px ; margin-top:50px; margin-bottom: 50px;">
             <a href="{{ route('blogs') }}" class="btn-line  btn-big  btn-h" style="color:#fff">@lang('site.view_all_blog')</a>
         </section>
         <!-- logo carousel section close -->
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax" style="padding-bottom: 25px;padding-top: 30px;border-radius: 15px ;">
+        <section id="section-testimonial-architecture" class="jarallax"
+            style="padding-bottom: 25px;padding-top: 30px;border-radius: 15px ;">
             <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="">
             <div class="container">
                 <div class="row">
@@ -281,7 +334,8 @@
                             style="padding: 0">
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
-                                    <img src="{{ asset($image->image) }}" alt="" style="border-radius: 15px 15px 15px 15px;">
+                                    <img src="{{ asset($image->image) }}" alt=""
+                                        style="border-radius: 15px 15px 15px 15px;">
                                 </blockquote>
                             @endforeach
                         </div>

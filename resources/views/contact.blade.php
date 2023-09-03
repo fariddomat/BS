@@ -1,6 +1,16 @@
 @extends('layouts.site')
 @section('title', trans('site.contact_us'))
-
+@section('styles')
+    <style>
+        .form-control{
+            margin-top: 25px;
+        }
+        .form-check-label {
+            margin-bottom: 0;
+            padding: 0 25px;
+        }
+    </style>
+@endsection
 @section('scripts')
     <script>
         $('#contactFrom').submit(function() {
@@ -54,11 +64,7 @@
                                 href="{{ $contactInfo->location_link }}" target="_blank">{{ $contactInfo->location }}</a>
                         </p>
                     </div>
-                    {{-- <div>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.369643221737!2d39.19512271494126!3d21.532397085727695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf135aa8c5cf%3A0xb5d7d806784475f3!2zZGlnaXRzIG1hcmsg2KjYtdmF2Kkg2YXYrdin2LHZgSDYp9mE2LHZgtmF2YrYqQ!5e0!3m2!1sen!2s!4v1631086171225!5m2!1sen!2s"
-                        width="" height="300" style="border:0;" allowfullscreen="" loading="lazy" id="iframe-google-map"></iframe>
-                </div> --}}
+                    
                 </div>
                 <!-- Contact Form -->
                 <div class="col-md-6">
@@ -80,7 +86,7 @@
                             <input type="number" min="0" name="mobile" value="{{ old('mobile') }}"
                                 class="form-control" placeholder="@lang('contact.mobile')" required>
                         </div>
-                        <div class="col-md-12" style="margin-top: 25px">
+                        <div class="col-md-12" style="">
                             <div class="form-group">
                                 <input type="email" name="email" value="{{ old('email') }}" class="form-control"
                                     placeholder="@lang('contact.email')">

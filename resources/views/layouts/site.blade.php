@@ -446,32 +446,38 @@
         .toggle-switchArea {
             margin: 10px 0 10px 0;
         }
-
-
     </style>
     <style>
-  @media screen and (max-width: 767px)
-{
-.de-navbar-left .inner-padding {
-  padding: 0px;
-    padding-bottom: 25px;
-  padding-top: 45px;
-}}
+        @media screen and (max-width: 767px) {
+            .de-navbar-left .inner-padding {
+                padding: 0px;
+                padding-bottom: 25px;
+                padding-top: 45px;
+            }
+        }
 
-  @media  screen and (max-width: 992px){
-    .switchToggle label {
-margin-left: 35px;
-    }
-header.side-header .social-icons-2 {
+        @media screen and (max-width: 992px) {
+            .switchToggle label {
+                margin-left: 35px;
+            }
 
-}
-header.side-header, .de_light header.side-header {
-  position: absolute !important;
-  display: block;
-  height: 60px !important;
-  top: 0;
-}
-  }
+            header.side-header .social-icons-2 {}
+
+            header.side-header,
+            .de_light header.side-header {
+                position: absolute !important;
+                display: block;
+                height: 60px !important;
+                top: 0;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+
+            .de-navbar-left footer {
+                padding: 70px 25px 0;
+            }
+        }
     </style>
     @yield('styles')
 </head>
@@ -534,7 +540,8 @@ header.side-header, .de_light header.side-header {
                         </nav>
 
 
-                        <div class="h-content" style="position: absolute;
+                        <div class="h-content"
+                            style="position: absolute;
                         bottom: 15px;
                         right: 0;
                         left: 0;
@@ -634,14 +641,7 @@ header.side-header, .de_light header.side-header {
                                     <div class="col-md-6">
                                         &copy; Copyright 2023 by <a href="https://joudtech.sa/">JoudTech</a>
                                     </div>
-                                    {{-- <div class="col-md-6 text-right">
-                                        <div class="social-icons">
-                                            @foreach ($socialMedias as $socialMedia)
-                                                <a href="{{ $socialMedia->link }}" target="_blank"><i
-                                                        class="fa-brands {{ $socialMedia->icon }}"></i></a>
-                                            @endforeach
-                                        </div>
-                                    </div> --}}
+                                  
                                 </div>
                             </div>
                         </div>

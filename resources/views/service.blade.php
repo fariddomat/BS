@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="{{ asset('css/services.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <style>
-
-.accordion1 {
-    font-family: inherit;
-  color: #2f529f;
-}
+        .accordion1 {
+            font-family: inherit;
+            color: #2f529f;
+        }
 
         .simple-slider-wrapper {
             width: 100%;
@@ -105,6 +104,26 @@
         #subheader h1 {
             color: #2f529f !important;
             font-weight: bold;
+        }
+
+        @media screen and (max-width: 460px) {
+            #section-content {
+                padding: 35px 25px 70px;
+            }
+
+            .de-navbar-left #subheader h1 {
+                margin: 60px 15px;
+            }
+
+            #view-all-projects,
+            #call-to-action,
+            #view-all-services {
+                padding: 60px 0 25px 0;
+            }
+
+            #section-testimonial-architecture {
+                padding: 30px 15px 25px;
+            }
         }
     </style>
 @endsection
@@ -225,7 +244,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    {{-- <h1 style="margin-top: 50px">{{ $service->title }}</h1> --}}
                     <h1 class="service-main-title">{{ $service->main_title }}</h1>
 
                     <ul class="crumb" style="margin-top: 60px">
@@ -246,7 +264,6 @@
         <section id="section-content">
             <div class="container-fluid">
                 <div class="row">
-                    {{-- <h1 class="service-main-title">{{ $service->main_title }}</h1> --}}
 
                     <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s" style="margin-top:50px">
 
@@ -365,39 +382,6 @@
 
                 </section>
 
-
-
-                <!-- revolution slider close -->
-                {{-- @if ($service->subServices->count() > 0)
-                    <div class="row">
-                        <h2>@lang('site.subServices')</h2>
-                        @foreach ($service->subServices as $index => $subService)
-                            <div class="row wow fadeIn" data-wow-delay=".9s" style="margin-bottom: 50px">
-                                <div class="col-md-6">
-                                    <h3 style="height: 65px;"><span class="id-color">{{ $subService->title }}</span> </h3>
-                                    <p>{!! $subService->brief !!}</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="{{ asset($subService->index_image) }}" class="img-responsive" alt="">
-
-                                </div>
-                                <div class="spacer-single"></div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="{{ route('service', $subService->slug) }}"
-                                            class="btn-line btn-ho">@lang('site.read_more')</a>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            @if ($index % 2 != 0)
-                                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                                <div class="spacer-single"></div>
-                            @endif
-                        @endforeach
-                    </div>
-                @endif --}}
             </div>
         </section>
 

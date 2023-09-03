@@ -14,6 +14,21 @@
             font-weight: bold;
             font-size: 20px !important;
         }
+
+        @media screen and (max-width: 460px) {
+            #section-content{
+                padding: 35px 25px 70px;
+            }
+
+
+        .service-item{
+            margin-top: 35px;
+        }
+        h3, p{
+            height: auto !important;
+        }
+
+    }
     </style>
 @endsection
 @section('content')
@@ -45,7 +60,7 @@
                 <div class="row">
 
                     @foreach ($services as $index => $service)
-                        <div class="col-md-6 wow fadeIn" data-wow-delay=".9s">
+                        <div class="col-md-6 wow fadeIn service-item" data-wow-delay=".9s">
                             <h3 style="height: 65px;"><span class="id-color stitle">{{ $service->title }}</span> </h3>
                             <p style="height: 37px;">{{ Str::limit($service->brief, 140) }}</p>
                             <div class="spacer-single"></div>
@@ -55,16 +70,7 @@
                             <a href="{{ route('service', $service->slug) }}"
                                 class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
-                            {{-- <div class="d-flex flex-row justify-content-between pt-4">
-                            <div>
-                                <a href="{{route('service', $service->slug )}}"
-                                    class="more"><span>@lang('site.read_more')</span></a>
-                            </div>
-                            <div>
-                                <a href="{{route('service.order', $service->slug )}}"
-                                    class="more"><span>@lang('site.order_now')</span></a>
-                            </div>
-                        </div> --}}
+
                         </div>
                         @if ($index % 2 != 0)
                             <div class="separator"><span><i class="fa fa-circle"></i></span></div>
@@ -75,14 +81,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- section begin -->
-        {{-- <section id="view-all-projects" class="call-to-action bg-color dark text-center" data-speed="5"
-            data-type="background" aria-label="view-all-projects">
-            <a href="sidebar-light-contact.html" class="btn-line black btn-big">Get Quotation</a>
-        </section> --}}
-        <!-- logo carousel section close -->
-
 
 
     </div>

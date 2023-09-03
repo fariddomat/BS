@@ -4,13 +4,47 @@
 @section('styles')
     <style>
         #section-about-us-4 .image-container {
-  background: url(../images/background/bg-side-3.jpg);
-    background-size: auto;
-  min-height: 450px;
-}
+            background: url(../images/background/bg-side-3.jpg);
+            background-size: auto;
+            min-height: 450px;
+        }
 
-        #section-about-us-4{
+        #section-about-us-4 {
             border-radius: 0 0 15px 0;
+        }
+
+        @media screen and (max-width: 460px) {
+            .side-bg .image-container img {
+
+                padding: 0 25px;
+                margin-top: 15px !important;
+            }
+
+            #section-about-us-4 .image-container {
+                margin-bottom: 15px !important;
+            }
+
+            .de_light #content {
+                padding-top: 50px !important;
+            }
+
+            .inner-padding {
+                padding-top: 0 !important;
+            }
+
+            #view-all-projects,
+            #call-to-action,
+            #view-all-services {
+                padding: 60px 0 25px 0;
+            }
+
+            #section-testimonial-architecture {
+                padding: 30px 15px 25px;
+            }
+
+            #partner {
+                padding: 25px
+            }
         }
     </style>
 @endsection
@@ -39,32 +73,14 @@
     <!-- subheader close -->
 
     <div id="content" class="nopadding">
-        {{-- <section id="section-about-us-4" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style=" background: url({{ asset($aboutImages[0]->image) }});"></div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="inner-padding">
-                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s">
-                            <h2>@lang('about.brief')</h2>
-
-                            <p class="intro">
-                                {!! $about->brief !!}
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-        <section id="section-about-us-4" class="side-bg no-padding" >
+        <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif ">
-                <img src="{{ asset($aboutImages->where("id",2)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where('id', 2)->first()->image) }}" style="width: 100%;margin-top: 50px;"
+                    class="img-responsive" alt="">
 
             </div>
 
@@ -85,7 +101,8 @@
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
             <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0">
-                <img src="{{ asset($aboutImages->where("id",3)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where('id', 3)->first()->image) }}" style="width: 100%;margin-top: 50px;"
+                    class="img-responsive" alt="">
 
             </div>
 
@@ -109,7 +126,8 @@
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif ">
-                <img src="{{ asset($aboutImages->where("id",4)->first()->image) }}" style="width: 100%;margin-top: 50px;" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where('id', 4)->first()->image) }}" style="width: 100%;margin-top: 50px;"
+                    class="img-responsive" alt="">
 
             </div>
 
@@ -129,10 +147,10 @@
             </div>
         </section>
         <section id="section-about-us-4" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-            >
-            <img src="{{ asset($aboutImages->where("id",5)->first()->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
-        </div>
+            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0">
+                <img src="{{ asset($aboutImages->where('id', 5)->first()->image) }}" style="width: 100%; margin-top: 50px"
+                    class="img-responsive" alt="">
+            </div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -154,7 +172,8 @@
                 style="@if (app()->getLocale() == 'ar') left: 0;
                 @else
                 right: 0; @endif">
-                <img src="{{ asset($aboutImages->where("id",6)->first()->image) }}" style="width: 100%; margin-top: 50px" class="img-responsive" alt="">
+                <img src="{{ asset($aboutImages->where('id', 6)->first()->image) }}" style="width: 100%; margin-top: 50px"
+                    class="img-responsive" alt="">
             </div>
 
             <div class="container-fluid">
@@ -172,160 +191,14 @@
                 </div>
             </div>
         </section>
-        {{-- <section id="section-about-us-4" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="background: url({{ asset($aboutImages->where("id",7)->first()->image) }});"></div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="inner-padding">
-                        <div class="col-lg-5 offset-lg-6 col-md-12 wow fadeInRight" data-wow-delay=".2s">
-                            <h2>@lang('about.ambition')</h2>
-
-                            <p class="intro">
-                                {!! $about->ambition !!}
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="section-about-us-4" class="side-bg no-padding">
-            <div class="image-container col-lg-5 col-md-12 pull-left" data-delay="0"
-                style="@if (app()->getLocale() == 'ar') left: 0;
-                @else
-                right: 0; @endif background: url({{ asset($aboutImages->where("id",10)->first()->image) }}); ">
-            </div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="inner-padding">
-                        <div class="col-lg-5 offset-lg-1 col-md-12 wow fadeInLeft" data-wow-delay=".2s">
-                            <h2>@lang('about.values')</h2>
-
-                            <p class="intro">
-                                {!! $about->values !!}
-                            </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-
-
-        {{-- <section id="section-team">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                        <h1>@lang('site.our_team')</h1>
-
-                        <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                        <div class="spacer-single"></div>
-                    </div>
-
-                    <div class="col-md-12 container-4">
-                        @foreach ($teams as $team)
-                            <!-- team member -->
-                            <div class="de-team-list">
-                                <div class="team-pic">
-                                    <img src="{{ asset($team->image) }}" class="img-responsive" alt="" />
-                                </div>
-                                <div class="team-desc col-md-12">
-                                    <h3>{{ $team->name }}</h3>
-                                    <p class="lead">{{ $team->title }}</p>
-                                    <div class="small-border"></div>
-                                    <p>{{ $team->description }}</p>
-
-                                </div>
-                            </div>
-                            <!-- team close -->
-                        @endforeach
-
-
-                        <div class="clearfix"></div>
-
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- <section id="section-testimonial" data-bgimage="url(images/background/bg-38.jpg)" data-stellar-background-ratio=".2"
-        class="text-light">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                    <h1>Customer Says</h1>
-                    <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                    <div class="spacer-single"></div>
-                </div>
-            </div>
-            <div id="testimonial-carousel" class="owl-carousel owl-theme de_carousel wow fadeInUp" data-wow-delay=".3s">
-
-                <div class="item">
-                    <div class="de_testi">
-                        <blockquote>
-                            <p>I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur
-                                adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                            <div class="de_testi_by">
-                                John, Customer
-                            </div>
-                        </blockquote>
-
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="de_testi">
-                        <blockquote>
-                            <p>I have very much enjoyed with your services. Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                            <div class="de_testi_by">
-                                Michael, Customer
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="de_testi">
-                        <blockquote>
-                            <p>I totally recommend your services. Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                            <div class="de_testi_by">
-                                Patrick, Customer
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="de_testi">
-                        <blockquote>
-                            <p>I have very much enjoyed with your services. Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                            <div class="de_testi_by">
-                                James, Customer
-                            </div>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
 
         <!-- section begin -->
-        <section id="section-testimonial-architecture" class="jarallax" style=";
+        <section id="section-testimonial-architecture" class="jarallax"
+            style=";
         padding-bottom: 25px;padding-top: 30px;">
-            <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt="" style="border-radius: 15px 15px 15px 15px;">
+            <img src="{{ asset('home/bg18.webp') }}" class="jarallax-img" alt=""
+                style="border-radius: 15px 15px 15px 15px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
@@ -338,7 +211,8 @@
                             style="padding: 0">
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
-                                    <img src="{{ asset($image->image) }}" alt="" style="border-radius: 15px 15px 15px 15px;">
+                                    <img src="{{ asset($image->image) }}" alt=""
+                                        style="border-radius: 15px 15px 15px 15px;">
                                 </blockquote>
                             @endforeach
                         </div>
@@ -350,7 +224,7 @@
             </div>
         </section>
         <!-- section close -->
-        <section>
+        <section id="partner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
