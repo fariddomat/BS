@@ -254,6 +254,10 @@
         </style>
     @endif
     <style>
+        #back-to-top::before {
+            color: #e4d9d9;
+        }
+
         #back-to-top {
             bottom: 70px;
 
@@ -641,7 +645,7 @@
                                     <div class="col-md-6">
                                         &copy; Copyright 2023 by <a href="https://joudtech.sa/">JoudTech</a>
                                     </div>
-                                  
+
                                 </div>
                             </div>
                         </div>

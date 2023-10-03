@@ -2,13 +2,89 @@
 @section('title', trans('site.home'))
 @section('styles')
     <style>
+.de_tab.tab_steps .de_nav li span {
+
+  font-size: 32px !important;
+}
+.de_tab.tab_steps .de_nav li span:hover {
+  color: rgb(204, 207, 207);
+}
+        .owl-theme .owl-nav [class*="owl-"] {
+  color: #FFF;
+  font-size: 8px !important;
+  margin: 5px;
+  padding: 0px 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+
+        .section-testimonial-architecture.owl-carousel .owl-nav.disabled:not(:first-child),
+        .section-testimonial-architecture.owl-carousel .owl-dots.disabled:not(:first-child) {
+  display: block !important;
+}
+
+.section-testimonial-architecture > span .owl-carousel .owl-nav.disabled > span,
+        .section-testimonial-architecture.owl-carousel span  {
+
+font-size: 46px !important;
+}
+
+        .owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.owl-prev {
+  left: -2rem;
+}
+
+.owl-next {
+  right: -2rem;
+}
         .stitle {
             font-weight: bold;
             font-size: 20px !important;
         }
 
+        #section-welcome {
+            max-height: 100vh !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        @media screen and (max-width: 960px) {
+            #section-about-us-3 .image-container {
+                display: none;
+            }
+
+        }
+
+        @media screen and (min-width: 960px) {
+            #logo {
+                position: sticky;
+                z-index: 9999;
+            }
+
+        }
+
         @media screen and (max-width: 460px) {
 
+            #introd {
+                /* display: flex !important; */
+                background: #001a2f !important;
+                padding-top: 100px;
+                padding-bottom: 30px
+            }
+
+            #text-carousel {
+                visibility: hidden;
+            }
 
             #section-about,
             #section-steps-2 {
@@ -72,6 +148,8 @@
             return true;
         });
     </script>
+
+
 @endsection
 @section('content')
 
@@ -90,6 +168,27 @@
                 $lang = 'en';
             @endphp
         @endif
+        <section id="introd" style="display: none">
+            @if ($lang == 'ar')
+                <div class="item" style="direction: rtl;
+        float: right;">
+                    <h2 style="letter-spacing: 15px;color: #bdccd9;">
+                        أسرار الأعمال
+                    </h2>
+                    <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 15px;color: #bdccd9;">
+                        ابداع مبتكر لتحول رقمي مستدام
+                    </h3>
+                </div>
+            @else
+                <div class="item">
+                    <h2 style="letter-spacing: 15px;color: #bdccd9;">
+                        Business secrets
+                    </h2>
+                    <h3 style="letter-spacing: 0;font-size: 25px;  margin-top: 15px;color: #bdccd9;">Innovative
+                        Creative for Sustainable Digital Transformation</h3>
+                </div>
+            @endif
+        </section>
         <section id="section-welcome" class="full-height"
             data-bgimage="url({{ asset($homeSlider->where('lang', $lang)->first()->image) }})"
             data-stellar-background-ratio=".2">
@@ -142,7 +241,8 @@
                                     </div>
                                 @endforeach
                                 <a href="{{ route('about') }}" class="btn btn-primary text-white"
-                                    style="margin-top: 25px;   width: auto;
+                                    style="margin-top:0px;margin-right: 10px;
+                                    margin-left: 10px;   width: auto;
                         padding: 12px 32px;
                         border-radius: 10px;">@lang('site.read_more')</a>
                             </div>
@@ -165,19 +265,21 @@
                     </div>
 
                     @foreach ($services as $index => $service)
-                        <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{{ asset($service->image) }}" class="img-responsive img-service" alt=""
-                                style="border-radius: 15px 15px 15px 15px;">
-                            <div class="spacer-single"></div>
-                            <h3><span class="id-color stitle">{{ $service->title }}</span></h3>
-                            {{ Str::limit($service->brief, 100) }}
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <a href="{{ route('service', $service->slug) }}">
+                                <img src="{{ asset($service->image) }}" class="img-responsive img-service" alt=""
+                                    style="border-radius: 15px 15px 15px 15px;">
+                                <div class="spacer-single"></div>
+                                <h3><span class="id-color stitle">{{ $service->title }}</span></h3>
+                                {{ Str::limit($service->brief, 100) }}
 
-                            <div class="spacer-single"></div>
-                            <a href="{{ route('service', $service->slug) }}"
-                                class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
+                                <div class="spacer-single"></div>
+                                <a href="{{ route('service', $service->slug) }}"
+                                    class="btn-line btn-fullwidth btn-ho">@lang('site.read_more')</a>
 
-                           
-                        </div>
+
+                        </a>
+                            </div>
                     @endforeach
 
 
@@ -287,7 +389,7 @@
                                     <h3>{{ $blog->title }}</h3>
                                     <span
                                         class="d-date">{{ $blog->updated_at->format('d F
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                Y') }}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Y') }}</span>
                                 </div>
                             </a>
                             <div class="d-image" data-bgimage="url({{ asset($blog->image) }})"
@@ -330,14 +432,16 @@
                     </div>
                     <div class="col-md-12 ">
 
-                        <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp"
+                        <div id="testimonial-carousel-single" class="section-testimonial-architecture owl-carousel owl-theme wow fadeInUp "
                             style="padding: 0">
+
                             @foreach ($experinceSlider as $image)
                                 <blockquote class="testimonial-big">
                                     <img src="{{ asset($image->image) }}" alt=""
                                         style="border-radius: 15px 15px 15px 15px;">
                                 </blockquote>
                             @endforeach
+
                         </div>
 
                     </div>
