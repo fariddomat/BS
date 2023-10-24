@@ -37,9 +37,9 @@
             }
 
             #filters a {
-  background: none;
-  letter-spacing: 0;
-}
+            background: none;
+            letter-spacing: 0;
+            }
             #gallery .item {
                 padding: 0;
                 left: 0 !important;
@@ -64,6 +64,7 @@
                 padding-right: 0px !important;
             }
         }
+
     </style>
 @endsection
 @section('content')
@@ -134,7 +135,12 @@
 
                                         <div class="post-text">
                                             <h2><a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a></h2>
-                                            <p>{!! Str::limit($blog->description, 300) !!}</p>
+
+                                            @php
+                                            $desc=$content = preg_replace("/<img[^>]+\>/i", "", $blog->description);
+
+                                            @endphp
+                                            <p>{!! Str::limit($desc, 300) !!}</p>
                                         </div>
 
                                         <a href="{{ route('blog', $blog->slug) }}" class="btn-more">@lang('site.read_more')</a>

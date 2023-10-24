@@ -26,6 +26,7 @@ use App\HomeSlider;
 use App\PartnerSlider;
 use App\Privacy;
 use App\SMSLog;
+use App\SocialMedia;
 use App\Team;
 use Illuminate\Support\Carbon;
 use Mail;
@@ -315,7 +316,8 @@ class SiteController extends Controller
             ->where('blog_category_id', $blog->blog_category_id)
             ->where('id', '!=', $blog->id)
             ->get();
-        return view('blog', compact('blog', 'relatedBlogs'));
+            $socialMedias=SocialMedia::all();
+        return view('blog', compact('blog', 'relatedBlogs', 'socialMedias'));
     }
 
     public function blogs()

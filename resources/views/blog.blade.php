@@ -214,9 +214,9 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="mt-5 mb-4">
+                        <div class="mt-5 mb-4">
                             <div class="mb-3">
-                                <a target="_blank" href="https://www.facebook.com/DigitsMark-101594752108749" class="follow-a">
+                                <a target="_blank" href="{{ $socialMedias->where('name', 'Facebook')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
                                         <i class="fa fa-facebook-f fa-2x" style="color: #4267b2;"></i>
                                     </div>
@@ -230,7 +230,7 @@
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a target="_blank" href="https://www.instagram.com/digitsmark/" class="follow-a">
+                                <a target="_blank" href="{{ $socialMedias->where('name', 'Instagram')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
                                         <i class="fa fa-instagram fa-2x" style="color: #e1306c;"></i>
                                     </div>
@@ -244,7 +244,7 @@
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a target="_blank" href="https://twitter.com/digitsmark1" class="follow-a">
+                                <a target="_blank" href="{{ $socialMedias->where('name', 'Twitter')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
                                         <i class="fa fa-twitter fa-2x" style="color: #1da1f2;"></i>
                                     </div>
@@ -258,7 +258,7 @@
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <a target="_blank" href="https://www.youtube.com/channel/UCpUPqvnFjlMmDVHFHQzkQmw" class="follow-a">
+                                <a target="_blank" href="{{ $socialMedias->where('name', 'Youtube')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
                                         <i class="fa fa-youtube fa-2x" style="color: #ff0000;"></i>
                                     </div>
@@ -271,7 +271,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="border rounded border-secondary p-3" style="margin-top: 35px">
                             <div class="mt-2 d-flex flex-column flex-md-row justify-content-between">
