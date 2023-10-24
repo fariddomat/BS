@@ -149,16 +149,7 @@
 @section('content')
 <div class="related-blogs section-padding" style="padding-top: 45px; background-color: #fff;padding-left: 25px; padding-right: 25px">
     <div class="container-fluid">
-        <div class="row mb-2 d-none d-md-flex">
-            <div class="col-12 col-md-8 col-xl-8">
 
-                    <h1 style="font-family: '29ltbukralight';">{{$blog->title}}</h1>
-
-            </div>
-            <div class="col-12 col-md-4 col-xl-3">
-
-            </div>
-        </div>
         <div class="row">
             <div class="col-12 col-md-8 col-xl-8">
                 <div class="animate-box" data-animate-effect="fadeInUp">
@@ -168,52 +159,59 @@
                     <div class="post-img mb-30">
                         <div class="img"><img src="{{asset($blog->image)}}" alt=""></div>
                     </div>
+                    <div class="row mt-2 mb-2 d-none d-md-flex">
+                        <div class="col-12 col-md-12 col-xl-12">
+                            <div class="border p-2">
+                                <h1 style="font-family: '29ltbukralight';">{{$blog->title}}</h1>
+                            </div>
+                        </div>
+                    </div>
                     <div class="cont blog-content">
                         <div class="p-3" style="background-color: #f6f6f6; border-right: 4px solid; border-color: #104071">{!! $blog->introduction !!}</div>
                         <div class="pb-3 mt-3">{!! $blog->content_table !!}</div>
                         <div class="p-3" style="background-color: rgba(96,125,139,0.12); border-radius: 10px;">{!! $blog->first_paragraph !!}</div>
                         <div class="mt-3">{!!$blog->description!!}</div>
                         <div class="mt-3" style="background-color: rgba(96,125,139,0.12); border-radius: 10px;">
-                            <div class="row p-4" style="padding-bottom: 0.1rem !important;">
-                                {{-- <div class="col-6 col-md-6">
+                            <div class="row p-4">
+                                <div class="col-4 col-md-3">
                                     <img class="author_image rounded-circle" src="{{asset($blog->author_image)}}" />
-                                </div> --}}
-                                <div class="col-12 col-md-12" style="text-align: center">
-                                    <h3 style="text-align: center">{{ $blog->author_name}}</h3>
-                                    <p style="text-align: center">{{ $blog->author_title}}</p>
+                                </div>
+                                <div class="col-8 col-md-9">
+                                    <h3>{{ $blog->author_name}}</h3>
+                                    <p>{{ $blog->author_title}}</p>
                                 </div>
                                 <div class="col-3 mt-3 d-none d-md-block"></div>
-                                {{-- <div class="col-12 col-md-9 mt-3 text-center text-md-left">
+                                <div class="col-12 col-md-9 mt-3 text-center text-md-left">
                                     @if($blog->author_instagram)
                                     <a target="_blank" href="{{$blog->author_instagram}}">
-                                        <i class="fa fa-instagram fa-2x" style="color: #e1306c;"></i>
+                                        <i class="fab fa-instagram fa-2x" style="color: #e1306c;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_snapchat)
                                     <a target="_blank" href="{{$blog->author_snapchat}}" class="ml-2">
-                                        <i class="fa fa-snapchat fa-2x" style="color: #fffc00;"></i>
+                                        <i class="fab fa-snapchat fa-2x" style="color: #fffc00;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_twitter)
                                     <a target="_blank" href="{{$blog->author_twitter}}" class="ml-2">
-                                        <i class="fa fa-twitter fa-2x" style="color: #00acee;"></i>
+                                        <i class="fab fa-twitter fa-2x" style="color: #00acee;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_tiktok)
                                     <a target="_blank" href="{{$blog->author_tiktok}}" class="ml-2">
-                                        <i class="fa fa-tiktok fa-2x" style="color: #000000;"></i>
+                                        <i class="fab fa-tiktok fa-2x" style="color: #000000;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_linkedin)
                                     <a target="_blank" href="{{$blog->author_linkedin}}" class="ml-2">
-                                        <i class="fa fa-linkedin fa-2x" style="color: #0072b1;"></i>
+                                        <i class="fab fa-linkedin fa-2x" style="color: #0072b1;"></i>
                                     </a>
                                     @endif
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         {{-- <div class="mt-5 mb-4">
@@ -312,21 +310,22 @@
             <div class="col-12 col-md-4 col-xl-3 mt-5 mt-md-0">
 
                 <div id="sidebar">
-                    <div class="widget widget-post">
-                        <h4>@lang('site.related_blogs')</h4>
+                    <div class="widget widget-post ">
+                        <h4 class="border p-3" style="text-align: center">@lang('site.related_blogs')</h4>
                         <div class="small-border"></div>
 
-                        <ul class="de-bloglist-type-1" style="  direction: ltr;">
+                        <ul class="de-bloglist-type-1 border" style="  direction: ltr;">
                             @foreach($relatedBlogs as $blog)
-                            <li style="padding-top: 15px">
+                            <li style="padding: 15px;">
                                 <div class="d-image">
                                     <img src="{{asset($blog->image)}}" alt="">
                                 </div>
-                                <div class="d-content">
-                                    <a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a>
-                                    <div class="d-date">{{$blog->updated_at->format('d F
+                                <div class="d-content" style="border-bottom: unset"> <div class="d-date">{{$blog->updated_at->format('d F
                                         Y')}}</div>
+
+
                                 </div>
+                                <div style="border-bottom: solid 1px rgba(0, 0, 0, .1);"><a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a></div>
                             </li>
                             @endforeach
 

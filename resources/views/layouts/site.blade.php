@@ -497,7 +497,7 @@
     ">
         <div class="container-fluid">
             <div class="row g-0">
-                <div id="de-sidebar" class="col-lg-3 col-md-12">
+                <div id="de-sidebar" class="col-lg-2 col-md-12">
 
                     <!-- header begin -->
                     <header class="side-header" style="height: 100vh">
@@ -508,10 +508,10 @@
 
 
                         <!-- logo begin -->
-                        <div id="logo" style="padding-top: 0px !important">
+                        <div id="logo" style="padding-top: 0px !important ;padding: 0 20px; ">
                             <a href="{{ route('home') }}" style="text-align: center">
                                 <img class="logo" src="{{ asset($info->logo) }}" alt=""
-                                    style="  width: 80% !important; ">
+                                    style="  width: 100% !important;">
                                 <img class="logo-2" src="{{ asset('logo.png') }}"
                                     style="    width: unset !important; " alt="">
                             </a>
@@ -580,7 +580,7 @@
 
                 </div>
 
-                <div id="main" class="col-lg-9 col-md-12 offset-lg-3 offset-md-0">
+                <div id="main" class="col-lg-10 col-md-12 offset-lg-2 offset-md-0">
                     @yield('content')
 
 
