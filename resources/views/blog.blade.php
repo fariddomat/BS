@@ -184,31 +184,31 @@
                                 <div class="col-12 col-md-9 mt-3 text-center text-md-left">
                                     @if($blog->author_instagram)
                                     <a target="_blank" href="{{$blog->author_instagram}}">
-                                        <i class="fab fa-instagram fa-2x" style="color: #e1306c;"></i>
+                                        <i class="fa-brands fa-instagram fa-2x" style="color: #e1306c;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_snapchat)
                                     <a target="_blank" href="{{$blog->author_snapchat}}" class="ml-2">
-                                        <i class="fab fa-snapchat fa-2x" style="color: #fffc00;"></i>
+                                        <i class="fa-brands fa-snapchat fa-2x" style="color: #fffc00;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_twitter)
                                     <a target="_blank" href="{{$blog->author_twitter}}" class="ml-2">
-                                        <i class="fab fa-twitter fa-2x" style="color: #00acee;"></i>
+                                        <i class="fa-brands fa-x-twitter fa-2x" ></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_tiktok)
                                     <a target="_blank" href="{{$blog->author_tiktok}}" class="ml-2">
-                                        <i class="fab fa-tiktok fa-2x" style="color: #000000;"></i>
+                                        <i class="fa-brands fa-tiktok fa-2x" style="color: #000000;"></i>
                                     </a>
                                     @endif
 
                                     @if($blog->author_linkedin)
                                     <a target="_blank" href="{{$blog->author_linkedin}}" class="ml-2">
-                                        <i class="fab fa-linkedin fa-2x" style="color: #0072b1;"></i>
+                                        <i class="fa-brands fa-linkedin fa-2x" style="color: #0072b1;"></i>
                                     </a>
                                     @endif
                                 </div>
@@ -218,7 +218,7 @@
                             <div class="mb-3">
                                 <a target="_blank" href="{{ $socialMedias->where('name', 'Facebook')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
-                                        <i class="fa fa-facebook-f fa-2x" style="color: #4267b2;"></i>
+                                        <i class="fa-brands fa-facebook fa-2x" style="color: #4267b2;"></i>
                                     </div>
                                     <div class="follow-a-div-content">
                                         <h3 class="follow-h3">
@@ -232,7 +232,7 @@
                             <div class="mb-3">
                                 <a target="_blank" href="{{ $socialMedias->where('name', 'Instagram')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
-                                        <i class="fa fa-instagram fa-2x" style="color: #e1306c;"></i>
+                                        <i class="fa fa-brands fa-instagram fa-2x" style="color: #e1306c;"></i>
                                     </div>
                                     <div class="follow-a-div-content">
                                         <h3 class="follow-h3">
@@ -246,7 +246,7 @@
                             <div class="mb-3">
                                 <a target="_blank" href="{{ $socialMedias->where('name', 'Twitter')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
-                                        <i class="fa fa-twitter fa-2x" style="color: #1da1f2;"></i>
+                                        <i class="fa-brands fa-x-twitter fa-2x" style=""></i>
                                     </div>
                                     <div class="follow-a-div-content">
                                         <h3 class="follow-h3">
@@ -260,7 +260,7 @@
                             <div class="mb-3">
                                 <a target="_blank" href="{{ $socialMedias->where('name', 'Youtube')->first()->link}}" class="follow-a">
                                     <div class="follow-a-div-icon text-center">
-                                        <i class="fa fa-youtube fa-2x" style="color: #ff0000;"></i>
+                                        <i class="fa-brands fa-youtube fa-2x" style="color: #ff0000;"></i>
                                     </div>
                                     <div class="follow-a-div-content">
                                         <h3 class="follow-h3">
@@ -325,7 +325,7 @@
 
 
                                 </div>
-                                <div style="border-bottom: solid 1px rgba(0, 0, 0, .1);"><a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a></div>
+                                <div class="pt-2" style="border-bottom: solid 1px rgba(0, 0, 0, .1);"><a href="{{route('blog',$blog->slug)}}">{{$blog->title}}</a></div>
                             </li>
                             @endforeach
 

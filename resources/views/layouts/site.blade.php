@@ -341,7 +341,9 @@
         }
 
         @media screen and (max-width: 400px) {
-
+            .fh-content{
+                display: flex !important;
+            }
             .img-responsive {
                 margin-top: 50px !important;
             }
@@ -631,6 +633,21 @@
                                                     <a
                                                         href="mailto:{{ $contactInfo->email }}">{{ $contactInfo->email }}</a>
                                                 </span>
+                                                <div class="h-content fh-content" style="
+                                                text-align: center;
+                                                margin: 0 auto;
+                                                width: 100%;justify-content: center;
+                                                display: none;
+                                                font-size: 20px;">
+                                                    <div class="social-icons-2" style=" margin-top: 20px !important;">
+                                                        @foreach ($socialMedias as $socialMedia)
+                                                            <a href="{{ $socialMedia->link }}" target="_blank"
+                                                                style="color: #2f419f !important;
+                                                                opacity: unset;"><i
+                                                                    class="fa-brands {{ $socialMedia->icon }}"></i></a>
+                                                       @endforeach
+                                                    </div>
+                                                </div>
                                             </address>
                                         </div>
                                     </div>

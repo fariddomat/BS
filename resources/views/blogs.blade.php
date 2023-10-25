@@ -32,6 +32,13 @@
             }
 
         @media screen and (max-width: 460px) {
+            #filters li {
+  display: flex;
+            }
+            h2{
+                text-align: initial;
+font-size: 1.5rem;
+            }
             #section-portfolio {
                 padding: 70px 45px !important;
             }
@@ -137,10 +144,10 @@
                                             <h2><a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a></h2>
 
                                             @php
-                                            $desc=$content = preg_replace("/<img[^>]+\>/i", "", $blog->description);
-
+                                            /* $desc= preg_replace("/<img[^>]+\>/i", "", $blog->description); */
+                                            $desc= Str::limit(strip_tags($blog->description), 300 , ' ...');
                                             @endphp
-                                            <p>{!! Str::limit($desc, 300) !!}</p>
+                                            <p>{{ $desc }}</p>
                                         </div>
 
                                         <a href="{{ route('blog', $blog->slug) }}" class="btn-more">@lang('site.read_more')</a>
