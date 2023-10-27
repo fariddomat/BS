@@ -34,6 +34,9 @@
     }
 
     @media (max-width: 576px) {
+        .pt-2, .py-2 {
+  padding-top: 2.2rem !important;
+}
         .relatedBlogs {
             max-height: unset;
         }
